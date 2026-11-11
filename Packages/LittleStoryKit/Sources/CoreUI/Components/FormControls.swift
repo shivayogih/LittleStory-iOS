@@ -214,7 +214,7 @@ public struct LSSelect<Option: Hashable>: View {
                         .foregroundStyle(LSColor.textPrimary)
                     Spacer(minLength: LSSpacing.sm)
                     LSIconView(.chevron, size: LSDimens.iconSizeSmall)
-                        .rotationEffect(.degrees(Self.downwards))
+                        .rotationEffect(.degrees(SelectChevron.downwards))
                         .foregroundStyle(LSColor.textSecondary)
                 }
                 .padding(.horizontal, LSSpacing.lg)
@@ -225,7 +225,10 @@ public struct LSSelect<Option: Hashable>: View {
             .accessibilityIdentifier(identifier)
         }
     }
+}
 
-    /// The chevron icon points to the trailing side; a menu shows it pointing down.
-    private static let downwards = 90.0
+/// The chevron icon points to the trailing side; a menu shows it pointing down.
+/// Outside `LSSelect` because generic types cannot hold static stored properties.
+private enum SelectChevron {
+    static let downwards = 90.0
 }
