@@ -13,7 +13,8 @@ struct TokenTests {
             let regular = LSFonts.font(family, weight: .regular, size: 20)
             let extraBold = LSFonts.font(family, weight: .extraBold, size: 20)
             #expect(regular.fontName.hasPrefix(family.postScriptName.prefix { $0 != "-" }), "\(family)")
-            let sample = "LittleStory"
+            // Noto Sans Kannada has no Latin glyphs, so measure Kannada text with it.
+            let sample = family == .notoSansKannada ? "ಕಥೆ ಹೇಳುವ ಸಮಯ" : "LittleStory"
             let regularWidth = (sample as NSString).size(withAttributes: [.font: regular]).width
             let boldWidth = (sample as NSString).size(withAttributes: [.font: extraBold]).width
             // A heavier instance of the same text is wider, so the weight axis was applied.
