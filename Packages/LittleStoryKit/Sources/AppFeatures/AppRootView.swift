@@ -244,10 +244,8 @@ struct TabStack: View {
                 ),
                 navigation: libraryNavigation,
             )
-        case .notifications, .childProfiles, .editChild, .language, .help:
+        case .notifications, .childProfiles, .editChild, .language, .help, .reminder, .privacy, .subscription:
             settingsDestination(route)
-        case .comingSoon:
-            ComingSoonView()
         }
     }
 

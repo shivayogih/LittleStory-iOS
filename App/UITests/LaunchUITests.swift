@@ -117,6 +117,19 @@ final class LaunchUITests: XCTestCase {
     }
 
     @MainActor
+    func testBedtimeReminderSaves() {
+        let app = launch()
+        skipFirstRun(in: app)
+        app.buttons["home.avatar"].tap()
+        let reminder = app.buttons["profile.reminder"]
+        XCTAssertTrue(reminder.waitForExistence(timeout: timeout))
+        reminder.tap()
+        XCTAssertTrue(app.staticTexts["reminder.title"].waitForExistence(timeout: timeout))
+        app.buttons["reminder.save"].tap()
+        XCTAssertTrue(app.staticTexts["reminder.saved"].waitForExistence(timeout: timeout))
+    }
+
+    @MainActor
     private func skipFirstRun(in app: XCUIApplication) {
         let skip = app.buttons["onboarding.skip"]
         XCTAssertTrue(skip.waitForExistence(timeout: timeout))

@@ -1234,6 +1234,24 @@
         }
       }
     },
+    "privacy.policy_keep_body_ios": {
+      "comment": "iOS only: how long data is kept. iOS includes app data in the device's own backups, so this differs from Android.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Until you delete it below or delete the app. Like other app data, it can be part of this device’s own iCloud or computer backup, which only you control; it is never sent to us."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನೀವು ಕೆಳಗೆ ಅಳಿಸುವವರೆಗೆ ಅಥವಾ ಆ್ಯಪ್ ಅಳಿಸುವವರೆಗೆ. ಇತರ ಆ್ಯಪ್ ಡೇಟಾದಂತೆ, ಇದು ನಿಮ್ಮ ನಿಯಂತ್ರಣದಲ್ಲಿರುವ ಈ ಸಾಧನದ iCloud ಅಥವಾ ಕಂಪ್ಯೂಟರ್ ಬ್ಯಾಕಪ್‌ನ ಭಾಗವಾಗಿರಬಹುದು; ಇದನ್ನು ಎಂದಿಗೂ ನಮಗೆ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    },
     "privacy.policy_keep_title": {
       "comment": "From Android feature/settings/src/main/res `privacy_policy_keep_title`.",
       "extractionState": "manual",

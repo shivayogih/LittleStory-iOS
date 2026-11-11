@@ -24,8 +24,9 @@ public enum AppRoute: Sendable, Hashable {
     case editChild(String?)
     case language
     case help
-    /// A screen a later phase builds; keeps every tap working meanwhile.
-    case comingSoon(String)
+    case reminder
+    case privacy
+    case subscription
 }
 
 /// Which part of the app is shown and each tab's stack (LLD §6).

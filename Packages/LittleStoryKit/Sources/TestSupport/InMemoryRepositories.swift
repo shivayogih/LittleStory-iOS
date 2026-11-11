@@ -278,3 +278,24 @@ public final class FakeNotifications: NotificationsRepository, @unchecked Sendab
         readIDs.send(Set(items.current.map(\.id)))
     }
 }
+
+public struct FakeSubscription: SubscriptionRepository {
+    public let all: [Plan]
+
+    public init(_ plans: [Plan]) {
+        all = plans
+    }
+
+    public func plans() -> AsyncStream<[Plan]> { .of(all) }
+}
+
+/// Counts wipes; tests check the effect, not the data (each fake owns its own data).
+public final class FakeLocalData: LocalDataRepository, @unchecked Sendable {
+    public let deletions = TestSubject(0)
+
+    public init() {}
+
+    public func deleteAll() async {
+        deletions.send(deletions.current + 1)
+    }
+}

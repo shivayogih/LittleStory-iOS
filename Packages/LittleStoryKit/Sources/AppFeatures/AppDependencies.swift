@@ -9,6 +9,8 @@ public struct AppDependencies: Sendable {
     public let stores: StoryStores
     public let generation: any GenerationRepository
     public let notifications: any NotificationsRepository
+    public let subscription: any SubscriptionRepository
+    public let localData: any LocalDataRepository
     public let appInfo: AppInfo
     /// Questions for the grown-ups-only gate; UI tests ask for the fixed one.
     public let parentalGate: any ParentalGateChallenges
@@ -20,6 +22,8 @@ public struct AppDependencies: Sendable {
         stores: StoryStores,
         generation: any GenerationRepository,
         notifications: any NotificationsRepository,
+        subscription: any SubscriptionRepository,
+        localData: any LocalDataRepository,
         appVersion: String,
         appBuild: String,
         fixedParentalGate: Bool = false,
@@ -30,6 +34,8 @@ public struct AppDependencies: Sendable {
         self.stores = stores
         self.generation = generation
         self.notifications = notifications
+        self.subscription = subscription
+        self.localData = localData
         appInfo = AppInfo(version: appVersion, build: appBuild)
         parentalGate = fixedParentalGate ? FixedParentalGate() : RandomParentalGateChallenges()
         self.flags = flags

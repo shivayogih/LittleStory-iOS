@@ -11,20 +11,44 @@ import SwiftUI
 /// Profile's destinations and every feature's navigation callbacks, kept apart from `TabStack`'s
 /// body so each file stays readable.
 extension TabStack {
-    /// Profile's screens; parent-only ones open behind the grown-ups gate, and Cancel goes back.
+    /// Profile's screens.
     @ViewBuilder
     func settingsDestination(_ route: AppRoute) -> some View {
         switch route {
+        case .childProfiles, .language, .privacy, .subscription:
+            parentDestination(route)
         case .notifications:
             NotificationsRoute(
                 viewModel: NotificationsViewModel(preferences: dependencies.preferences, notifications: dependencies.notifications),
                 navigation: NotificationsNavigation(
                     back: router.pop,
                     storyReady: { router.select(.stories) },
-                    reminder: { router.push(.comingSoon(Pending.reminder)) },
+                    reminder: { router.push(.reminder) },
                     newStories: { router.select(.discover) },
                 ),
             )
+        case let .editChild(childID):
+            SetupRoute(
+                profiles: dependencies.profiles,
+                preferences: dependencies.preferences,
+                uiLanguageTag: localizer.language.tag,
+                childID: childID,
+                onApplyLanguage: localizer.apply(tag:),
+                onDone: router.pop,
+            )
+        case .help:
+            HelpRoute(appInfo: dependencies.appInfo, onBack: router.pop)
+        case .reminder:
+            ReminderRoute(viewModel: ReminderViewModel(preferences: dependencies.preferences), onBack: router.pop)
+        default:
+            EmptyView()
+        }
+    }
+
+    /// Parent-only screens: they open behind the grown-ups gate, and Cancel goes back.
+    @ViewBuilder
+    func parentDestination(_ route: AppRoute) -> some View {
+        switch route {
         case .childProfiles:
             ParentGated(onCancel: router.pop) {
                 ChildProfilesRoute(
@@ -36,15 +60,6 @@ extension TabStack {
                     ),
                 )
             }
-        case let .editChild(childID):
-            SetupRoute(
-                profiles: dependencies.profiles,
-                preferences: dependencies.preferences,
-                uiLanguageTag: localizer.language.tag,
-                childID: childID,
-                onApplyLanguage: localizer.apply(tag:),
-                onDone: router.pop,
-            )
         case .language:
             ParentGated(onCancel: router.pop) {
                 LanguageRoute(
@@ -54,8 +69,25 @@ extension TabStack {
                     onBack: router.pop,
                 )
             }
-        case .help:
-            HelpRoute(appInfo: dependencies.appInfo, onBack: router.pop)
+        case .privacy:
+            ParentGated(onCancel: router.pop) {
+                PrivacyRoute(
+                    viewModel: PrivacyViewModel(localData: dependencies.localData, flags: dependencies.flags),
+                    onBack: router.pop,
+                    onDeleted: {
+                        localizer.reset()
+                        router.resetToOnboarding()
+                    },
+                )
+            }
+        case .subscription:
+            ParentGated(onCancel: router.pop) {
+                SubscriptionRoute(
+                    viewModel: SubscriptionViewModel(subscription: dependencies.subscription),
+                    onBack: router.pop,
+                    onDone: router.pop,
+                )
+            }
         default:
             EmptyView()
         }
@@ -88,11 +120,11 @@ extension TabStack {
             editChild: { router.push(.editChild($0)) },
             children: { router.push(.childProfiles) },
             language: { router.push(.language) },
-            reminder: { router.push(.comingSoon(Pending.reminder)) },
+            reminder: { router.push(.reminder) },
             notifications: { router.push(.notifications) },
             downloads: { router.push(.downloads) },
-            subscription: { router.push(.comingSoon(Pending.subscription)) },
-            privacy: { router.push(.comingSoon(Pending.privacy)) },
+            subscription: { router.push(.subscription) },
+            privacy: { router.push(.privacy) },
             help: { router.push(.help) },
         )
     }
@@ -121,11 +153,4 @@ extension TabStack {
             back: router.pop,
         )
     }
-}
-
-/// Names for screens a later phase builds (I6c).
-enum Pending {
-    static let reminder = "reminder"
-    static let subscription = "subscription"
-    static let privacy = "privacy"
 }

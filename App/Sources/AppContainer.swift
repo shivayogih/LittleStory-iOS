@@ -33,6 +33,8 @@ final class AppContainer {
             stores: repositories.storyStores,
             generation: repositories.generation,
             notifications: repositories.notifications,
+            subscription: repositories.subscription,
+            localData: repositories.localData,
             appVersion: Bundle.main.object(forInfoDictionaryKey: Self.versionKey) as? String ?? "",
             appBuild: Bundle.main.object(forInfoDictionaryKey: Self.buildKey) as? String ?? "",
             fixedParentalGate: uiTest,

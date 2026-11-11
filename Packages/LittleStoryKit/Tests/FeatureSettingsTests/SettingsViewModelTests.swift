@@ -176,3 +176,98 @@ func waitUntil(_ condition: () -> Bool) async throws {
     }
     Issue.record("Condition not met in time")
 }
+
+@MainActor
+struct ReminderViewModelTests {
+    @Test("Loads the saved reminder, edits stay local until Save")
+    func editAndSave() async {
+        let preferences = FakePreferences()
+        let viewModel = ReminderViewModel(preferences: preferences)
+        await viewModel.start()
+        #expect(!viewModel.state.loading)
+        #expect(viewModel.state.days.count == 7)
+        viewModel.onEnabledChange(true)
+        viewModel.onTimeSelected(hour: 19, minute: 45)
+        viewModel.onDayToggled(7)
+        #expect(!preferences.parent.current.reminder.enabled)
+        await viewModel.onSave()
+        let saved = preferences.parent.current.reminder
+        #expect(saved.enabled && saved.hour == 19 && saved.minute == 45)
+        #expect(!saved.days.contains(7))
+        #expect(viewModel.state.showSaved)
+        #expect(viewModel.state.savedMessage(time: "7:45 PM").resolved(for: english) == "Reminder saved for 7:45 PM")
+        viewModel.onSavedShown()
+        #expect(!viewModel.state.showSaved)
+        viewModel.onDayToggled(7)
+        #expect(viewModel.state.days.contains(7))
+    }
+
+    @Test("Weekdays follow the locale's first day and use its names")
+    func weekdays() {
+        #expect(WeekDays.ordered(for: Locale(identifier: "en_US")).first == 7)
+        #expect(WeekDays.ordered(for: Locale(identifier: "en_GB")).first == 1)
+        #expect(WeekDays.fullName(1, locale: Locale(identifier: "en_US")) == "Monday")
+        #expect(WeekDays.ordered(for: Locale(identifier: "en_GB")).count == 7)
+    }
+}
+
+@MainActor
+struct PrivacyViewModelTests {
+    @Test("Delete asks first; confirming wipes the data once and reports it")
+    func delete() async {
+        let localData = FakeLocalData()
+        let viewModel = PrivacyViewModel(localData: localData, flags: .mvp)
+        #expect(viewModel.state.showDraftNotice)
+        viewModel.onDeleteTapped()
+        #expect(viewModel.state.confirmOpen)
+        viewModel.onConfirmDismissed()
+        #expect(!viewModel.state.confirmOpen)
+        #expect(localData.deletions.current == 0)
+        viewModel.onDeleteTapped()
+        await viewModel.onConfirmDelete()
+        #expect(localData.deletions.current == 1)
+        #expect(!viewModel.state.deleting)
+        var effects = viewModel.effects.makeAsyncIterator()
+        #expect(await effects.next() == .deleted)
+    }
+
+    @Test("The draft notice follows its feature flag")
+    func draftFlag() {
+        let viewModel = PrivacyViewModel(localData: FakeLocalData(), flags: FeatureFlags(draftLegalText: false))
+        #expect(!viewModel.state.showDraftNotice)
+    }
+}
+
+@MainActor
+struct SubscriptionViewModelTests {
+    private let plans = [
+        Plan(id: "free", priceMinorUnits: 0, currencyCode: "INR", billedYearly: false),
+        Plan(id: "monthly", priceMinorUnits: 24900, currencyCode: "INR", billedYearly: false),
+        Plan(id: "yearly", priceMinorUnits: 179_900, currencyCode: "INR", billedYearly: true, bestValue: true),
+        Plan(id: "family", priceMinorUnits: 249_900, currencyCode: "INR", billedYearly: true, maxChildren: 5),
+    ]
+
+    @Test("Yearly is chosen by default; Choose shows the prototype dialog for the selected plan")
+    func chooseAPlan() async throws {
+        let viewModel = SubscriptionViewModel(subscription: FakeSubscription(plans))
+        let task = Task { await viewModel.start() }
+        defer { task.cancel() }
+        try await waitUntil { viewModel.state.plans.count == 4 }
+        #expect(viewModel.state.chooseLabel.resolved(for: english) == "Choose Premium Yearly plan")
+        viewModel.onSelect("family")
+        viewModel.onChoose()
+        #expect(viewModel.state.confirmedText?.resolved(for: english).contains("Premium Family") == true)
+        viewModel.onDialogDismissed()
+        #expect(viewModel.state.confirmedID == nil)
+    }
+
+    @Test("Periods and prices describe each plan")
+    func labels() {
+        #expect(plans[0].period.resolved(for: english) == "Try the magic")
+        #expect(plans[1].period.resolved(for: english) == "per month")
+        #expect(plans[2].period.resolved(for: english) == "per year · best value")
+        #expect(plans[3].period.resolved(for: english) == "per year · up to 5 children")
+        #expect(plans[1].price(locale: Locale(identifier: "en_IN")).contains("249"))
+        #expect(!plans[1].price(locale: Locale(identifier: "en_IN")).contains("24,900"))
+    }
+}
