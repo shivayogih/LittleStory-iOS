@@ -1,0 +1,11 @@
+# SwiftFormat 0.64.6 (Tools/versions.env). CI runs `swiftformat --lint .`.
+--swiftversion 6.4
+--exclude App/Generated,Packages/LittleStoryKit/.build,*.xcodeproj
+--indent 4
+--maxwidth 140
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--ranges spaced
+--header ignore
+--importgrouping alpha

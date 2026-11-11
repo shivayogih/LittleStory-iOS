@@ -1,0 +1,82 @@
+# XcodeGen spec. The .xcodeproj is generated (`xcodegen generate`) and never committed.
+name: LittleStory
+options:
+  bundleIdPrefix: com.littlestory
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "27.2"
+  createIntermediateGroups: true
+  developmentLanguage: en
+packages:
+  LittleStoryKit:
+    path: Packages/LittleStoryKit
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: "YES"
+    GCC_TREAT_WARNINGS_AS_ERRORS: "YES"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    LOCALIZATION_PREFERS_STRING_CATALOGS: "YES"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+    DEAD_CODE_STRIPPING: "YES"
+targets:
+  LittleStory:
+    type: application
+    platform: iOS
+    sources:
+      - path: App/Sources
+      - path: App/Resources
+    dependencies:
+      - package: LittleStoryKit
+        product: AppFeatures
+      - package: LittleStoryKit
+        product: DataLayer
+    info:
+      path: App/Generated/Info.plist
+      properties:
+        CFBundleDisplayName: LittleStory
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, kn]
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_NAME: LittleStory
+        # Placeholder until the owner picks the real identifier (HLD §16, Q5).
+        PRODUCT_BUNDLE_IDENTIFIER: com.littlestory.ios
+        CODE_SIGN_STYLE: Automatic
+  LittleStoryUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: App/UITests
+    dependencies:
+      - target: LittleStory
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.littlestory.ios.uitests
+schemes:
+  LittleStory:
+    build:
+      targets:
+        LittleStory: all
+    test:
+      gatherCoverageData: true
+      targets:
+        - LittleStoryUITests

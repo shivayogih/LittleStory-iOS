@@ -29,6 +29,8 @@
 
 ## 1. Package and targets
 
+> **As built in phase I0:** the data target is named `DataLayer` (a module called `Data` would clash with `Foundation.Data`); the app project is generated from `project.yml` by XcodeGen; the checks in `Tools/` are Python scripts so they also run on Linux.
+
 ### 1.1 Folder layout
 
 ```text

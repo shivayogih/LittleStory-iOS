@@ -138,7 +138,7 @@ All free. Versions below are the **newest stable releases on 11 Nov 2026** (chec
 | Lint | SwiftLint (MIT) | **0.65.1** | Rule gate |
 | Format | SwiftFormat (MIT) | **0.64.6** | Style gate |
 | CI actions | `actions/checkout`, `actions/upload-artifact` | **v7** | Newest majors |
-| Project file | Thin `.xcodeproj`; all code in the local package | — | Avoids `project.pbxproj` conflicts |
+| Project file | `project.yml` generated with XcodeGen (MIT); all code in the local package | XcodeGen latest via Homebrew | No `project.pbxproj` in git, so no merge conflicts |
 
 **Deliberately not used:** Firebase, Crashlytics, any analytics SDK, RevenueCat, The Composable Architecture (good, but a large learning curve for a small team; our pattern in §7 gives the same unidirectional flow with no dependency), Combine for new code, CocoaPods.
 

@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [development, staging, main]
+  push:
+    branches: [development, staging, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Rules (dependencies, hardcoding, translations)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - run: python3 Tools/check-dependencies.py
+      - run: python3 Tools/check-hardcoding.py
+      - run: python3 Tools/check-translations.py
+
+  build-and-test:
+    name: Lint, build and test (iPhone + iPad)
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Select Xcode from .xcode-version
+        run: Tools/select-xcode.sh
+
+      - name: Install pinned SwiftLint and SwiftFormat
+        run: Tools/install-lint-tools.sh
+
+      - name: SwiftFormat
+        run: .tools/bin/swiftformat --lint .
+
+      - name: SwiftLint
+        run: .tools/bin/swiftlint lint --strict --reporter github-actions-logging
+
+      - name: Generate the Xcode project
+        run: |
+          brew install xcodegen
+          xcodegen --version
+          xcodegen generate
+
+      - name: Pick simulators
+        id: sims
+        run: |
+          echo "iphone=$(python3 Tools/pick-simulator.py iphone)" >> "$GITHUB_OUTPUT"
+          echo "ipad=$(python3 Tools/pick-simulator.py ipad)" >> "$GITHUB_OUTPUT"
+
+      - name: Package tests (Swift Testing)
+        working-directory: Packages/LittleStoryKit
+        run: >
+          xcodebuild test
+          -scheme LittleStoryKit-Package
+          -destination "${{ steps.sims.outputs.iphone }}"
+          -resultBundlePath "$RUNNER_TEMP/PackageTests.xcresult"
+          SWIFT_TREAT_WARNINGS_AS_ERRORS=YES
+
+      - name: App build and UI tests on iPhone and iPad
+        run: >
+          xcodebuild test
+          -project LittleStory.xcodeproj
+          -scheme LittleStory
+          -destination "${{ steps.sims.outputs.iphone }}"
+          -destination "${{ steps.sims.outputs.ipad }}"
+          -resultBundlePath "$RUNNER_TEMP/AppTests.xcresult"
+          CODE_SIGNING_ALLOWED=NO
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results
+          path: ${{ runner.temp }}/*.xcresult
+          if-no-files-found: ignore
