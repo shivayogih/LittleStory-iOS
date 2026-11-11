@@ -226,7 +226,7 @@ private struct PlayerContent: View {
                 active: state.downloaded,
                 action: actions.download,
             )
-            .accessibilityIdentifier(ReaderID.download)
+            .accessibilityIdentifier(ReaderID.playerDownload)
             ActionTile(
                 icon: state.favourite ? .heartFilled : .heart,
                 title: UIText(state.favourite ? ReaderStrings.loved : ReaderStrings.favourite),
@@ -235,7 +235,7 @@ private struct PlayerContent: View {
                 spoken: state.favouriteLabel,
                 action: actions.favourite,
             )
-            .accessibilityIdentifier(ReaderID.favourite)
+            .accessibilityIdentifier(ReaderID.playerFavourite)
             Button(action: actions.speed) {
                 VStack(spacing: LSSpacing.xs) {
                     LText(state.speedValue).lsTextStyle(.button)

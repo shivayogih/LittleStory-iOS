@@ -73,8 +73,8 @@ public enum ReaderID {
     public static let previousChapter = "player.previous_chapter"
     public static let nextChapter = "player.next_chapter"
     public static let sleepTimer = "player.sleep_timer"
-    public static let download = "player.download"
-    public static let favourite = "player.favourite"
+    public static let playerDownload = "player.download"
+    public static let playerFavourite = "player.favourite"
     public static let speed = "player.speed"
     public static let volume = "player.volume"
     public static func sleepOption(_ id: String) -> String { "player.sleep.\(id)" }
