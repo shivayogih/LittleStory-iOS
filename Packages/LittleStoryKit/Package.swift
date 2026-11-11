@@ -44,6 +44,7 @@ let package = Package(
         .target(name: "TestSupport", dependencies: ["Domain", "Common"]),
 
         .testTarget(name: "CommonTests", dependencies: ["Common", "TestSupport"]),
+        .testTarget(name: "DomainTests", dependencies: ["Domain", "Common", "TestSupport"]),
         .testTarget(name: "DesignSystemTests", dependencies: ["DesignSystem"]),
         .testTarget(name: "CoreUITests", dependencies: ["CoreUI"]),
     ],
