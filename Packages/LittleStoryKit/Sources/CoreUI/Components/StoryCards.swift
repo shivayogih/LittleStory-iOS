@@ -6,6 +6,7 @@ public enum StoryComponentID {
     public static func card(_ id: String) -> String { "story.card.\(id)" }
     public static func favourite(_ id: String) -> String { "story.favourite.\(id)" }
     public static func row(_ id: String) -> String { "story.row.\(id)" }
+    public static func play(_ id: String) -> String { "story.play.\(id)" }
 }
 
 /// Square cover with title and "Category · N min"; the heart toggles the favourite.
@@ -66,17 +67,31 @@ public struct StoryCard: View {
     }
 }
 
-/// A list row: small cover, category, title, "Ages · min", offline note and a favourite button.
+/// What the button at the trailing end of a `StoryRow` does.
+public enum StoryRowTrailing {
+    case favourite(() -> Void)
+    /// "Play <title>" (My Stories); `label` is the spoken name.
+    case play(label: UIText, action: () -> Void)
+}
+
+/// A list row: small cover, category, title, meta, offline note and a favourite or play button.
 public struct StoryRow: View {
     private let item: StoryItem
+    private let meta: UIText
     private let onOpen: () -> Void
-    private let onFavourite: () -> Void
+    private let trailing: StoryRowTrailing
     @Environment(\.locale) private var locale
 
     public init(_ item: StoryItem, onOpen: @escaping () -> Void, onFavourite: @escaping () -> Void) {
+        self.init(item, meta: item.listMeta, onOpen: onOpen, trailing: .favourite(onFavourite))
+    }
+
+    /// - Parameter meta: the line under the title; `item.listMeta` ("Ages 4–7 · 6 min") elsewhere.
+    public init(_ item: StoryItem, meta: UIText, onOpen: @escaping () -> Void, trailing: StoryRowTrailing) {
         self.item = item
+        self.meta = meta
         self.onOpen = onOpen
-        self.onFavourite = onFavourite
+        self.trailing = trailing
     }
 
     public var body: some View {
@@ -93,7 +108,7 @@ public struct StoryRow: View {
                         Text(item.title)
                             .lsTextStyle(.itemTitle)
                             .foregroundStyle(LSColor.textPrimary)
-                        LText(item.listMeta)
+                        LText(meta)
                             .lsTextStyle(.chip)
                             .foregroundStyle(LSColor.textSecondary)
                         if item.downloaded {
@@ -110,17 +125,28 @@ public struct StoryRow: View {
             .buttonStyle(LSPressStyle())
             .accessibilityElement(children: .combine)
             .accessibilityIdentifier(StoryComponentID.row(item.id))
-            LSIconButton(
-                item.favourite ? .heartFilled : .heart,
-                label: item.favouriteLabel.text(locale),
-                active: item.favourite,
-                action: onFavourite,
-            )
-            .accessibilityIdentifier(StoryComponentID.favourite(item.id))
+            trailingButton
         }
         .padding(LSSpacing.md)
         .background(LSColor.surface, in: .rect(cornerRadius: LSRadius.large))
         .lsShadow(.soft)
+    }
+
+    @ViewBuilder
+    private var trailingButton: some View {
+        switch trailing {
+        case let .favourite(action):
+            LSIconButton(
+                item.favourite ? .heartFilled : .heart,
+                label: item.favouriteLabel.text(locale),
+                active: item.favourite,
+                action: action,
+            )
+            .accessibilityIdentifier(StoryComponentID.favourite(item.id))
+        case let .play(label, action):
+            LSIconButton(.play, label: label.text(locale), action: action)
+                .accessibilityIdentifier(StoryComponentID.play(item.id))
+        }
     }
 }
 

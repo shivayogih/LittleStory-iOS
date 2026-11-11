@@ -58,6 +58,35 @@ final class LaunchUITests: XCTestCase {
     @MainActor
     func testCreatingAStoryOpensItInTheReader() {
         let app = launch()
+        createStory(in: app)
+        let read = app.buttons["ready.read"]
+        read.swipeUpIfNeeded(in: app)
+        read.tap()
+        XCTAssertTrue(app.staticTexts["reader.title"].waitForExistence(timeout: timeout))
+        app.buttons["reader.next"].tap()
+        XCTAssertTrue(app.staticTexts["reader.page"].exists)
+    }
+
+    @MainActor
+    func testCreatedStoryIsInMyStories() {
+        let app = launch()
+        createStory(in: app)
+        let saved = app.buttons["ready.saved"]
+        saved.swipeUpIfNeeded(in: app)
+        saved.tap()
+        XCTAssertTrue(app.staticTexts["stories.title"].waitForExistence(timeout: timeout))
+        app.buttons["stories.tab.created"].tap()
+        let createdRow = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "story.row.")).firstMatch
+        XCTAssertTrue(createdRow.waitForExistence(timeout: timeout))
+        app.buttons["stories.downloads"].tap()
+        XCTAssertTrue(app.staticTexts["downloads.title"].waitForExistence(timeout: timeout))
+        app.buttons["downloads.back"].tap()
+        XCTAssertTrue(app.staticTexts["stories.title"].waitForExistence(timeout: timeout))
+    }
+
+    /// Skips the first run, then makes a story from the first starter and waits for Story ready.
+    @MainActor
+    private func createStory(in app: XCUIApplication) {
         let skip = app.buttons["onboarding.skip"]
         XCTAssertTrue(skip.waitForExistence(timeout: timeout))
         skip.tap()
@@ -74,14 +103,8 @@ final class LaunchUITests: XCTestCase {
         submit.swipeUpIfNeeded(in: app)
         submit.tap()
         // The simulated generation takes a few seconds, then Story ready opens on its own.
-        let read = app.buttons["ready.read"]
-        XCTAssertTrue(read.waitForExistence(timeout: generationTimeout))
+        XCTAssertTrue(app.buttons["ready.read"].waitForExistence(timeout: generationTimeout))
         XCTAssertTrue(app.staticTexts["ready.title"].exists)
-        read.swipeUpIfNeeded(in: app)
-        read.tap()
-        XCTAssertTrue(app.staticTexts["reader.title"].waitForExistence(timeout: timeout))
-        app.buttons["reader.next"].tap()
-        XCTAssertTrue(app.staticTexts["reader.page"].exists)
     }
 
     @MainActor

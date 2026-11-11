@@ -9,7 +9,7 @@ public enum AppTab: String, Sendable, Hashable, CaseIterable {
     case profile
 }
 
-/// Screens pushed inside a tab. Later phases add Library and Settings routes.
+/// Screens pushed inside a tab. Later phases add Settings routes.
 public enum AppRoute: Sendable, Hashable {
     case category(String)
     case story(String)
@@ -17,6 +17,7 @@ public enum AppRoute: Sendable, Hashable {
     case storyReady(String)
     case reader(storyID: String, page: Int)
     case player(String)
+    case downloads
     /// A screen a later phase builds; keeps every tap working meanwhile.
     case comingSoon(String)
 }

@@ -5,6 +5,7 @@ import Domain
 import FeatureCreate
 import FeatureDiscover
 import FeatureHome
+import FeatureLibrary
 import FeatureOnboarding
 import FeatureReader
 import Foundation
@@ -180,7 +181,16 @@ private struct TabStack: View {
                 ),
                 navigation: CreateNavigation(startGeneration: { router.push(.generating(requestID: $0)) }),
             )
-        case .stories, .profile:
+        case .stories:
+            MyStoriesRoute(
+                viewModel: MyStoriesViewModel(
+                    profiles: dependencies.profiles,
+                    preferences: dependencies.preferences,
+                    stores: dependencies.stores,
+                ),
+                navigation: libraryNavigation,
+            )
+        case .profile:
             ComingSoonView()
         }
     }
@@ -214,6 +224,15 @@ private struct TabStack: View {
             createDestination(route)
         case .reader, .player:
             readingDestination(route)
+        case .downloads:
+            DownloadsRoute(
+                viewModel: DownloadsViewModel(
+                    profiles: dependencies.profiles,
+                    preferences: dependencies.preferences,
+                    stores: dependencies.stores,
+                ),
+                navigation: libraryNavigation,
+            )
         case .comingSoon:
             ComingSoonView()
         }
@@ -287,6 +306,18 @@ private struct TabStack: View {
             back: router.pop,
             listen: { router.push(.player($0)) },
             read: { router.push(.reader(storyID: $0, page: 0)) },
+        )
+    }
+
+    private var libraryNavigation: LibraryNavigation {
+        let router = router
+        return LibraryNavigation(
+            downloads: { router.push(.downloads) },
+            story: { router.push(.story($0)) },
+            createdStory: { router.push(.storyReady($0)) },
+            play: { router.push(.player($0)) },
+            discover: { router.select(.discover) },
+            back: router.pop,
         )
     }
 
