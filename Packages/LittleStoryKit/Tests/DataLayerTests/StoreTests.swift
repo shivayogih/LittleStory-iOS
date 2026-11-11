@@ -189,7 +189,7 @@ struct StoreTests {
         #expect(await repositories.profiles.activeProfile().first() == .some(nil))
         #expect(await repositories.favourites.favouriteIDs(childID: child.id).first() == [])
         #expect(await repositories.downloads.downloads().first() == [])
-        #expect(await repositories.notifications.notifications(languageTag: "en").first()?.contains(where: \.read) == false)
+        #expect(await repositories.notifications.notifications(languageTag: "en").first()?.contains { $0.read } == false)
         #expect(await repositories.preferences.firstRunCompleted().first() == false)
     }
 }
