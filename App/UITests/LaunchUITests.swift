@@ -84,15 +84,53 @@ final class LaunchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["stories.title"].waitForExistence(timeout: timeout))
     }
 
-    /// Skips the first run, then makes a story from the first starter and waits for Story ready.
     @MainActor
-    private func createStory(in app: XCUIApplication) {
+    func testProfileOpensHelpAndGatedChildProfiles() {
+        let app = launch()
+        skipFirstRun(in: app)
+        app.buttons["home.avatar"].tap()
+        XCTAssertTrue(app.staticTexts["profile.title"].waitForExistence(timeout: timeout))
+        let help = app.buttons["profile.help"]
+        help.swipeUpIfNeeded(in: app)
+        help.tap()
+        XCTAssertTrue(app.staticTexts["help.title"].waitForExistence(timeout: timeout))
+        app.buttons["settings.back"].tap()
+        let children = app.buttons["profile.children"]
+        XCTAssertTrue(children.waitForExistence(timeout: timeout))
+        children.tap()
+        // Grown-ups only: UI test builds always ask 12 × 3.
+        XCTAssertTrue(app.staticTexts["parental_gate.question"].waitForExistence(timeout: timeout))
+        app.buttons["parental_gate.key.3"].tap()
+        app.buttons["parental_gate.key.6"].tap()
+        let submit = app.buttons["parental_gate.submit"]
+        submit.swipeUpIfNeeded(in: app)
+        submit.tap()
+        XCTAssertTrue(app.staticTexts["children.title"].waitForExistence(timeout: timeout))
+    }
+
+    @MainActor
+    func testBellOpensNotifications() {
+        let app = launch()
+        skipFirstRun(in: app)
+        app.buttons["home.bell"].tap()
+        XCTAssertTrue(app.staticTexts["notifications.title"].waitForExistence(timeout: timeout))
+    }
+
+    @MainActor
+    private func skipFirstRun(in app: XCUIApplication) {
         let skip = app.buttons["onboarding.skip"]
         XCTAssertTrue(skip.waitForExistence(timeout: timeout))
         skip.tap()
         let setupSkip = app.buttons["setup.skip"]
         XCTAssertTrue(setupSkip.waitForExistence(timeout: timeout))
         setupSkip.tap()
+        XCTAssertTrue(app.staticTexts["home.title"].waitForExistence(timeout: timeout))
+    }
+
+    /// Skips the first run, then makes a story from the first starter and waits for Story ready.
+    @MainActor
+    private func createStory(in app: XCUIApplication) {
+        skipFirstRun(in: app)
         let create = app.buttons["home.create"]
         XCTAssertTrue(create.waitForExistence(timeout: timeout))
         create.tap()

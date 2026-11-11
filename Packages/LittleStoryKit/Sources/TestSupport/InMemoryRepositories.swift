@@ -250,3 +250,31 @@ public final class FakeGeneration: GenerationRepository, @unchecked Sendable {
         }
     }
 }
+
+/// Inbox items per language; reading state is shared across languages, like the real store.
+public final class FakeNotifications: NotificationsRepository, @unchecked Sendable {
+    public let items: TestSubject<[NotificationItem]>
+    public let readIDs = TestSubject<Set<String>>([])
+
+    public init(_ items: [NotificationItem] = []) {
+        self.items = TestSubject(items)
+    }
+
+    public func notifications(languageTag _: String) -> AsyncStream<[NotificationItem]> {
+        combineLatest(items.stream(), readIDs.stream()).map { all, read in
+            all.map { item in
+                var copy = item
+                copy.read = item.read || read.contains(item.id)
+                return copy
+            }
+        }
+    }
+
+    public func markRead(id: String) async {
+        readIDs.send(readIDs.current.union([id]))
+    }
+
+    public func markAllRead() async {
+        readIDs.send(Set(items.current.map(\.id)))
+    }
+}

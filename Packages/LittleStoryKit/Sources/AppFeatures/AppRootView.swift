@@ -8,6 +8,7 @@ import FeatureHome
 import FeatureLibrary
 import FeatureOnboarding
 import FeatureReader
+import FeatureSettings
 import Foundation
 import SwiftUI
 
@@ -36,6 +37,7 @@ public struct AppRootView: View {
                 .background(LSColor.background)
         }
         .environment(\.locale, localizer.locale)
+        .environment(\.parentalGateChallenges, dependencies.parentalGate)
         .tint(LSColor.primary)
         // One light theme with night surfaces (Android ADR-013) until a dark palette is designed.
         .preferredColorScheme(.light)
@@ -53,7 +55,7 @@ public struct AppRootView: View {
         case .onboarding:
             FirstRunFlow(dependencies: dependencies, localizer: localizer, router: router)
         case .main:
-            MainTabs(dependencies: dependencies, router: router)
+            MainTabs(dependencies: dependencies, localizer: localizer, router: router)
         }
     }
 }
@@ -85,13 +87,14 @@ private struct FirstRunFlow: View {
 /// Five tabs; on iPad (regular width) they become a sidebar.
 private struct MainTabs: View {
     let dependencies: AppDependencies
+    let localizer: Localizer
     @Bindable var router: AppRouter
 
     var body: some View {
         TabView(selection: Binding(get: { router.selectedTab }, set: router.select)) {
             ForEach(AppTab.allCases, id: \.self) { tab in
                 Tab(value: tab) {
-                    TabStack(tab: tab, dependencies: dependencies, router: router)
+                    TabStack(tab: tab, dependencies: dependencies, localizer: localizer, router: router)
                 } label: {
                     TabLabel(tab: tab)
                 }
@@ -135,9 +138,10 @@ private struct TabLabel: View {
 }
 
 /// One tab's navigation stack and the screens it can push.
-private struct TabStack: View {
+struct TabStack: View {
     let tab: AppTab
     let dependencies: AppDependencies
+    let localizer: Localizer
     @Bindable var router: AppRouter
 
     var body: some View {
@@ -191,7 +195,14 @@ private struct TabStack: View {
                 navigation: libraryNavigation,
             )
         case .profile:
-            ComingSoonView()
+            ProfileRoute(
+                viewModel: ProfileViewModel(
+                    profiles: dependencies.profiles,
+                    preferences: dependencies.preferences,
+                    flags: dependencies.flags,
+                ),
+                navigation: profileNavigation,
+            )
         }
     }
 
@@ -233,6 +244,8 @@ private struct TabStack: View {
                 ),
                 navigation: libraryNavigation,
             )
+        case .notifications, .childProfiles, .editChild, .language, .help:
+            settingsDestination(route)
         case .comingSoon:
             ComingSoonView()
         }
@@ -299,55 +312,4 @@ private struct TabStack: View {
             EmptyView()
         }
     }
-
-    private var readerNavigation: ReaderNavigation {
-        let router = router
-        return ReaderNavigation(
-            back: router.pop,
-            listen: { router.push(.player($0)) },
-            read: { router.push(.reader(storyID: $0, page: 0)) },
-        )
-    }
-
-    private var libraryNavigation: LibraryNavigation {
-        let router = router
-        return LibraryNavigation(
-            downloads: { router.push(.downloads) },
-            story: { router.push(.story($0)) },
-            createdStory: { router.push(.storyReady($0)) },
-            play: { router.push(.player($0)) },
-            discover: { router.select(.discover) },
-            back: router.pop,
-        )
-    }
-
-    private var homeNavigation: HomeNavigation {
-        let router = router
-        return HomeNavigation(
-            notifications: { router.push(.comingSoon(Pending.notifications)) },
-            profiles: { router.select(.profile) },
-            create: { router.select(.create) },
-            resume: { router.push(.player($0)) },
-            discover: { router.select(.discover) },
-            category: { router.push(.category($0)) },
-            story: { router.push(.story($0)) },
-        )
-    }
-
-    private var discoverNavigation: DiscoverNavigation {
-        let router = router
-        return DiscoverNavigation(
-            notifications: { router.push(.comingSoon(Pending.notifications)) },
-            category: { router.push(.category($0)) },
-            story: { router.push(.story($0)) },
-            listen: { router.push(.player($0)) },
-            read: { router.push(.reader(storyID: $0, page: 0)) },
-            back: router.pop,
-        )
-    }
-}
-
-/// Names for screens later phases build (Notifications in I6).
-private enum Pending {
-    static let notifications = "notifications"
 }

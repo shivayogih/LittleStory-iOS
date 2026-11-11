@@ -14,6 +14,15 @@ public enum LSFontFamily: String, Sendable, CaseIterable {
     /// Every style when the app language is Kannada (Latin fonts have no Kannada glyphs).
     case notoSansKannada = "noto_sans_kannada"
 
+    /// The family's published name, shown verbatim on Help & about (names are not translated).
+    public var displayName: String {
+        switch self {
+        case .dmSans: "DM Sans"
+        case .manrope: "Manrope"
+        case .notoSansKannada: "Noto Sans Kannada"
+        }
+    }
+
     /// PostScript name of the default (regular) font of the family.
     public var postScriptName: String {
         switch self {
