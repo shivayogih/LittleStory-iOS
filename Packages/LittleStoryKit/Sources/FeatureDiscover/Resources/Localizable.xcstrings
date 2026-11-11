@@ -1,0 +1,660 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "category.all_description": {
+      "comment": "From Android feature/discover/src/main/res `category_all_description`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every story in the library, ready for tonight."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಂದು ರಾತ್ರಿಗೆ ಸಿದ್ಧವಾಗಿರುವ ಗ್ರಂಥಾಲಯದ ಎಲ್ಲಾ ಕಥೆಗಳು."
+          }
+        }
+      }
+    },
+    "category.all_name": {
+      "comment": "From Android feature/discover/src/main/res `category_all_name`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲಾ ಕಥೆಗಳು"
+          }
+        }
+      }
+    },
+    "category.empty_text": {
+      "comment": "From Android feature/discover/src/main/res `category_empty_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New stories are on their way."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹೊಸ ಕಥೆಗಳು ಬರುತ್ತಿವೆ."
+          }
+        }
+      }
+    },
+    "category.empty_title": {
+      "comment": "From Android feature/discover/src/main/res `category_empty_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No stories here yet"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಲ್ಲಿ ಇನ್ನೂ ಕಥೆಗಳಿಲ್ಲ"
+          }
+        }
+      }
+    },
+    "category.heading": {
+      "comment": "From Android feature/discover/src/main/res `category_heading`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories for curious minds"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕುತೂಹಲದ ಮನಸ್ಸುಗಳಿಗೆ ಕಥೆಗಳು"
+          }
+        }
+      }
+    },
+    "category.sort_label": {
+      "comment": "From Android feature/discover/src/main/res `category_sort_label`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sort stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳನ್ನು ವಿಂಗಡಿಸಿ"
+          }
+        }
+      }
+    },
+    "category.sort_newest": {
+      "comment": "From Android feature/discover/src/main/res `category_sort_newest`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Newest"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹೊಸದು ಮೊದಲು"
+          }
+        }
+      }
+    },
+    "category.sort_recommended": {
+      "comment": "From Android feature/discover/src/main/res `category_sort_recommended`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recommended"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಶಿಫಾರಸು ಮಾಡಿದ್ದು"
+          }
+        }
+      }
+    },
+    "category.sort_shortest": {
+      "comment": "From Android feature/discover/src/main/res `category_sort_shortest`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortest first"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಚಿಕ್ಕದು ಮೊದಲು"
+          }
+        }
+      }
+    },
+    "category.story_count": {
+      "comment": "From Android feature/discover/src/main/res `category_story_count`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%1$lld STORY"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%1$lld STORIES"
+                }
+              }
+            }
+          }
+        },
+        "kn": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "%1$lld ಕಥೆ"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "%1$lld ಕಥೆಗಳು"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "detail.download_add": {
+      "comment": "From Android feature/discover/src/main/res `detail_download_add`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ"
+          }
+        }
+      }
+    },
+    "detail.download_remove": {
+      "comment": "From Android feature/discover/src/main/res `detail_download_remove`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove download of %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಡೌನ್‌ಲೋಡ್ ತೆಗೆದುಹಾಕಿ"
+          }
+        }
+      }
+    },
+    "detail.lesson_title": {
+      "comment": "From Android feature/discover/src/main/res `detail_lesson_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A little lesson"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಒಂದು ಪುಟ್ಟ ಪಾಠ"
+          }
+        }
+      }
+    },
+    "detail.listen": {
+      "comment": "From Android feature/discover/src/main/res `detail_listen`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listen to Story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆ ಕೇಳಿ"
+          }
+        }
+      }
+    },
+    "detail.meta": {
+      "comment": "From Android feature/discover/src/main/res `detail_meta`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ages %1$lld–%2$lld · %3$lld min · %4$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$lld–%2$lld ವರ್ಷ · %3$lld ನಿಮಿಷ · %4$@"
+          }
+        }
+      }
+    },
+    "detail.narration_available": {
+      "comment": "From Android feature/discover/src/main/res `detail_narration_available`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Available"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಲಭ್ಯ"
+          }
+        }
+      }
+    },
+    "detail.narration_text": {
+      "comment": "From Android feature/discover/src/main/res `detail_narration_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warm, expressive voice · %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಬೆಚ್ಚಗಿನ, ಭಾವಪೂರ್ಣ ಧ್ವನಿ · %1$@"
+          }
+        }
+      }
+    },
+    "detail.narration_title": {
+      "comment": "From Android feature/discover/src/main/res `detail_narration_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Narrated story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿರೂಪಿತ ಕಥೆ"
+          }
+        }
+      }
+    },
+    "detail.not_found_text": {
+      "comment": "From Android feature/discover/src/main/res `detail_not_found_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This story is no longer available."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಈ ಕಥೆ ಇನ್ನು ಲಭ್ಯವಿಲ್ಲ."
+          }
+        }
+      }
+    },
+    "detail.not_found_title": {
+      "comment": "From Android feature/discover/src/main/res `detail_not_found_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Story not found"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆ ಸಿಗಲಿಲ್ಲ"
+          }
+        }
+      }
+    },
+    "detail.read": {
+      "comment": "From Android feature/discover/src/main/res `detail_read`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Read Story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆ ಓದಿ"
+          }
+        }
+      }
+    },
+    "discover.bedtime": {
+      "comment": "From Android feature/discover/src/main/res `discover_bedtime`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedtime favourites"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಲಗುವ ಸಮಯದ ಮೆಚ್ಚಿನವು"
+          }
+        }
+      }
+    },
+    "discover.empty_action": {
+      "comment": "From Android feature/discover/src/main/res `discover_empty_action`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear search"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹುಡುಕಾಟ ಅಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "discover.empty_text": {
+      "comment": "From Android feature/discover/src/main/res `discover_empty_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try a different title or explore one of our story collections."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಬೇರೆ ಶೀರ್ಷಿಕೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ನಮ್ಮ ಕಥಾ ಸಂಗ್ರಹಗಳನ್ನು ಅನ್ವೇಷಿಸಿ."
+          }
+        }
+      }
+    },
+    "discover.empty_title": {
+      "comment": "From Android feature/discover/src/main/res `discover_empty_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No stories found"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಯಾವುದೇ ಕಥೆ ಸಿಗಲಿಲ್ಲ"
+          }
+        }
+      }
+    },
+    "discover.featured_cta": {
+      "comment": "From Android feature/discover/src/main/res `discover_featured_cta`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listen now"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಈಗ ಕೇಳಿ"
+          }
+        }
+      }
+    },
+    "discover.featured_kicker": {
+      "comment": "From Android feature/discover/src/main/res `discover_featured_kicker`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FEATURED THIS WEEK"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಈ ವಾರದ ವಿಶೇಷ"
+          }
+        }
+      }
+    },
+    "discover.filter_all": {
+      "comment": "From Android feature/discover/src/main/res `discover_filter_all`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವೂ"
+          }
+        }
+      }
+    },
+    "discover.notifications": {
+      "comment": "From Android feature/discover/src/main/res `discover_notifications`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಧಿಸೂಚನೆಗಳು"
+          }
+        }
+      }
+    },
+    "discover.popular": {
+      "comment": "From Android feature/discover/src/main/res `discover_popular`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Popular right now"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಈಗ ಜನಪ್ರಿಯ"
+          }
+        }
+      }
+    },
+    "discover.results": {
+      "comment": "From Android feature/discover/src/main/res `discover_results`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Results for “%1$@”"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "“%1$@” ಗಾಗಿ ಫಲಿತಾಂಶಗಳು"
+          }
+        }
+      }
+    },
+    "discover.search_clear": {
+      "comment": "From Android feature/discover/src/main/res `discover_search_clear`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear search"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹುಡುಕಾಟ ಅಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "discover.search_placeholder": {
+      "comment": "From Android feature/discover/src/main/res `discover_search_placeholder`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search stories, themes, or characters"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳು, ವಿಷಯಗಳು ಅಥವಾ ಪಾತ್ರಗಳನ್ನು ಹುಡುಕಿ"
+          }
+        }
+      }
+    },
+    "discover.title": {
+      "comment": "From Android feature/discover/src/main/res `discover_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discover"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅನ್ವೇಷಿಸಿ"
+          }
+        }
+      }
+    },
+    "discover.view_all": {
+      "comment": "From Android feature/discover/src/main/res `discover_view_all`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View all"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವನ್ನೂ ನೋಡಿ"
+          }
+        }
+      }
+    }
+  }
+}

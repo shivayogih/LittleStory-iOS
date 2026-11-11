@@ -3,6 +3,8 @@ import CoreGraphics
 /// Spacing scale (4 pt base) and screen padding from design-tokens.json `layout.content-padding`.
 /// Same values as Android's `LittleStorySpacing` (1 CSS px = 1 pt = 1 dp).
 public enum LSSpacing {
+    /// Stacks whose children touch, such as a hero image over its content.
+    public static let none: CGFloat = 0
     public static let xxs: CGFloat = 2
     public static let xs: CGFloat = 4
     public static let sm: CGFloat = 8

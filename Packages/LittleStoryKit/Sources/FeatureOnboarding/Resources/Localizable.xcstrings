@@ -1,0 +1,498 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "onboarding.body_1": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_body_1`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn school days, family moments and tiny acts of kindness into magical adventures."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಶಾಲೆಯ ದಿನಗಳು, ಕುಟುಂಬದ ಕ್ಷಣಗಳು ಮತ್ತು ಸಣ್ಣ ದಯೆಯ ಕೆಲಸಗಳನ್ನು ಮಾಯಾ ಸಾಹಸಗಳನ್ನಾಗಿ ಮಾಡಿ."
+          }
+        }
+      }
+    },
+    "onboarding.body_2": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_body_2`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories shaped around their name, age and favourite things—with parents always in control."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಗುವಿನ ಹೆಸರು, ವಯಸ್ಸು ಮತ್ತು ಇಷ್ಟಗಳ ಸುತ್ತ ರೂಪುಗೊಂಡ ಕಥೆಗಳು—ಪೋಷಕರ ನಿಯಂತ್ರಣದಲ್ಲಿ."
+          }
+        }
+      }
+    },
+    "onboarding.body_3": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_body_3`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gentle narration, offline stories and a sleep timer make bedtime feel wonderfully calm."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮೃದುವಾದ ನಿರೂಪಣೆ, ಆಫ್‌ಲೈನ್ ಕಥೆಗಳು ಮತ್ತು ನಿದ್ರಾ ಟೈಮರ್ ಮಲಗುವ ಸಮಯವನ್ನು ಶಾಂತವಾಗಿಸುತ್ತವೆ."
+          }
+        }
+      }
+    },
+    "onboarding.cta_get_started": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_cta_get_started`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get Started"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರಾರಂಭಿಸಿ"
+          }
+        }
+      }
+    },
+    "onboarding.eyebrow": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_eyebrow`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Little Stories. Big Imagination."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪುಟ್ಟ ಕಥೆಗಳು. ದೊಡ್ಡ ಕಲ್ಪನೆ."
+          }
+        }
+      }
+    },
+    "onboarding.pager_description": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_pager_description`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slide %1$lld of %2$lld"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸ್ಲೈಡ್ %1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "onboarding.title_1": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_title_1`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every Day Has a Story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರತಿ ದಿನವೂ ಒಂದು ಕಥೆ"
+          }
+        }
+      }
+    },
+    "onboarding.title_2": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_title_2`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your Child, the Hero"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮ್ಮ ಮಗು, ನಾಯಕ"
+          }
+        }
+      }
+    },
+    "onboarding.title_3": {
+      "comment": "From Android feature/onboarding/src/main/res `onboarding_title_3`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listen, Dream, Repeat"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕೇಳಿ, ಕನಸು ಕಾಣಿ, ಮತ್ತೆ ಕೇಳಿ"
+          }
+        }
+      }
+    },
+    "setup.age_years": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_age_years`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%1$lld year"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%1$lld years"
+                }
+              }
+            }
+          }
+        },
+        "kn": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "%1$lld ವರ್ಷ"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "%1$lld ವರ್ಷಗಳು"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "setup.badge": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_badge`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Private & parent-managed"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಖಾಸಗಿ ಮತ್ತು ಪೋಷಕರ ನಿರ್ವಹಣೆ"
+          }
+        }
+      }
+    },
+    "setup.cta_create": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_cta_create`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create profile"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೊಫೈಲ್ ರಚಿಸಿ"
+          }
+        }
+      }
+    },
+    "setup.cta_create_named": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_cta_create_named`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create %1$@’s profile"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಅವರ ಪ್ರೊಫೈಲ್ ರಚಿಸಿ"
+          }
+        }
+      }
+    },
+    "setup.cta_save": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_cta_save`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save changes"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "setup.error_name_empty": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_error_name_empty`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please enter your child’s name."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಮಗುವಿನ ಹೆಸರನ್ನು ನಮೂದಿಸಿ."
+          }
+        }
+      }
+    },
+    "setup.error_name_too_long": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_error_name_too_long`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Names can be up to %1$lld characters."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹೆಸರು ಗರಿಷ್ಠ %1$lld ಅಕ್ಷರಗಳಷ್ಟಿರಬಹುದು."
+          }
+        }
+      }
+    },
+    "setup.label_age": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_label_age`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Age"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ವಯಸ್ಸು"
+          }
+        }
+      }
+    },
+    "setup.label_avatar": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_label_avatar`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose an avatar"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅವತಾರ ಆಯ್ಕೆಮಾಡಿ"
+          }
+        }
+      }
+    },
+    "setup.label_duration": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_label_duration`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Story duration"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಯ ಅವಧಿ"
+          }
+        }
+      }
+    },
+    "setup.label_interests": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_label_interests`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favourite interests (optional)"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಷ್ಟದ ವಿಷಯಗಳು (ಐಚ್ಛಿಕ)"
+          }
+        }
+      }
+    },
+    "setup.label_language": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_label_language`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಭಾಷೆ"
+          }
+        }
+      }
+    },
+    "setup.label_name": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_label_name`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Child’s name"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಗುವಿನ ಹೆಸರು"
+          }
+        }
+      }
+    },
+    "setup.placeholder_name": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_placeholder_name`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "First name"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮೊದಲ ಹೆಸರು"
+          }
+        }
+      }
+    },
+    "setup.skip": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_skip`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip for now"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಈಗ ಬಿಟ್ಟುಬಿಡಿ"
+          }
+        }
+      }
+    },
+    "setup.subtitle": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_subtitle`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A few details help us choose safe, age-appropriate adventures."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕೆಲವು ವಿವರಗಳು ಸುರಕ್ಷಿತ, ವಯಸ್ಸಿಗೆ ಸೂಕ್ತವಾದ ಸಾಹಸಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ."
+          }
+        }
+      }
+    },
+    "setup.title": {
+      "comment": "From Android feature/onboarding/src/main/res `setup_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let’s make stories feel like home."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳು ಮನೆಯಂತೆ ಅನಿಸಲಿ."
+          }
+        }
+      }
+    }
+  }
+}

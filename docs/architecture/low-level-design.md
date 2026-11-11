@@ -708,15 +708,17 @@ sequenceDiagram
 | Piece | Where | Job |
 | --- | --- | --- |
 | `Localizable.xcstrings` | each UI target | keys, English source, Kannada translation, plural variants, comments for translators |
-| `L10n` keys | generated per target (`Tools/gen-l10n`) | `static let readerNextPage = LocalizedStringResource("reader.next_page", bundle: .module)` so no string literal appears in views |
-| `Localizer` | `CoreUI` | `@Observable` holder of the active UI `Locale`; resolves a resource with `String(localized:)` using that locale and the matching `.lproj` bundle; injected into the SwiftUI environment |
-| `LText` | `CoreUI` | `Text` wrapper: `LText(L10n.readerNextPage)` reads the `Localizer` from the environment |
+| `…Strings` keys | hand-written enum per target (`HomeStrings.titleForChild`) | `LocalizedKey("home.title_for_child", bundle: .module)`, so no string literal appears in views |
+| `UIText` | `CoreUI` | what view models expose, like Android's `UiText`: a key with positional `.text` / `.number` arguments, or `.verbatim` content already in the story's language |
+| `Localizer` | `CoreUI` | `@Observable` owner of the app language; keeps the choice in `UserDefaults` (`ui_language_tag`), otherwise follows the system's preferred languages |
+| `LocalizedLookup` | `CoreUI` | reads the key from the chosen language's `.lproj` in the target bundle, falls back to `en`, then formats with `String(format:locale:arguments:)` so plural variants apply; the in-app switch works without a restart |
+| `LText` | `CoreUI` | `Text` wrapper: `LText(state.title)` resolves with `\.locale` from the environment |
 | `\.locale` | root view | set from `Localizer` so dates, numbers and `FormatStyle` follow the app language |
 | Content language | `PreferencesRepository.contentLanguage()` | drives every catalogue stream |
 
 ```mermaid
 flowchart TB
-    Key["L10n.readerNextPage (LocalizedStringResource)"] --> LText["LText view"]
+    Key["HomeStrings.titleForChild(name) (UIText)"] --> LText["LText view"]
     Env["Localizer in environment: locale = kn"] --> LText
     LText --> Lookup{"kn value present?"}
     Lookup -->|"yes"| KN["Kannada text"]
@@ -1162,8 +1164,7 @@ Baselines live in `__Snapshots__/`, are recorded on the CI simulator image only,
 | `check-translations` | parses every `.xcstrings`: each key has `en` and `kn`, placeholders match, no empty values |
 | `check-tokens` | `design-tokens.json` colours present in `Palette.swift`; icons match `LSIcon`; font licences present |
 | `convert-icons` | Android `ic_*.xml` → `Icons.xcassets` SVGs (run when an Android icon changes) |
-| `gen-l10n` | `.xcstrings` → `L10n` key constants |
-| `import-android-strings` | Android `strings.xml` (values, values-kn) → `.xcstrings` with mapped keys |
+| `import-android-strings` | Android `strings.xml` (values, values-kn) → `.xcstrings`: the first `_` becomes `.`, `%1$s` → `%1$@`, `%1$d` → `%1$lld`, plurals → variants; Kannada is `needs_review`; iOS-only keys are kept |
 | `sync-android-content` | copies mock JSON from a checkout of the Android repo and diffs it |
 
 ### 14.2 `ci.yml` (shape)
