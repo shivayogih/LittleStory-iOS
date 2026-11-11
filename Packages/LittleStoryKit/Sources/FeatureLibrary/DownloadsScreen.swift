@@ -61,6 +61,7 @@ struct DownloadsScreen: View {
             }
         }
         .background(LSColor.background)
+        .toolbar(.hidden, for: .navigationBar)
     }
 
     private var topBar: some View {
