@@ -37,7 +37,7 @@ let package = Package(
             dependencies: [
                 "FeatureOnboarding", "FeatureHome", "FeatureDiscover", "FeatureCreate",
                 "FeatureReader", "FeatureLibrary", "FeatureSettings", "CoreUI", "DesignSystem",
-            ]
+            ],
         ),
 
         // Test helpers
@@ -47,5 +47,5 @@ let package = Package(
         .testTarget(name: "DesignSystemTests", dependencies: ["DesignSystem"]),
         .testTarget(name: "CoreUITests", dependencies: ["CoreUI"]),
     ],
-    swiftLanguageModes: [.v6]
+    swiftLanguageModes: [.v6],
 )

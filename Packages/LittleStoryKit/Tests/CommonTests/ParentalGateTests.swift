@@ -1,6 +1,6 @@
 import Common
-import TestSupport
 import Testing
+import TestSupport
 
 struct ParentalGateTests {
     private let challenge = ParentalGateChallenge(first: 14, second: 7)
