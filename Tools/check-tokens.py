@@ -61,9 +61,11 @@ def check() -> list[str]:
     for name in sorted(cases - assets):
         errors.append(f"LSIcon.{name} has no image in Icons.xcassets")
 
+    licences = [path.name.removesuffix("_ofl.txt") for path in LICENSES.glob("*_ofl.txt")]
     for font in sorted(FONTS.glob("*.ttf")):
-        if not (LICENSES / f"{font.stem}_ofl.txt").exists():
-            errors.append(f"{font.relative_to(ROOT)}: licence {font.stem}_ofl.txt is missing")
+        # noto_sans_kannada_bold.ttf is covered by noto_sans_kannada_ofl.txt
+        if not any(font.stem == name or font.stem.startswith(f"{name}_") for name in licences):
+            errors.append(f"{font.relative_to(ROOT)}: no matching *_ofl.txt licence")
     return errors
 
 

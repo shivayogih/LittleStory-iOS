@@ -3,8 +3,9 @@ import Foundation
 import OSLog
 import UIKit
 
-/// The bundled typefaces (SIL Open Font License, texts in `Resources/Licenses`). All three are
-/// variable fonts: one file per family, and the weight is set on the `wght` axis, as on Android.
+/// The bundled typefaces (SIL Open Font License, texts in `Resources/Licenses`). DM Sans and
+/// Manrope are variable fonts with the weight set on the `wght` axis, as on Android; Noto Sans
+/// Kannada ships one static file per weight.
 public enum LSFontFamily: String, Sendable, CaseIterable {
     /// Body text, buttons, chips and labels.
     case dmSans = "dm_sans"
@@ -22,8 +23,9 @@ public enum LSFontFamily: String, Sendable, CaseIterable {
         }
     }
 
-    /// PostScript name of the font's named instance at `weight`, for files that name their
-    /// instances. CoreText ignores a `wght` variation on Noto Sans Kannada, so instances come first.
+    /// PostScript name of the instance at `weight`, for families that ship or name their instances.
+    /// CoreText applies neither a `wght` variation nor the named instances of the variable Noto Sans
+    /// Kannada, so it ships as static files (`Tools/instance-noto-kannada.py`).
     public func instanceName(_ weight: LSFontWeight) -> String? {
         switch self {
         case .dmSans: nil
@@ -32,13 +34,20 @@ public enum LSFontFamily: String, Sendable, CaseIterable {
         }
     }
 
-    var fileURL: URL? {
-        Bundle.module.url(forResource: rawValue, withExtension: "ttf")
+    var fileURLs: [URL] {
+        switch self {
+        case .dmSans, .manrope:
+            [Bundle.module.url(forResource: rawValue, withExtension: "ttf")].compactMap(\.self)
+        case .notoSansKannada:
+            LSFontWeight.allCases.compactMap {
+                Bundle.module.url(forResource: "\(rawValue)_\($0.instanceSuffix.lowercased())", withExtension: "ttf")
+            }
+        }
     }
 }
 
 /// Weights as values of the OpenType `wght` axis.
-public enum LSFontWeight: CGFloat, Sendable {
+public enum LSFontWeight: CGFloat, Sendable, CaseIterable {
     case regular = 400
     case medium = 500
     case semibold = 600
@@ -64,21 +73,28 @@ public enum LSFonts {
     private static let registration: Set<LSFontFamily> = {
         var registered = Set<LSFontFamily>()
         for family in LSFontFamily.allCases {
-            guard let url = family.fileURL else {
-                logger.error("Missing font file \(family.rawValue, privacy: .public)")
+            let urls = family.fileURLs
+            guard !urls.isEmpty else {
+                logger.error("Missing font files for \(family.rawValue, privacy: .public)")
                 continue
             }
-            var error: Unmanaged<CFError>?
             let alreadyAvailable = UIFont(name: family.postScriptName, size: UIFont.systemFontSize) != nil
-            if alreadyAvailable || CTFontManagerRegisterFontsForURL(url as CFURL, .process, &error) {
+            if alreadyAvailable || urls.allSatisfy({ register($0) }) {
                 registered.insert(family)
-            } else {
-                let reason = error?.takeRetainedValue().localizedDescription ?? "unknown"
-                logger.error("Could not register \(family.rawValue, privacy: .public): \(reason, privacy: .public)")
             }
         }
         return registered
     }()
+
+    private static func register(_ url: URL) -> Bool {
+        var error: Unmanaged<CFError>?
+        guard CTFontManagerRegisterFontsForURL(url as CFURL, .process, &error) else {
+            let reason = error?.takeRetainedValue().localizedDescription ?? "unknown"
+            logger.error("Could not register \(url.lastPathComponent, privacy: .public): \(reason, privacy: .public)")
+            return false
+        }
+        return true
+    }
 
     /// The family at `weight` and `size` points. Falls back to the system font if the file is missing.
     public static func font(_ family: LSFontFamily, weight: LSFontWeight, size: CGFloat) -> UIFont {

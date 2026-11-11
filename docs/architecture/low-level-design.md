@@ -751,7 +751,7 @@ The tokens are a hand port of Android's `:core:designsystem` theme, with the sam
 | `LSColor.swift` | Semantic roles (`primary`, `background`, `textSecondary`, …), story-art gradients by `paletteId`, illustration and tile colours |
 | `Dimens.swift` | `LSSpacing`, `LSDimens`, `LSRadius` |
 | `LSShadow.swift`, `LSMotion.swift` | CSS shadows (`.lsShadow(_:)`), durations and Reduce Motion aware animations |
-| `LSFonts.swift`, `LSTypography.swift` | Bundled variable fonts (DM Sans, Manrope, Noto Sans Kannada, OFL) with the weight set on the `wght` axis; `LSTextStyle` in a Latin and a Kannada set; `.lsTextStyle(_:)` |
+| `LSFonts.swift`, `LSTypography.swift` | Bundled fonts (OFL): DM Sans and Manrope as variable fonts with the weight on the `wght` axis; Noto Sans Kannada as static weights, because CoreText ignores its weight axis (`Tools/instance-noto-kannada.py`). `LSTextStyle` in a Latin and a Kannada set; `.lsTextStyle(_:)` |
 | `LSIcon.swift` | The 24 design icons from `Icons.xcassets` (SVG, template, back and chevron mirror right to left) |
 | `LSButtons.swift` | `LSPressStyle`, `LSButton` (primary, secondary, ghost), `LSIconButton` |
 
