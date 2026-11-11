@@ -73,7 +73,8 @@ struct StreamOperatorTests {
     @Test("first returns the first element, or nil for an empty stream")
     func first() async {
         #expect(await AsyncStream.of(7, 8).first() == 7)
-        #expect(await AsyncStream<Int>.of().first() == nil)
+        let empty = await AsyncStream<Int>.of().first()
+        #expect(empty == nil)
     }
 
     @Test("combineLatest waits for both sources and finishes after both")

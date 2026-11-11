@@ -92,15 +92,6 @@ public func combineLatest<A: Sendable, B: Sendable>(_ first: AsyncStream<A>, _ s
     }
 }
 
-/// Three-way `combineLatest`.
-public func combineLatest<A: Sendable, B: Sendable, C: Sendable>(
-    _ first: AsyncStream<A>,
-    _ second: AsyncStream<B>,
-    _ third: AsyncStream<C>,
-) -> AsyncStream<(A, B, C)> {
-    combineLatest(combineLatest(first, second), third).map { value in (value.0.0, value.0.1, value.1) }
-}
-
 private actor CombineLatestState<A: Sendable, B: Sendable> {
     private let continuation: AsyncStream<(A, B)>.Continuation
     private var first: A?
