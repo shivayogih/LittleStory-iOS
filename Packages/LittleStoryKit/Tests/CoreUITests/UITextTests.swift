@@ -2,6 +2,7 @@
 import Domain
 import Foundation
 import Testing
+import TestSupport
 
 struct UITextTests {
     private let english = Locale(identifier: "en")
