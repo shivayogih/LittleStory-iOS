@@ -23,6 +23,8 @@ public struct UIText: Sendable, Hashable {
     public enum Argument: Sendable, Hashable {
         case text(String)
         case number(Int)
+        /// Another catalog key, resolved in the same language (e.g. "My little one" as a name).
+        case localized(LocalizedKey)
     }
 
     enum Source: Sendable, Hashable {

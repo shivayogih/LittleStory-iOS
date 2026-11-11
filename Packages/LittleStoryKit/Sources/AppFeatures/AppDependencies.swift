@@ -7,12 +7,20 @@ public struct AppDependencies: Sendable {
     public let profiles: any ProfilesRepository
     public let preferences: any PreferencesRepository
     public let stores: StoryStores
+    public let generation: any GenerationRepository
     public let flags: FeatureFlags
 
-    public init(profiles: any ProfilesRepository, preferences: any PreferencesRepository, stores: StoryStores, flags: FeatureFlags = .mvp) {
+    public init(
+        profiles: any ProfilesRepository,
+        preferences: any PreferencesRepository,
+        stores: StoryStores,
+        generation: any GenerationRepository,
+        flags: FeatureFlags = .mvp,
+    ) {
         self.profiles = profiles
         self.preferences = preferences
         self.stores = stores
+        self.generation = generation
         self.flags = flags
     }
 }

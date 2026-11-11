@@ -21,7 +21,8 @@ public enum AppConfig {
         public static let defaultTheme = "adventure"
         public static let moods = ["calm", "funny", "magical", "adventurous"]
         public static let defaultMood = "magical"
-        public static let suggestionIDs = ["suggestion_1", "suggestion_2", "suggestion_3", "suggestion_4", "suggestion_5"]
+        /// Prompt starters on Create, in order; each has a label and a fill-in text in the Create catalog.
+        public static let suggestionIDs = ["school", "family", "funny", "learned", "kindness"]
     }
 
     public enum Setup {

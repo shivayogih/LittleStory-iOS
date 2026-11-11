@@ -11,11 +11,12 @@ Run it again after Android strings change; review the diff before committing.
 """
 import argparse
 import json
+import os
 import pathlib
 import re
 import xml.etree.ElementTree as ET
 
-FORMAT = re.compile(r"%(\d+)\$([sd])")
+FORMAT = re.compile(r"%(\d+)\$(0?\d*)([sd])")
 
 
 def ios_key(name: str) -> str:
@@ -28,7 +29,7 @@ def ios_text(raw: str) -> str:
     if len(text) >= 2 and text[0] == text[-1] == '"':
         text = text[1:-1]
     text = text.replace("\\'", "'").replace('\\"', '"').replace("\\n", "\n")
-    return FORMAT.sub(lambda m: f"%{m.group(1)}${'@' if m.group(2) == 's' else 'lld'}", text)
+    return FORMAT.sub(lambda m: f"%{m.group(1)}${m.group(2)}{'@' if m.group(3) == 's' else 'lld'}", text)
 
 
 def read(path: pathlib.Path, prefixes: list[str]) -> dict:
@@ -46,10 +47,31 @@ def read(path: pathlib.Path, prefixes: list[str]) -> dict:
     return found
 
 
+COUNT = re.compile(r"%(\d+)\$lld")
+
+
 def unit(value, state: str) -> dict:
     if isinstance(value, dict):
-        cases = {q: {"stringUnit": {"state": state, "value": v}} for q, v in value.items()}
-        return {"variations": {"plural": cases}}
+        counts = sorted({int(n) for text in value.values() for n in COUNT.findall(text)})
+        if len(re.findall(r"%\d+\$", next(iter(value.values())))) <= 1 or not counts:
+            cases = {q: {"stringUnit": {"state": state, "value": v}} for q, v in value.items()}
+            return {"variations": {"plural": cases}}
+        # Several arguments: the plural follows the last number (Android passes it as the count), so
+        # it becomes a substitution and the text shared by every case stays outside it.
+        count = counts[-1]
+        texts = {q: v.replace(f"%{count}$lld", "%arg") for q, v in value.items()}
+        prefix = os.path.commonprefix(list(texts.values())).split("%arg")[0]
+        suffix = os.path.commonprefix([t[len(prefix):][::-1] for t in texts.values()])[::-1].split("%arg")[-1]
+        cases = {
+            q: {"stringUnit": {"state": state, "value": t[len(prefix) : len(t) - len(suffix)]}}
+            for q, t in texts.items()
+        }
+        return {
+            "stringUnit": {"state": state, "value": f"{prefix}%#@count@{suffix}"},
+            "substitutions": {
+                "count": {"argNum": count, "formatSpecifier": "lld", "variations": {"plural": cases}},
+            },
+        }
     return {"stringUnit": {"state": state, "value": value}}
 
 

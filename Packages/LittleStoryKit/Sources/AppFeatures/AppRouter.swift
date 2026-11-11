@@ -9,10 +9,14 @@ public enum AppTab: String, Sendable, Hashable, CaseIterable {
     case profile
 }
 
-/// Screens pushed inside a tab. Later phases add Create, Reader, Library and Settings routes.
+/// Screens pushed inside a tab. Later phases add Library and Settings routes.
 public enum AppRoute: Sendable, Hashable {
     case category(String)
     case story(String)
+    case generating(requestID: String)
+    case storyReady(String)
+    case reader(storyID: String, page: Int)
+    case player(String)
     /// A screen a later phase builds; keeps every tap working meanwhile.
     case comingSoon(String)
 }
@@ -75,6 +79,16 @@ public final class AppRouter {
         var path = paths[selectedTab] ?? []
         guard path.last != route else {
             return
+        }
+        path.append(route)
+        paths[selectedTab] = path
+    }
+
+    /// Swaps the top screen, so Back skips it (Generating gives way to Story ready).
+    public func replaceTop(with route: AppRoute) {
+        var path = paths[selectedTab] ?? []
+        if !path.isEmpty {
+            path.removeLast()
         }
         path.append(route)
         paths[selectedTab] = path

@@ -191,3 +191,62 @@ public extension StoryStores {
         )
     }
 }
+
+/// Records requests and plays back a scripted run: progress steps, then the story id (saved to
+/// `library` first, like the real generator), or a failure.
+public final class FakeGeneration: GenerationRepository, @unchecked Sendable {
+    public enum Outcome: Sendable {
+        case completes(Story)
+        case fails(GenerationError)
+    }
+
+    private let lock = NSLock()
+    private var requests: [String: StoryCreationRequest] = [:]
+    private let library: any LibraryRepository
+    public var outcome: Outcome
+    public var steps: [Int]
+
+    public init(library: any LibraryRepository, outcome: Outcome, steps: [Int] = [20, 50, 90]) {
+        self.library = library
+        self.outcome = outcome
+        self.steps = steps
+    }
+
+    public var submitted: [StoryCreationRequest] { lock.withLock { Array(requests.values) } }
+
+    public func submit(_ request: StoryCreationRequest) async {
+        lock.withLock { requests[request.requestID] = request }
+    }
+
+    public func request(id: String) async -> StoryCreationRequest? {
+        lock.withLock { requests[id] }
+    }
+
+    public func generate(requestID: String, startPercent: Int) -> AsyncStream<GenerationState> {
+        let request = lock.withLock { requests[requestID] }
+        let remaining = steps.filter { $0 > startPercent }
+        let result = outcome
+        let store = library
+        return AsyncStream { continuation in
+            let task = Task {
+                guard let request else {
+                    continuation.yield(.failed(requestID: requestID, error: .unknownRequest))
+                    continuation.finish()
+                    return
+                }
+                for percent in remaining {
+                    continuation.yield(.inProgress(requestID: requestID, stage: GenerationStage(percent: percent), percent: percent))
+                }
+                switch result {
+                case let .completes(story):
+                    await store.save(story, childID: request.heroChildID)
+                    continuation.yield(.completed(requestID: requestID, storyID: story.id))
+                case let .fails(error):
+                    continuation.yield(.failed(requestID: requestID, error: error))
+                }
+                continuation.finish()
+            }
+            continuation.onTermination = { _ in task.cancel() }
+        }
+    }
+}

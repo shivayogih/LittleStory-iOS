@@ -2,9 +2,11 @@ import Common
 import CoreUI
 import DesignSystem
 import Domain
+import FeatureCreate
 import FeatureDiscover
 import FeatureHome
 import FeatureOnboarding
+import FeatureReader
 import Foundation
 import SwiftUI
 
@@ -169,7 +171,16 @@ private struct TabStack: View {
                 ),
                 navigation: discoverNavigation,
             )
-        case .create, .stories, .profile:
+        case .create:
+            CreateRoute(
+                viewModel: CreateViewModel(
+                    profiles: dependencies.profiles,
+                    preferences: dependencies.preferences,
+                    generation: dependencies.generation,
+                ),
+                navigation: CreateNavigation(startGeneration: { router.push(.generating(requestID: $0)) }),
+            )
+        case .stories, .profile:
             ComingSoonView()
         }
     }
@@ -199,9 +210,84 @@ private struct TabStack: View {
                 ),
                 navigation: discoverNavigation,
             )
+        case .generating, .storyReady:
+            createDestination(route)
+        case .reader, .player:
+            readingDestination(route)
         case .comingSoon:
             ComingSoonView()
         }
+    }
+
+    /// Generating and Story ready (pushed on the Create tab).
+    @ViewBuilder
+    private func createDestination(_ route: AppRoute) -> some View {
+        switch route {
+        case let .generating(requestID):
+            GeneratingRoute(
+                viewModel: GeneratingViewModel(requestID: requestID, generation: dependencies.generation),
+                navigation: GeneratingNavigation(
+                    ready: { router.replaceTop(with: .storyReady($0)) },
+                    backToIdea: router.pop,
+                ),
+            )
+        case let .storyReady(id):
+            StoryReadyRoute(
+                viewModel: StoryReadyViewModel(
+                    storyID: id,
+                    profiles: dependencies.profiles,
+                    preferences: dependencies.preferences,
+                    stores: dependencies.stores,
+                ),
+                navigation: StoryReadyNavigation(
+                    back: router.pop,
+                    listen: { router.push(.player($0)) },
+                    read: { router.push(.reader(storyID: $0, page: 0)) },
+                    myStories: { router.select(.stories) },
+                ),
+            )
+        default:
+            EmptyView()
+        }
+    }
+
+    /// Reader and Player (from any tab).
+    @ViewBuilder
+    private func readingDestination(_ route: AppRoute) -> some View {
+        switch route {
+        case let .reader(storyID, page):
+            ReaderRoute(
+                viewModel: ReaderViewModel(
+                    storyID: storyID,
+                    page: page,
+                    profiles: dependencies.profiles,
+                    preferences: dependencies.preferences,
+                    stores: dependencies.stores,
+                ),
+                navigation: readerNavigation,
+            )
+        case let .player(storyID):
+            PlayerRoute(
+                viewModel: PlayerViewModel(
+                    storyID: storyID,
+                    profiles: dependencies.profiles,
+                    preferences: dependencies.preferences,
+                    stores: dependencies.stores,
+                ),
+                navigation: readerNavigation,
+            )
+        default:
+            EmptyView()
+        }
+    }
+
+    private var readerNavigation: ReaderNavigation {
+        let router = router
+        return ReaderNavigation(
+            back: router.pop,
+            listen: { router.push(.player($0)) },
+            read: { router.push(.reader(storyID: $0, page: 0)) },
+        )
     }
 
     private var homeNavigation: HomeNavigation {
@@ -210,7 +296,7 @@ private struct TabStack: View {
             notifications: { router.push(.comingSoon(Pending.notifications)) },
             profiles: { router.select(.profile) },
             create: { router.select(.create) },
-            resume: { router.push(.comingSoon(Pending.player($0))) },
+            resume: { router.push(.player($0)) },
             discover: { router.select(.discover) },
             category: { router.push(.category($0)) },
             story: { router.push(.story($0)) },
@@ -223,16 +309,14 @@ private struct TabStack: View {
             notifications: { router.push(.comingSoon(Pending.notifications)) },
             category: { router.push(.category($0)) },
             story: { router.push(.story($0)) },
-            listen: { router.push(.comingSoon(Pending.player($0))) },
-            read: { router.push(.comingSoon(Pending.reader($0))) },
+            listen: { router.push(.player($0)) },
+            read: { router.push(.reader(storyID: $0, page: 0)) },
             back: router.pop,
         )
     }
 }
 
-/// Names for screens later phases build (Reader and Player in I5, Notifications in I6).
+/// Names for screens later phases build (Notifications in I6).
 private enum Pending {
     static let notifications = "notifications"
-    static func player(_ id: String) -> String { "player.\(id)" }
-    static func reader(_ id: String) -> String { "reader.\(id)" }
 }

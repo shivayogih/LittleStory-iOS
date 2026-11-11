@@ -4,6 +4,7 @@ import XCTest
 /// identifier, never by English text. `-uiTest` starts each run with empty, in-memory data.
 final class LaunchUITests: XCTestCase {
     private let timeout: TimeInterval = 10
+    private let generationTimeout: TimeInterval = 30
 
     override func setUp() {
         continueAfterFailure = false
@@ -55,6 +56,35 @@ final class LaunchUITests: XCTestCase {
     }
 
     @MainActor
+    func testCreatingAStoryOpensItInTheReader() {
+        let app = launch()
+        let skip = app.buttons["onboarding.skip"]
+        XCTAssertTrue(skip.waitForExistence(timeout: timeout))
+        skip.tap()
+        let setupSkip = app.buttons["setup.skip"]
+        XCTAssertTrue(setupSkip.waitForExistence(timeout: timeout))
+        setupSkip.tap()
+        let create = app.buttons["home.create"]
+        XCTAssertTrue(create.waitForExistence(timeout: timeout))
+        create.tap()
+        let suggestion = app.buttons["create.suggestion.school"]
+        XCTAssertTrue(suggestion.waitForExistence(timeout: timeout))
+        suggestion.tap()
+        let submit = app.buttons["create.submit"]
+        submit.swipeUpIfNeeded(in: app)
+        submit.tap()
+        // The simulated generation takes a few seconds, then Story ready opens on its own.
+        let read = app.buttons["ready.read"]
+        XCTAssertTrue(read.waitForExistence(timeout: generationTimeout))
+        XCTAssertTrue(app.staticTexts["ready.title"].exists)
+        read.swipeUpIfNeeded(in: app)
+        read.tap()
+        XCTAssertTrue(app.staticTexts["reader.title"].waitForExistence(timeout: timeout))
+        app.buttons["reader.next"].tap()
+        XCTAssertTrue(app.staticTexts["reader.page"].exists)
+    }
+
+    @MainActor
     func testLaunchInKannada() {
         let app = launch(["-AppleLanguages", "(kn)", "-AppleLocale", "kn_IN"])
         let title = app.staticTexts["onboarding.title"]
@@ -69,5 +99,16 @@ final class LaunchUITests: XCTestCase {
         defer { XCUIDevice.shared.orientation = .portrait }
         XCTAssertTrue(app.staticTexts["onboarding.title"].waitForExistence(timeout: timeout))
         XCTAssertTrue(app.buttons["onboarding.continue"].isHittable)
+    }
+}
+
+private extension XCUIElement {
+    /// Scrolls the screen up a few times until the element can be tapped (short simulators).
+    func swipeUpIfNeeded(in app: XCUIApplication, attempts: Int = 4) {
+        var remaining = attempts
+        while !isHittable, remaining > 0 {
+            app.swipeUp()
+            remaining -= 1
+        }
     }
 }
