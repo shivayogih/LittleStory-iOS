@@ -9,6 +9,7 @@ enum ReaderStrings {
 
     static let title = key("reader.title")
     static let pageOf = key("reader.page_of")
+    static let pagesOf = key("reader.pages_of")
     static let textSmallerLabel = key("reader.text_smaller_label")
     static let textLargerLabel = key("reader.text_larger_label")
     static let textSmaller = key("reader.text_smaller")
@@ -56,6 +57,7 @@ public enum ReaderID {
     public static let favourite = "reader.favourite"
     public static let pageLabel = "reader.page"
     public static let text = "reader.text"
+    public static let facingText = "reader.facing_text"
     public static let smaller = "reader.smaller"
     public static let larger = "reader.larger"
     public static let previous = "reader.previous"

@@ -92,6 +92,7 @@ struct PlayerScreen: View {
             SleepSheet(options: state.sleepOptions, onSelect: actions.sleepSelected, onCancel: actions.sleepDismiss)
                 .presentationDetents([.medium])
                 .presentationDragIndicator(.visible)
+                .presentationSizing(.form)
         }
     }
 }
@@ -198,6 +199,8 @@ private struct PlayerContent: View {
                     .background(LSColor.accent, in: .circle)
             }
             .buttonStyle(LSPressStyle())
+            // Space plays and pauses with an iPad keyboard (LLD §9.4).
+            .keyboardShortcut(.space, modifiers: [])
             .accessibilityLabel(state.playLabel)
             .accessibilityIdentifier(ReaderID.playPause)
             Spacer()

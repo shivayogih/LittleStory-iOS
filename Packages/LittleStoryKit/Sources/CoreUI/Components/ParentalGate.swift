@@ -80,6 +80,7 @@ public struct ParentalGateCard: View {
             keypad
             LSButton(CoreUIStrings.actionContinue.text(locale)) { submit(current) }
                 .disabled(input.isEmpty)
+                .keyboardShortcut(.defaultAction)
                 .accessibilityIdentifier(ParentalGateID.submit)
             LSButton(CoreUIStrings.ParentalGate.cancel.text(locale), variant: .ghost, action: onCancel)
                 .accessibilityIdentifier(ParentalGateID.cancel)
@@ -131,6 +132,7 @@ public struct ParentalGateCard: View {
                 LSButton(CoreUIStrings.ParentalGate.clear.text(locale), variant: .ghost) {
                     input = ""
                 }
+                .keyboardShortcut(.delete, modifiers: [])
                 .accessibilityIdentifier(ParentalGateID.clear)
                 digitKey(GateKeypad.lastRowDigit)
                 Color.clear.gridCellUnsizedAxes([.horizontal, .vertical])
@@ -145,6 +147,8 @@ public struct ParentalGateCard: View {
             }
             wrong = false
         }
+        // Digits can also be typed on an iPad keyboard.
+        .keyboardShortcut(KeyEquivalent(Character(String(digit))), modifiers: [])
         .accessibilityIdentifier(ParentalGateID.key(digit))
     }
 

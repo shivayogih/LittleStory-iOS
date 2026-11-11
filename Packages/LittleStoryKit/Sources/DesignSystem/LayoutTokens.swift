@@ -8,6 +8,8 @@ public enum LayoutTokens {
     public static let expandedMinWidth: CGFloat = 900
     /// Longest comfortable line for story text and forms.
     public static let readableMaxWidth: CGFloat = 680
+    /// Widest Reader two-page spread: two pages of comfortable line length and the gutter.
+    public static let readerSpreadMaxWidth: CGFloat = 1200
     /// Smallest width of a story card in adaptive grids.
     public static let cardMinWidth: CGFloat = 160
     /// Phone layouts at or below this width use the compact side padding (design-tokens.json breakpoints).

@@ -5,6 +5,8 @@ import XCTest
 final class LaunchUITests: XCTestCase {
     private let timeout: TimeInterval = 10
     private let generationTimeout: TimeInterval = 30
+    /// `LayoutTokens.expandedMinWidth`; the UI test target cannot import the design system.
+    private let expandedMinWidth: CGFloat = 900
 
     override func setUp() {
         continueAfterFailure = false
@@ -65,6 +67,30 @@ final class LaunchUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["reader.title"].waitForExistence(timeout: timeout))
         app.buttons["reader.next"].tap()
         XCTAssertTrue(app.staticTexts["reader.page"].exists)
+    }
+
+    /// A wide iPad window shows a two-page spread; an iPhone keeps one page even in landscape.
+    @MainActor
+    func testReaderSpreadFollowsTheWindowWidth() {
+        let app = launch()
+        createStory(in: app)
+        let read = app.buttons["ready.read"]
+        read.swipeUpIfNeeded(in: app)
+        read.tap()
+        XCTAssertTrue(app.staticTexts["reader.text"].waitForExistence(timeout: timeout))
+        XCUIDevice.shared.orientation = .landscapeLeft
+        defer { XCUIDevice.shared.orientation = .portrait }
+        let facing = app.staticTexts["reader.facing_text"]
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            XCTAssertTrue(facing.waitForExistence(timeout: timeout))
+        } else {
+            XCTAssertTrue(app.staticTexts["reader.text"].waitForExistence(timeout: timeout))
+            // Phones narrower than the expanded layout never show a spread; the largest phones
+            // can, because they get a regular width in landscape.
+            if app.windows.firstMatch.frame.width < expandedMinWidth {
+                XCTAssertFalse(facing.exists)
+            }
+        }
     }
 
     @MainActor
