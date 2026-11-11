@@ -27,7 +27,7 @@ struct SettingsContentTests {
         #expect(updated.filter(\.read).map(\.id) == [first.id])
         await repository.markAllRead()
         let all = try #require(await repository.notifications(languageTag: "kn").first())
-        #expect(all.allSatisfy { $0.read })
+        #expect(all.filter(\.read).count == all.count)
     }
 
     @Test("Unknown section and kind names use the defaults")
