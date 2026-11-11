@@ -19,6 +19,8 @@ opt_in_rules:
   - modifier_order
   - private_swiftui_state
   - accessibility_label_for_image
+cyclomatic_complexity:
+  ignores_case_statements: true   # token tables are one switch case per style
 identifier_name:
   min_length: 2
   excluded: [id, x, y]

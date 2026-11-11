@@ -40,7 +40,7 @@ Packages/LittleStoryKit/
 │   ├── Common/            AppConfig.swift, FeatureFlags.swift, SupportedLanguage.swift, AppInfo.swift, ParentalGate.swift
 │   ├── Domain/            Models/, Validation/, Repositories/, Services/, Simulation/
 │   ├── Data/              Content/, Persistence/, Preferences/, Repositories/, Simulated/, Resources/Mock/*.json
-│   ├── DesignSystem/      Tokens.generated.swift, Theme.swift, Fonts/, Icons/, Components/
+│   ├── DesignSystem/      Palette, LSColor, LSTypography, LSFonts, Dimens, LSIcon, LSButtons, Resources/{Fonts,Icons.xcassets,Licenses}
 │   ├── CoreUI/            Chrome/, Story/, Illustration/, Localization/, Safety/, Loading/
 │   ├── FeatureOnboarding/ Onboarding/, Setup/, OnboardingRoute.swift, Localizable.xcstrings
 │   ├── FeatureHome/ …     (same shape for Discover, Create, Reader, Library, Settings)
@@ -743,18 +743,27 @@ flowchart TB
 
 ### 9.1 Tokens
 
-`Tools/gen-tokens` reads `docs/design/design-tokens.json` (copied from the Android repo) and writes `Tokens.generated.swift`:
+The tokens are a hand port of Android's `:core:designsystem` theme, with the same names and values (1 CSS px = 1 pt = 1 dp). A generator was dropped because Android's palette also holds colours sampled from the screenshots that are not in `design-tokens.json`.
+
+| File | Contents |
+| --- | --- |
+| `Palette.swift` | The only colour literals: every `design-tokens.json` colour plus Android's sampled extras |
+| `LSColor.swift` | Semantic roles (`primary`, `background`, `textSecondary`, …), story-art gradients by `paletteId`, illustration and tile colours |
+| `Dimens.swift` | `LSSpacing`, `LSDimens`, `LSRadius` |
+| `LSShadow.swift`, `LSMotion.swift` | CSS shadows (`.lsShadow(_:)`), durations and Reduce Motion aware animations |
+| `LSFonts.swift`, `LSTypography.swift` | Bundled variable fonts (DM Sans, Manrope, Noto Sans Kannada, OFL) with the weight set on the `wght` axis; `LSTextStyle` in a Latin and a Kannada set; `.lsTextStyle(_:)` |
+| `LSIcon.swift` | The 24 design icons from `Icons.xcassets` (SVG, template, back and chevron mirror right to left) |
+| `LSButtons.swift` | `LSPressStyle`, `LSButton` (primary, secondary, ghost), `LSIconButton` |
 
 ```swift
-public enum LSColor { public static let primary = Color(lsHex: 0x6C4CF1) /* generated */ … }
-public enum LSSpacing { public static let xs: CGFloat = 4, sm: CGFloat = 8, md: CGFloat = 16, lg: CGFloat = 24 }
-public enum LSRadius { public static let card: CGFloat = 20, chip: CGFloat = 999 }
-public enum LSMotion { public static let standard: Animation = .easeInOut(duration: 0.25) }
+Text(HomeStrings.title).lsTextStyle(.homeTitle).foregroundStyle(LSColor.textPrimary)
+LSButton(Text(SetupStrings.continue)) { model.continueTapped() }
+LSIconButton(.heart, label: Text(ReaderStrings.favourite), active: state.isFavourite) { model.toggleFavourite() }
 ```
 
-- Typography uses `Font.custom(_:size:relativeTo:)` so every style scales with Dynamic Type; Kannada styles add line spacing.
-- `LSTheme` is injected with `@Entry` environment values; night surfaces for Reader and Player.
-- Hex values above are placeholders; real values come from the generated file.
+- Typography scales with Dynamic Type through `UIFontMetrics` for the style's text style, so a 29 pt title grows like `.largeTitle`. The language, not the device, picks the set: Kannada uses Noto Sans Kannada, line heights of at least 1.4, no negative tracking, no upper-casing and labels of at least 11 pt.
+- One light theme with night surfaces (Android ADR-013): the root sets `.preferredColorScheme(.light)` until a dark palette is designed.
+- `Tools/check-tokens.py` (CI) fails when a design colour is missing from `Palette.swift`, a colour literal appears elsewhere, an icon and `LSIcon` disagree, or a font has no licence.
 
 ### 9.2 Components
 
@@ -1149,7 +1158,8 @@ Baselines live in `__Snapshots__/`, are recorded on the CI simulator image only,
 | `check-dependencies` | fails on imports outside §1.3 |
 | `check-hardcoding` | fails on `Text("…")` literals, `Color(red:…)`, raw numbers in padding/frame, `.font(.system(size:))` outside DesignSystem |
 | `check-translations` | parses every `.xcstrings`: each key has `en` and `kn`, placeholders match, no empty values |
-| `gen-tokens` | `design-tokens.json` → `Tokens.generated.swift` |
+| `check-tokens` | `design-tokens.json` colours present in `Palette.swift`; icons match `LSIcon`; font licences present |
+| `convert-icons` | Android `ic_*.xml` → `Icons.xcassets` SVGs (run when an Android icon changes) |
 | `gen-l10n` | `.xcstrings` → `L10n` key constants |
 | `import-android-strings` | Android `strings.xml` (values, values-kn) → `.xcstrings` with mapped keys |
 | `sync-android-content` | copies mock JSON from a checkout of the Android repo and diffs it |
