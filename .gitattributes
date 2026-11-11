@@ -1,0 +1,11 @@
+# Normalize line endings so Windows and macOS commits do not rewrite whole files.
+* text=auto eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.zip binary

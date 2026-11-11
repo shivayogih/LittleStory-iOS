@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcresult
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/*/.build/
+
+# Secrets and local config (this repository is public)
+*.xcconfig.local
+Config/Secrets.xcconfig
+GoogleService-Info.plist
+*.p12
+*.mobileprovision
+*.cer
+
+# Snapshot test failures (baselines are committed, failures are not)
+**/__Snapshots__/**/*.failed.png
