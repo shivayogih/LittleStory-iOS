@@ -25,6 +25,16 @@ public enum CoreUIStrings {
     public static let comingSoonTitle = key("coming_soon.title")
     public static let comingSoonText = key("coming_soon.text")
 
+    public enum ParentalGate {
+        public static let title = key("parental.gate_title")
+        public static let body = key("parental.gate_body")
+        public static let question = key("parental.gate_question")
+        public static let answer = key("parental.gate_answer")
+        public static let wrong = key("parental.gate_wrong")
+        public static let clear = key("parental.gate_clear")
+        public static let cancel = key("parental.gate_cancel")
+    }
+
     public enum Tab {
         public static let home = key("nav.home")
         public static let discover = key("nav.discover")

@@ -32,6 +32,15 @@ final class AppContainer {
             preferences: repositories.preferences,
             stores: repositories.storyStores,
             generation: repositories.generation,
+            notifications: repositories.notifications,
+            subscription: repositories.subscription,
+            localData: repositories.localData,
+            appVersion: Bundle.main.object(forInfoDictionaryKey: Self.versionKey) as? String ?? "",
+            appBuild: Bundle.main.object(forInfoDictionaryKey: Self.buildKey) as? String ?? "",
+            fixedParentalGate: uiTest,
         )
     }
+
+    private static let versionKey = "CFBundleShortVersionString"
+    private static let buildKey = "CFBundleVersion"
 }

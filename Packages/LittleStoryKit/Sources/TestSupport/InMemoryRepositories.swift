@@ -250,3 +250,52 @@ public final class FakeGeneration: GenerationRepository, @unchecked Sendable {
         }
     }
 }
+
+/// Inbox items per language; reading state is shared across languages, like the real store.
+public final class FakeNotifications: NotificationsRepository, @unchecked Sendable {
+    public let items: TestSubject<[NotificationItem]>
+    public let readIDs = TestSubject<Set<String>>([])
+
+    public init(_ items: [NotificationItem] = []) {
+        self.items = TestSubject(items)
+    }
+
+    public func notifications(languageTag _: String) -> AsyncStream<[NotificationItem]> {
+        combineLatest(items.stream(), readIDs.stream()).map { all, read in
+            all.map { item in
+                var copy = item
+                copy.read = item.read || read.contains(item.id)
+                return copy
+            }
+        }
+    }
+
+    public func markRead(id: String) async {
+        readIDs.send(readIDs.current.union([id]))
+    }
+
+    public func markAllRead() async {
+        readIDs.send(Set(items.current.map(\.id)))
+    }
+}
+
+public struct FakeSubscription: SubscriptionRepository {
+    public let all: [Plan]
+
+    public init(_ plans: [Plan]) {
+        all = plans
+    }
+
+    public func plans() -> AsyncStream<[Plan]> { .of(all) }
+}
+
+/// Counts wipes; tests check the effect, not the data (each fake owns its own data).
+public final class FakeLocalData: LocalDataRepository, @unchecked Sendable {
+    public let deletions = TestSubject(0)
+
+    public init() {}
+
+    public func deleteAll() async {
+        deletions.send(deletions.current + 1)
+    }
+}

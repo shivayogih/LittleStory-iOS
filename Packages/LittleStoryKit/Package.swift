@@ -32,7 +32,7 @@ let package = Package(
         .target(name: "FeatureCreate", dependencies: featureDependencies, resources: [.process("Resources")]),
         .target(name: "FeatureReader", dependencies: featureDependencies, resources: [.process("Resources")]),
         .target(name: "FeatureLibrary", dependencies: featureDependencies, resources: [.process("Resources")]),
-        .target(name: "FeatureSettings", dependencies: featureDependencies),
+        .target(name: "FeatureSettings", dependencies: featureDependencies, resources: [.process("Resources")]),
         .target(
             name: "AppFeatures",
             dependencies: [
@@ -55,6 +55,7 @@ let package = Package(
         .testTarget(name: "FeatureCreateTests", dependencies: ["FeatureCreate", "CoreUI", "Domain", "Common", "TestSupport"]),
         .testTarget(name: "FeatureReaderTests", dependencies: ["FeatureReader", "CoreUI", "Domain", "Common", "TestSupport"]),
         .testTarget(name: "FeatureLibraryTests", dependencies: ["FeatureLibrary", "CoreUI", "Domain", "Common", "TestSupport"]),
+        .testTarget(name: "FeatureSettingsTests", dependencies: ["FeatureSettings", "CoreUI", "Domain", "Common", "TestSupport"]),
         .testTarget(name: "AppFeaturesTests", dependencies: ["AppFeatures", "CoreUI", "Domain", "Common", "TestSupport"]),
     ],
     swiftLanguageModes: [.v6],

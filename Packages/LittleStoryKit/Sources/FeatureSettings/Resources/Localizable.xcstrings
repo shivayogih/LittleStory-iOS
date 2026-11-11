@@ -1,0 +1,2636 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "children.active": {
+      "comment": "From Android feature/settings/src/main/res `children_active`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Active"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಕ್ರಿಯ"
+          }
+        }
+      }
+    },
+    "children.add": {
+      "comment": "From Android feature/settings/src/main/res `children_add`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add child"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಗುವನ್ನು ಸೇರಿಸಿ"
+          }
+        }
+      }
+    },
+    "children.add_another": {
+      "comment": "From Android feature/settings/src/main/res `children_add_another`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add another child"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇನ್ನೊಂದು ಮಗುವನ್ನು ಸೇರಿಸಿ"
+          }
+        }
+      }
+    },
+    "children.add_another_body": {
+      "comment": "From Android feature/settings/src/main/res `children_add_another_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personalise stories for every little listener"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರತಿ ಪುಟ್ಟ ಕೇಳುಗರಿಗೂ ಕಥೆಗಳನ್ನು ವೈಯಕ್ತೀಕರಿಸಿ"
+          }
+        }
+      }
+    },
+    "children.age_language": {
+      "comment": "From Android feature/settings/src/main/res `children_age_language`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%#@count@ · %2$@"
+          },
+          "substitutions": {
+            "count": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg year"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg years"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%#@count@ · %2$@"
+          },
+          "substitutions": {
+            "count": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "needs_review",
+                      "value": "%arg ವರ್ಷ"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "needs_review",
+                      "value": "%arg ವರ್ಷಗಳು"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "children.banner": {
+      "comment": "From Android feature/settings/src/main/res `children_banner`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Private family profiles. Only you can see and manage your children’s details."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಖಾಸಗಿ ಕುಟುಂಬ ಪ್ರೊಫೈಲ್‌ಗಳು. ನಿಮ್ಮ ಮಕ್ಕಳ ವಿವರಗಳನ್ನು ನೀವು ಮಾತ್ರ ನೋಡಬಹುದು ಮತ್ತು ನಿರ್ವಹಿಸಬಹುದು."
+          }
+        }
+      }
+    },
+    "children.edit": {
+      "comment": "From Android feature/settings/src/main/res `children_edit`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit %1$@’s profile"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಅವರ ಪ್ರೊಫೈಲ್ ಬದಲಿಸಿ"
+          }
+        }
+      }
+    },
+    "children.interest_separator": {
+      "comment": "From Android feature/settings/src/main/res `children_interest_separator`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " · "
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": " · "
+          }
+        }
+      }
+    },
+    "children.switch": {
+      "comment": "From Android feature/settings/src/main/res `children_switch`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಬದಲಿಸಿ"
+          }
+        }
+      }
+    },
+    "children.title": {
+      "comment": "From Android feature/settings/src/main/res `children_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Child Profiles"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಕ್ಕಳ ಪ್ರೊಫೈಲ್‌ಗಳು"
+          }
+        }
+      }
+    },
+    "help.a_children": {
+      "comment": "From Android feature/settings/src/main/res `help_a_children`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile → Manage children → Add a child profile."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೊಫೈಲ್ → ಮಕ್ಕಳನ್ನು ನಿರ್ವಹಿಸಿ → ಮಗುವಿನ ಪ್ರೊಫೈಲ್ ಸೇರಿಸಿ."
+          }
+        }
+      }
+    },
+    "help.a_language": {
+      "comment": "From Android feature/settings/src/main/res `help_a_language`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile → Language preferences. The app and stories can use different languages."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೊಫೈಲ್ → ಭಾಷೆಯ ಆದ್ಯತೆಗಳು. ಆ್ಯಪ್ ಮತ್ತು ಕಥೆಗಳು ಬೇರೆ ಬೇರೆ ಭಾಷೆಗಳನ್ನು ಬಳಸಬಹುದು."
+          }
+        }
+      }
+    },
+    "help.a_offline": {
+      "comment": "From Android feature/settings/src/main/res `help_a_offline`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yes. All stories are on the device; downloading only adds a story to the Downloaded tab."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹೌದು. ಎಲ್ಲಾ ಕಥೆಗಳು ಸಾಧನದಲ್ಲೇ ಇವೆ; ಡೌನ್‌ಲೋಡ್‌ಗಳು ಕೇವಲ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದವು ಟ್ಯಾಬ್‌ಗಾಗಿ ಗುರುತಿಸುತ್ತವೆ."
+          }
+        }
+      }
+    },
+    "help.a_stories": {
+      "comment": "From Android feature/settings/src/main/res `help_a_stories`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tell us about your child’s day on Create. This version builds the story on the device from a template; narration is simulated."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ರಚಿಸಿ ಪುಟದಲ್ಲಿ ನಿಮ್ಮ ಮಗುವಿನ ದಿನದ ಬಗ್ಗೆ ತಿಳಿಸಿ. ಈ ಆವೃತ್ತಿ ಸಾಧನದಲ್ಲೇ ಮಾದರಿಯಿಂದ ಕಥೆ ರಚಿಸುತ್ತದೆ; ನಿರೂಪಣೆ ಅನುಕರಿಸಿದ್ದು."
+          }
+        }
+      }
+    },
+    "help.group_about": {
+      "comment": "From Android feature/settings/src/main/res `help_group_about`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ABOUT"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆ್ಯಪ್ ಬಗ್ಗೆ"
+          }
+        }
+      }
+    },
+    "help.group_questions": {
+      "comment": "From Android feature/settings/src/main/res `help_group_questions`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "QUESTIONS"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರಶ್ನೆಗಳು"
+          }
+        }
+      }
+    },
+    "help.licences_body": {
+      "comment": "From Android feature/settings/src/main/res `help_licences_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fonts: %1$@, under the SIL Open Font License 1.1. Built with Android Jetpack libraries under the Apache License 2.0."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಕ್ಷರಶೈಲಿಗಳು: %1$@, SIL ಓಪನ್ ಫಾಂಟ್ ಲೈಸೆನ್ಸ್ 1.1 ಅಡಿಯಲ್ಲಿ. Apache ಲೈಸೆನ್ಸ್ 2.0 ಅಡಿಯ Android Jetpack ಲೈಬ್ರರಿಗಳಿಂದ ನಿರ್ಮಿಸಲಾಗಿದೆ."
+          }
+        }
+      }
+    },
+    "help.licences_body_ios": {
+      "comment": "iOS only: Help & about licences; %1$@ is the list of font names.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fonts: %1$@, under the SIL Open Font License 1.1. Built with Apple’s SwiftUI and the Swift standard libraries."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಕ್ಷರಶೈಲಿಗಳು: %1$@, SIL ಓಪನ್ ಫಾಂಟ್ ಲೈಸೆನ್ಸ್ 1.1 ಅಡಿಯಲ್ಲಿ. Apple ನ SwiftUI ಮತ್ತು Swift ಸ್ಟ್ಯಾಂಡರ್ಡ್ ಲೈಬ್ರರಿಗಳಿಂದ ನಿರ್ಮಿಸಲಾಗಿದೆ."
+          }
+        }
+      }
+    },
+    "help.licences_title": {
+      "comment": "From Android feature/settings/src/main/res `help_licences_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open-source licences"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮುಕ್ತ ಮೂಲ ಪರವಾನಗಿಗಳು"
+          }
+        }
+      }
+    },
+    "help.q_children": {
+      "comment": "From Android feature/settings/src/main/res `help_q_children`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do I add another child?"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇನ್ನೊಂದು ಮಗುವನ್ನು ಹೇಗೆ ಸೇರಿಸುವುದು?"
+          }
+        }
+      }
+    },
+    "help.q_language": {
+      "comment": "From Android feature/settings/src/main/res `help_q_language`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How do I change the language?"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಭಾಷೆಯನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸುವುದು?"
+          }
+        }
+      }
+    },
+    "help.q_offline": {
+      "comment": "From Android feature/settings/src/main/res `help_q_offline`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Can we listen offline?"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಕೇಳಬಹುದೇ?"
+          }
+        }
+      }
+    },
+    "help.q_stories": {
+      "comment": "From Android feature/settings/src/main/res `help_q_stories`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How are stories made?"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳನ್ನು ಹೇಗೆ ರಚಿಸಲಾಗುತ್ತದೆ?"
+          }
+        }
+      }
+    },
+    "help.title": {
+      "comment": "From Android feature/settings/src/main/res `help_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help & about"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಹಾಯ ಮತ್ತು ಮಾಹಿತಿ"
+          }
+        }
+      }
+    },
+    "help.version_body": {
+      "comment": "From Android feature/settings/src/main/res `help_version_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ (build %2$lld)"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ (ಬಿಲ್ಡ್ %2$lld)"
+          }
+        }
+      }
+    },
+    "help.version_title": {
+      "comment": "From Android feature/settings/src/main/res `help_version_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆವೃತ್ತಿ"
+          }
+        }
+      }
+    },
+    "language.app_group": {
+      "comment": "From Android feature/settings/src/main/res `language_app_group`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "APP LANGUAGE"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆ್ಯಪ್ ಭಾಷೆ"
+          }
+        }
+      }
+    },
+    "language.fallback_note": {
+      "comment": "From Android feature/settings/src/main/res `language_fallback_note`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If a story is not yet available in the chosen language, it is shown in English."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಯ್ಕೆ ಮಾಡಿದ ಭಾಷೆಯಲ್ಲಿ ಕಥೆ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲದಿದ್ದರೆ, ಅದು ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ."
+          }
+        }
+      }
+    },
+    "language.story_group": {
+      "comment": "From Android feature/settings/src/main/res `language_story_group`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "STORY LANGUAGE"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಯ ಭಾಷೆ"
+          }
+        }
+      }
+    },
+    "language.title": {
+      "comment": "From Android feature/settings/src/main/res `language_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language preferences"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಭಾಷೆಯ ಆದ್ಯತೆಗಳು"
+          }
+        }
+      }
+    },
+    "notifications.earlier": {
+      "comment": "From Android feature/settings/src/main/res `notifications_earlier`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EARLIER"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹಿಂದಿನವು"
+          }
+        }
+      }
+    },
+    "notifications.empty_text": {
+      "comment": "From Android feature/settings/src/main/res `notifications_empty_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New stories and reminders will appear here."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹೊಸ ಕಥೆಗಳು ಮತ್ತು ಜ್ಞಾಪನೆಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತವೆ."
+          }
+        }
+      }
+    },
+    "notifications.empty_title": {
+      "comment": "From Android feature/settings/src/main/res `notifications_empty_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You’re all caught up"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವನ್ನೂ ನೋಡಿದ್ದೀರಿ"
+          }
+        }
+      }
+    },
+    "notifications.mark_all": {
+      "comment": "From Android feature/settings/src/main/res `notifications_mark_all`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mark all read"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವನ್ನೂ ಓದಿದೆ ಎಂದು ಗುರುತಿಸಿ"
+          }
+        }
+      }
+    },
+    "notifications.title": {
+      "comment": "From Android feature/settings/src/main/res `notifications_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಧಿಸೂಚನೆಗಳು"
+          }
+        }
+      }
+    },
+    "notifications.today": {
+      "comment": "From Android feature/settings/src/main/res `notifications_today`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TODAY"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಂದು"
+          }
+        }
+      }
+    },
+    "notifications.unread": {
+      "comment": "From Android feature/settings/src/main/res `notifications_unread`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unread"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಓದಿಲ್ಲ"
+          }
+        }
+      }
+    },
+    "privacy.audience_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_audience_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LittleStory is for children aged %1$lld to %2$lld. A parent or guardian sets it up and manages each child’s profile."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಲಿಟಲ್‌ಸ್ಟೋರಿ %1$lld ರಿಂದ %2$lld ವರ್ಷದ ಮಕ್ಕಳಿಗಾಗಿ. ಪೋಷಕರು ಅಥವಾ ಪಾಲಕರು ಇದನ್ನು ಸಿದ್ಧಪಡಿಸಿ, ಪ್ರತಿ ಮಗುವಿನ ಪ್ರೊಫೈಲ್ ನಿರ್ವಹಿಸುತ್ತಾರೆ."
+          }
+        }
+      }
+    },
+    "privacy.audience_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_audience_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Made for children, with a grown-up"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ದೊಡ್ಡವರ ಜೊತೆಗೆ, ಮಕ್ಕಳಿಗಾಗಿ"
+          }
+        }
+      }
+    },
+    "privacy.banner": {
+      "comment": "From Android feature/settings/src/main/res `privacy_banner`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everything stays on this device. LittleStory has no account, no ads and no tracking."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವೂ ಈ ಸಾಧನದಲ್ಲೇ ಇರುತ್ತದೆ. ಲಿಟಲ್‌ಸ್ಟೋರಿಯಲ್ಲಿ ಖಾತೆ, ಜಾಹೀರಾತು ಅಥವಾ ಟ್ರ್ಯಾಕಿಂಗ್ ಇಲ್ಲ."
+          }
+        }
+      }
+    },
+    "privacy.confirm_action": {
+      "comment": "From Android feature/settings/src/main/res `privacy_confirm_action`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "privacy.confirm_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_confirm_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This cannot be undone. Profiles, favourites, progress, downloads and created stories will be gone."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇದನ್ನು ಹಿಂಪಡೆಯಲಾಗುವುದಿಲ್ಲ. ಪ್ರೊಫೈಲ್‌ಗಳು, ಮೆಚ್ಚಿನವುಗಳು, ಪ್ರಗತಿ, ಡೌನ್‌ಲೋಡ್‌ಗಳು ಮತ್ತು ರಚಿಸಿದ ಕಥೆಗಳು ಇಲ್ಲವಾಗುತ್ತವೆ."
+          }
+        }
+      }
+    },
+    "privacy.confirm_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_confirm_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete everything?"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವನ್ನೂ ಅಳಿಸಬೇಕೆ?"
+          }
+        }
+      }
+    },
+    "privacy.content_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_content_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Library stories are written for young listeners. Stories made on Create are put together on this device from a template, without AI. Please enjoy new stories together with your child."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಂಗ್ರಹದ ಕಥೆಗಳನ್ನು ಪುಟ್ಟ ಕೇಳುಗರಿಗಾಗಿ ಬರೆಯಲಾಗಿದೆ. ರಚಿಸಿ ವಿಭಾಗದ ಕಥೆಗಳನ್ನು AI ಇಲ್ಲದೆ, ಮಾದರಿಯಿಂದ ಈ ಸಾಧನದಲ್ಲೇ ಜೋಡಿಸಲಾಗುತ್ತದೆ. ಹೊಸ ಕಥೆಗಳನ್ನು ನಿಮ್ಮ ಮಗುವಿನ ಜೊತೆ ಸೇರಿ ಆನಂದಿಸಿ."
+          }
+        }
+      }
+    },
+    "privacy.content_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_content_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Story content"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳ ವಿಷಯ"
+          }
+        }
+      }
+    },
+    "privacy.creation_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_creation_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories are made on this device from a built-in template; what you type is never sent anywhere."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳನ್ನು ಈ ಸಾಧನದಲ್ಲೇ ಒಳಗೊಂಡಿರುವ ಮಾದರಿಯಿಂದ ರಚಿಸಲಾಗುತ್ತದೆ; ನೀವು ಬರೆದದ್ದು ಎಲ್ಲಿಗೂ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    },
+    "privacy.creation_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_creation_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Story creation"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆ ರಚನೆ"
+          }
+        }
+      }
+    },
+    "privacy.delete_action": {
+      "comment": "From Android feature/settings/src/main/res `privacy_delete_action`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete all data"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲಾ ಮಾಹಿತಿ ಅಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "privacy.delete_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_delete_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Removes every child profile, favourite, progress, download, created story and setting. The app starts fresh."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲಾ ಮಕ್ಕಳ ಪ್ರೊಫೈಲ್‌ಗಳು, ಮೆಚ್ಚಿನವುಗಳು, ಪ್ರಗತಿ, ಡೌನ್‌ಲೋಡ್‌ಗಳು, ರಚಿಸಿದ ಕಥೆಗಳು ಮತ್ತು ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ. ಆ್ಯಪ್ ಹೊಸದಾಗಿ ಆರಂಭವಾಗುತ್ತದೆ."
+          }
+        }
+      }
+    },
+    "privacy.delete_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_delete_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete all data on this device"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಈ ಸಾಧನದ ಎಲ್ಲಾ ಮಾಹಿತಿಯನ್ನು ಅಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "privacy.draft_notice": {
+      "comment": "From Android feature/settings/src/main/res `privacy_draft_notice`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft for review: this privacy and safety text has not yet been checked by a legal reviewer and may change before release."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪರಿಶೀಲನೆಗಾಗಿ ಕರಡು: ಈ ಗೌಪ್ಯತೆ ಮತ್ತು ಸುರಕ್ಷತೆಯ ಪಠ್ಯವನ್ನು ಇನ್ನೂ ಕಾನೂನು ತಜ್ಞರು ಪರಿಶೀಲಿಸಿಲ್ಲ; ಬಿಡುಗಡೆಗೆ ಮೊದಲು ಬದಲಾಗಬಹುದು."
+          }
+        }
+      }
+    },
+    "privacy.gate_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_gate_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Changing a child’s details, the language, the plan or these privacy settings first asks a question a grown-up can answer."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಗುವಿನ ವಿವರ, ಭಾಷೆ, ಯೋಜನೆ ಅಥವಾ ಈ ಗೌಪ್ಯತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಿಸುವ ಮೊದಲು, ದೊಡ್ಡವರು ಉತ್ತರಿಸಬಹುದಾದ ಒಂದು ಪ್ರಶ್ನೆ ಕೇಳಲಾಗುತ್ತದೆ."
+          }
+        }
+      }
+    },
+    "privacy.gate_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_gate_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grown-ups-only areas"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ದೊಡ್ಡವರಿಗೆ ಮಾತ್ರ ಇರುವ ಭಾಗಗಳು"
+          }
+        }
+      }
+    },
+    "privacy.group_controls": {
+      "comment": "From Android feature/settings/src/main/res `privacy_group_controls`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PARENT CONTROLS"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪೋಷಕರ ನಿಯಂತ್ರಣ"
+          }
+        }
+      }
+    },
+    "privacy.group_data": {
+      "comment": "From Android feature/settings/src/main/res `privacy_group_data`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YOUR DATA"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮ್ಮ ಮಾಹಿತಿ"
+          }
+        }
+      }
+    },
+    "privacy.group_policy": {
+      "comment": "From Android feature/settings/src/main/res `privacy_group_policy`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRIVACY POLICY"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಗೌಪ್ಯತಾ ನೀತಿ"
+          }
+        }
+      }
+    },
+    "privacy.group_safety": {
+      "comment": "From Android feature/settings/src/main/res `privacy_group_safety`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FAMILY SAFETY"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕುಟುಂಬದ ಸುರಕ್ಷತೆ"
+          }
+        }
+      }
+    },
+    "privacy.no_ads_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_no_ads_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There is no advertising, no analytics, no advertising ID and no real payment. The subscription screen is only an illustration."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಜಾಹೀರಾತು, ಅನಾಲಿಟಿಕ್ಸ್, ಜಾಹೀರಾತು ಐಡಿ ಅಥವಾ ನಿಜವಾದ ಪಾವತಿ ಯಾವುದೂ ಇಲ್ಲ. ಚಂದಾದಾರಿಕೆ ಪರದೆ ಕೇವಲ ಉದಾಹರಣೆ."
+          }
+        }
+      }
+    },
+    "privacy.no_ads_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_no_ads_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No ads, purchases or tracking"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಜಾಹೀರಾತು, ಖರೀದಿ ಅಥವಾ ಟ್ರ್ಯಾಕಿಂಗ್ ಇಲ್ಲ"
+          }
+        }
+      }
+    },
+    "privacy.policy_changes_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_changes_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If a future version connects to the internet or uses AI to write stories, we will update this policy first and ask for a parent’s permission before any child’s information leaves the device."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮುಂದಿನ ಆವೃತ್ತಿ ಇಂಟರ್ನೆಟ್‌ಗೆ ಸಂಪರ್ಕಿಸಿದರೆ ಅಥವಾ ಕಥೆ ಬರೆಯಲು AI ಬಳಸಿದರೆ, ಮೊದಲು ಈ ನೀತಿಯನ್ನು ನವೀಕರಿಸುತ್ತೇವೆ; ಯಾವುದೇ ಮಗುವಿನ ಮಾಹಿತಿ ಸಾಧನದಿಂದ ಹೊರಹೋಗುವ ಮೊದಲು ಪೋಷಕರ ಅನುಮತಿ ಕೇಳುತ್ತೇವೆ."
+          }
+        }
+      }
+    },
+    "privacy.policy_changes_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_changes_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If this changes"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇದು ಬದಲಾದರೆ"
+          }
+        }
+      }
+    },
+    "privacy.policy_children_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_children_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We do not collect personal information from children. The details a parent enters are kept only in the app’s private storage on this device and are never sent to us or to anyone else."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಾವು ಮಕ್ಕಳಿಂದ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ. ಪೋಷಕರು ನಮೂದಿಸುವ ವಿವರಗಳು ಈ ಸಾಧನದಲ್ಲಿ ಆ್ಯಪ್‌ನ ಖಾಸಗಿ ಸಂಗ್ರಹದಲ್ಲಿ ಮಾತ್ರ ಇರುತ್ತವೆ; ಅವನ್ನು ನಮಗೆ ಅಥವಾ ಬೇರೆ ಯಾರಿಗೂ ಕಳುಹಿಸುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    },
+    "privacy.policy_children_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_children_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Children’s information"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಕ್ಕಳ ಮಾಹಿತಿ"
+          }
+        }
+      }
+    },
+    "privacy.policy_contact_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_contact_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact details for privacy questions will be added here before LittleStory is published."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಗೌಪ್ಯತೆಯ ಪ್ರಶ್ನೆಗಳಿಗೆ ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ಲಿಟಲ್‌ಸ್ಟೋರಿ ಪ್ರಕಟವಾಗುವ ಮೊದಲು ಇಲ್ಲಿ ಸೇರಿಸಲಾಗುತ್ತದೆ."
+          }
+        }
+      }
+    },
+    "privacy.policy_contact_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_contact_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contact"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಂಪರ್ಕ"
+          }
+        }
+      }
+    },
+    "privacy.policy_keep_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_keep_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Until you delete it below or uninstall the app. It is left out of cloud backups and transfers to a new device."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನೀವು ಕೆಳಗೆ ಅಳಿಸುವವರೆಗೆ ಅಥವಾ ಆ್ಯಪ್ ಅನ್‌ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡುವವರೆಗೆ. ಇದು ಕ್ಲೌಡ್ ಬ್ಯಾಕಪ್‌ಗೂ ಹೊಸ ಸಾಧನಕ್ಕೆ ವರ್ಗಾವಣೆಗೂ ಸೇರುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    },
+    "privacy.policy_keep_body_ios": {
+      "comment": "iOS only: how long data is kept. iOS includes app data in the device's own backups, so this differs from Android.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Until you delete it below or delete the app. Like other app data, it can be part of this device’s own iCloud or computer backup, which only you control; it is never sent to us."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನೀವು ಕೆಳಗೆ ಅಳಿಸುವವರೆಗೆ ಅಥವಾ ಆ್ಯಪ್ ಅಳಿಸುವವರೆಗೆ. ಇತರ ಆ್ಯಪ್ ಡೇಟಾದಂತೆ, ಇದು ನಿಮ್ಮ ನಿಯಂತ್ರಣದಲ್ಲಿರುವ ಈ ಸಾಧನದ iCloud ಅಥವಾ ಕಂಪ್ಯೂಟರ್ ಬ್ಯಾಕಪ್‌ನ ಭಾಗವಾಗಿರಬಹುದು; ಇದನ್ನು ಎಂದಿಗೂ ನಮಗೆ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    },
+    "privacy.policy_keep_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_keep_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How long it is kept"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಷ್ಟು ಕಾಲ ಇರುತ್ತದೆ"
+          }
+        }
+      }
+    },
+    "privacy.policy_rights_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_rights_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can see and change each child’s details in Manage children, and delete everything on this device at any time."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಕ್ಕಳನ್ನು ನಿರ್ವಹಿಸಿ ವಿಭಾಗದಲ್ಲಿ ಪ್ರತಿ ಮಗುವಿನ ವಿವರಗಳನ್ನು ನೋಡಬಹುದು ಮತ್ತು ಬದಲಿಸಬಹುದು; ಈ ಸಾಧನದ ಎಲ್ಲ ಮಾಹಿತಿಯನ್ನು ಯಾವಾಗ ಬೇಕಾದರೂ ಅಳಿಸಬಹುದು."
+          }
+        }
+      }
+    },
+    "privacy.policy_rights_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_policy_rights_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your choices"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮ್ಮ ಆಯ್ಕೆಗಳು"
+          }
+        }
+      }
+    },
+    "privacy.shared_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_shared_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing. This version does not connect to the internet."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಏನೂ ಇಲ್ಲ. ಈ ಆವೃತ್ತಿ ಇಂಟರ್ನೆಟ್‌ಗೆ ಸಂಪರ್ಕಿಸುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    },
+    "privacy.shared_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_shared_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What leaves the device"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಾಧನದಿಂದ ಹೊರಗೆ ಹೋಗುವುದು"
+          }
+        }
+      }
+    },
+    "privacy.stored_body": {
+      "comment": "From Android feature/settings/src/main/res `privacy_stored_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Each child’s first name, age, avatar and interests, plus favourites, reading progress, downloads and the stories you create."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರತಿ ಮಗುವಿನ ಮೊದಲ ಹೆಸರು, ವಯಸ್ಸು, ಅವತಾರ ಮತ್ತು ಆಸಕ್ತಿಗಳು, ಜೊತೆಗೆ ಮೆಚ್ಚಿನವುಗಳು, ಓದುವ ಪ್ರಗತಿ, ಡೌನ್‌ಲೋಡ್‌ಗಳು ಮತ್ತು ನೀವು ರಚಿಸಿದ ಕಥೆಗಳು."
+          }
+        }
+      }
+    },
+    "privacy.stored_title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_stored_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What we keep"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಾವು ಉಳಿಸಿಕೊಳ್ಳುವುದು"
+          }
+        }
+      }
+    },
+    "privacy.title": {
+      "comment": "From Android feature/settings/src/main/res `privacy_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy & parent controls"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಗೌಪ್ಯತೆ ಮತ್ತು ಪೋಷಕರ ನಿಯಂತ್ರಣ"
+          }
+        }
+      }
+    },
+    "profile.add_child": {
+      "comment": "From Android feature/settings/src/main/res `profile_add_child`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a child profile"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಗುವಿನ ಪ್ರೊಫೈಲ್ ಸೇರಿಸಿ"
+          }
+        }
+      }
+    },
+    "profile.audio": {
+      "comment": "From Android feature/settings/src/main/res `profile_audio`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio preferences"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಧ್ವನಿ ಆದ್ಯತೆಗಳು"
+          }
+        }
+      }
+    },
+    "profile.audio_subtitle": {
+      "comment": "From Android feature/settings/src/main/res `profile_audio_subtitle`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulated narration · %1$@× speed"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅನುಕರಿಸಿದ ನಿರೂಪಣೆ · %1$@× ವೇಗ"
+          }
+        }
+      }
+    },
+    "profile.cancel": {
+      "comment": "From Android feature/settings/src/main/res `profile_cancel`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ರದ್ದುಮಾಡಿ"
+          }
+        }
+      }
+    },
+    "profile.children_count": {
+      "comment": "From Android feature/settings/src/main/res `profile_children_count`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%1$lld child profile"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%1$lld child profiles"
+                }
+              }
+            }
+          }
+        },
+        "kn": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "%1$lld ಮಗುವಿನ ಪ್ರೊಫೈಲ್"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "%1$lld ಮಕ್ಕಳ ಪ್ರೊಫೈಲ್‌ಗಳು"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "profile.downloads": {
+      "comment": "From Android feature/settings/src/main/res `profile_downloads`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download settings"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಡೌನ್‌ಲೋಡ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು"
+          }
+        }
+      }
+    },
+    "profile.downloads_any": {
+      "comment": "From Android feature/settings/src/main/res `profile_downloads_any`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Any network"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಯಾವುದೇ ನೆಟ್‌ವರ್ಕ್"
+          }
+        }
+      }
+    },
+    "profile.downloads_wifi": {
+      "comment": "From Android feature/settings/src/main/res `profile_downloads_wifi`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi-Fi only"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ವೈ-ಫೈ ಮಾತ್ರ"
+          }
+        }
+      }
+    },
+    "profile.edit_child": {
+      "comment": "From Android feature/settings/src/main/res `profile_edit_child`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit child profile"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಗುವಿನ ಪ್ರೊಫೈಲ್ ಬದಲಿಸಿ"
+          }
+        }
+      }
+    },
+    "profile.family": {
+      "comment": "From Android feature/settings/src/main/res `profile_family`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your family"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮ್ಮ ಕುಟುಂಬ"
+          }
+        }
+      }
+    },
+    "profile.footer": {
+      "comment": "From Android feature/settings/src/main/res `profile_footer`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories created with care. Profiles are private and parent-managed."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಾಳಜಿಯಿಂದ ರಚಿಸಿದ ಕಥೆಗಳು. ಪ್ರೊಫೈಲ್‌ಗಳು ಖಾಸಗಿ ಮತ್ತು ಪೋಷಕರ ನಿರ್ವಹಣೆಯಲ್ಲಿವೆ."
+          }
+        }
+      }
+    },
+    "profile.group_app": {
+      "comment": "From Android feature/settings/src/main/res `profile_group_app`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LITTLESTORY"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಲಿಟಲ್‌ಸ್ಟೋರಿ"
+          }
+        }
+      }
+    },
+    "profile.group_children": {
+      "comment": "From Android feature/settings/src/main/res `profile_group_children`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CHILDREN"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಕ್ಕಳು"
+          }
+        }
+      }
+    },
+    "profile.group_experience": {
+      "comment": "From Android feature/settings/src/main/res `profile_group_experience`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "EXPERIENCE"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅನುಭವ"
+          }
+        }
+      }
+    },
+    "profile.help": {
+      "comment": "From Android feature/settings/src/main/res `profile_help`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help & about"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಹಾಯ ಮತ್ತು ಮಾಹಿತಿ"
+          }
+        }
+      }
+    },
+    "profile.help_subtitle": {
+      "comment": "From Android feature/settings/src/main/res `profile_help_subtitle`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questions, version and licences"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರಶ್ನೆಗಳು, ಆವೃತ್ತಿ ಮತ್ತು ಪರವಾನಗಿಗಳು"
+          }
+        }
+      }
+    },
+    "profile.language": {
+      "comment": "From Android feature/settings/src/main/res `profile_language`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Language preferences"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಭಾಷೆಯ ಆದ್ಯತೆಗಳು"
+          }
+        }
+      }
+    },
+    "profile.language_split": {
+      "comment": "From Android feature/settings/src/main/res `profile_language_split`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · Stories: %2$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ · ಕಥೆಗಳು: %2$@"
+          }
+        }
+      }
+    },
+    "profile.manage_children": {
+      "comment": "From Android feature/settings/src/main/res `profile_manage_children`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manage children"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಕ್ಕಳನ್ನು ನಿರ್ವಹಿಸಿ"
+          }
+        }
+      }
+    },
+    "profile.notifications": {
+      "comment": "From Android feature/settings/src/main/res `profile_notifications`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಧಿಸೂಚನೆಗಳು"
+          }
+        }
+      }
+    },
+    "profile.notifications_subtitle": {
+      "comment": "From Android feature/settings/src/main/res `profile_notifications_subtitle`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories and family updates"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳು ಮತ್ತು ಕುಟುಂಬದ ಸುದ್ದಿಗಳು"
+          }
+        }
+      }
+    },
+    "profile.privacy": {
+      "comment": "From Android feature/settings/src/main/res `profile_privacy`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy & parent controls"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಗೌಪ್ಯತೆ ಮತ್ತು ಪೋಷಕರ ನಿಯಂತ್ರಣ"
+          }
+        }
+      }
+    },
+    "profile.privacy_subtitle": {
+      "comment": "From Android feature/settings/src/main/res `profile_privacy_subtitle`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your family’s data stays on this device"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮ್ಮ ಕುಟುಂಬದ ಮಾಹಿತಿ ಈ ಸಾಧನದಲ್ಲೇ ಇರುತ್ತದೆ"
+          }
+        }
+      }
+    },
+    "profile.private_note": {
+      "comment": "From Android feature/settings/src/main/res `profile_private_note`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Private and parent-managed"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಖಾಸಗಿ ಮತ್ತು ಪೋಷಕರ ನಿರ್ವಹಣೆ"
+          }
+        }
+      }
+    },
+    "profile.reminder": {
+      "comment": "From Android feature/settings/src/main/res `profile_reminder`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedtime reminders"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಲಗುವ ಸಮಯದ ಜ್ಞಾಪನೆಗಳು"
+          }
+        }
+      }
+    },
+    "profile.reminder_every_day": {
+      "comment": "From Android feature/settings/src/main/res `profile_reminder_every_day`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every day at %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರತಿದಿನ %1$@ ಕ್ಕೆ"
+          }
+        }
+      }
+    },
+    "profile.reminder_off": {
+      "comment": "From Android feature/settings/src/main/res `profile_reminder_off`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್"
+          }
+        }
+      }
+    },
+    "profile.reminder_some_days": {
+      "comment": "From Android feature/settings/src/main/res `profile_reminder_some_days`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Some days at %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕೆಲವು ದಿನ %1$@ ಕ್ಕೆ"
+          }
+        }
+      }
+    },
+    "profile.subscription": {
+      "comment": "From Android feature/settings/src/main/res `profile_subscription`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscription"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಚಂದಾದಾರಿಕೆ"
+          }
+        }
+      }
+    },
+    "profile.subscription_subtitle": {
+      "comment": "From Android feature/settings/src/main/res `profile_subscription_subtitle`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free plan"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಉಚಿತ ಯೋಜನೆ"
+          }
+        }
+      }
+    },
+    "profile.title": {
+      "comment": "From Android feature/settings/src/main/res `profile_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೊಫೈಲ್"
+          }
+        }
+      }
+    },
+    "reminder.panel_body": {
+      "comment": "From Android feature/settings/src/main/res `reminder_panel_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "We’ll keep it quiet and calm, just one reminder."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಶಾಂತವಾಗಿ, ಸದ್ದಿಲ್ಲದೆ, ಒಂದೇ ಒಂದು ಜ್ಞಾಪನೆ."
+          }
+        }
+      }
+    },
+    "reminder.panel_title": {
+      "comment": "From Android feature/settings/src/main/res `reminder_panel_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A gentle nudge for storytime"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಯ ಸಮಯಕ್ಕೆ ಒಂದು ಮೃದು ನೆನಪು"
+          }
+        }
+      }
+    },
+    "reminder.quiet_body": {
+      "comment": "From Android feature/settings/src/main/res `reminder_quiet_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No sound, no bright alerts"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಶಬ್ದವಿಲ್ಲ, ಪ್ರಖರ ಎಚ್ಚರಿಕೆಗಳಿಲ್ಲ"
+          }
+        }
+      }
+    },
+    "reminder.quiet_title": {
+      "comment": "From Android feature/settings/src/main/res `reminder_quiet_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quiet bedtime experience"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಶಾಂತ ಮಲಗುವ ಅನುಭವ"
+          }
+        }
+      }
+    },
+    "reminder.repeat": {
+      "comment": "From Android feature/settings/src/main/res `reminder_repeat`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat on"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪುನರಾವರ್ತಿಸುವ ದಿನಗಳು"
+          }
+        }
+      }
+    },
+    "reminder.save": {
+      "comment": "From Android feature/settings/src/main/res `reminder_save`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save reminder"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಜ್ಞಾಪನೆ ಉಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "reminder.saved": {
+      "comment": "From Android feature/settings/src/main/res `reminder_saved`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminder saved for %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಕ್ಕೆ ಜ್ಞಾಪನೆ ಉಳಿಸಲಾಗಿದೆ"
+          }
+        }
+      }
+    },
+    "reminder.time": {
+      "comment": "From Android feature/settings/src/main/res `reminder_time`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminder time"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಜ್ಞಾಪನೆಯ ಸಮಯ"
+          }
+        }
+      }
+    },
+    "reminder.time_done": {
+      "comment": "From Android feature/settings/src/main/res `reminder_time_done`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಯಿತು"
+          }
+        }
+      }
+    },
+    "reminder.title": {
+      "comment": "From Android feature/settings/src/main/res `reminder_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedtime Reminder"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಲಗುವ ಸಮಯದ ಜ್ಞಾಪನೆ"
+          }
+        }
+      }
+    },
+    "reminder.toggle": {
+      "comment": "From Android feature/settings/src/main/res `reminder_toggle`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedtime reminder"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಲಗುವ ಸಮಯದ ಜ್ಞಾಪನೆ"
+          }
+        }
+      }
+    },
+    "reminder.toggle_hint": {
+      "comment": "From Android feature/settings/src/main/res `reminder_toggle_hint`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause anytime"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಯಾವಾಗ ಬೇಕಾದರೂ ನಿಲ್ಲಿಸಿ"
+          }
+        }
+      }
+    },
+    "subscription.benefit_collections": {
+      "comment": "From Android feature/settings/src/main/res `subscription_benefit_collections`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium story collections"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೀಮಿಯಂ ಕಥಾ ಸಂಗ್ರಹಗಳು"
+          }
+        }
+      }
+    },
+    "subscription.benefit_narration": {
+      "comment": "From Android feature/settings/src/main/res `subscription_benefit_narration`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio narration"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಧ್ವನಿ ನಿರೂಪಣೆ"
+          }
+        }
+      }
+    },
+    "subscription.benefit_offline": {
+      "comment": "From Android feature/settings/src/main/res `subscription_benefit_offline`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline downloads"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್ ಡೌನ್‌ಲೋಡ್‌ಗಳು"
+          }
+        }
+      }
+    },
+    "subscription.benefit_personalised": {
+      "comment": "From Android feature/settings/src/main/res `subscription_benefit_personalised`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More personalised stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇನ್ನಷ್ಟು ವೈಯಕ್ತಿಕ ಕಥೆಗಳು"
+          }
+        }
+      }
+    },
+    "subscription.benefit_profiles": {
+      "comment": "From Android feature/settings/src/main/res `subscription_benefit_profiles`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiple child profiles"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹಲವು ಮಕ್ಕಳ ಪ್ರೊಫೈಲ್‌ಗಳು"
+          }
+        }
+      }
+    },
+    "subscription.benefit_weekly": {
+      "comment": "From Android feature/settings/src/main/res `subscription_benefit_weekly`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New stories every week"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರತಿ ವಾರ ಹೊಸ ಕಥೆಗಳು"
+          }
+        }
+      }
+    },
+    "subscription.best_value": {
+      "comment": "From Android feature/settings/src/main/res `subscription_best_value`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BEST VALUE"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಉತ್ತಮ ಮೌಲ್ಯ"
+          }
+        }
+      }
+    },
+    "subscription.body": {
+      "comment": "From Android feature/settings/src/main/res `subscription_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More wonder, more listening, and stories that grow with your family."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇನ್ನಷ್ಟು ಅದ್ಭುತ, ಇನ್ನಷ್ಟು ಕೇಳುವಿಕೆ, ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬದೊಂದಿಗೆ ಬೆಳೆಯುವ ಕಥೆಗಳು."
+          }
+        }
+      }
+    },
+    "subscription.choose": {
+      "comment": "From Android feature/settings/src/main/res `subscription_choose`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose %1$@ plan"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಯೋಜನೆ ಆಯ್ಕೆಮಾಡಿ"
+          }
+        }
+      }
+    },
+    "subscription.dialog_done": {
+      "comment": "From Android feature/settings/src/main/res `subscription_dialog_done`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಯಿತು"
+          }
+        }
+      }
+    },
+    "subscription.dialog_text": {
+      "comment": "From Android feature/settings/src/main/res `subscription_dialog_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This is a prototype, so no payment was made. You selected the %1$@ plan."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇದು ಮಾದರಿ ಆವೃತ್ತಿ, ಆದ್ದರಿಂದ ಯಾವುದೇ ಪಾವತಿ ಆಗಿಲ್ಲ. ನೀವು %1$@ ಯೋಜನೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿದ್ದೀರಿ."
+          }
+        }
+      }
+    },
+    "subscription.dialog_title": {
+      "comment": "From Android feature/settings/src/main/res `subscription_dialog_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan selected"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಯೋಜನೆ ಆಯ್ಕೆಯಾಗಿದೆ"
+          }
+        }
+      }
+    },
+    "subscription.kicker": {
+      "comment": "From Android feature/settings/src/main/res `subscription_kicker`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LITTLESTORY PREMIUM"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಲಿಟಲ್‌ಸ್ಟೋರಿ ಪ್ರೀಮಿಯಂ"
+          }
+        }
+      }
+    },
+    "subscription.note": {
+      "comment": "From Android feature/settings/src/main/res `subscription_note`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Illustrative pricing only. No real payment will be processed."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಬೆಲೆಗಳು ಉದಾಹರಣೆಗೆ ಮಾತ್ರ. ಯಾವುದೇ ನಿಜವಾದ ಪಾವತಿ ನಡೆಯುವುದಿಲ್ಲ."
+          }
+        }
+      }
+    },
+    "subscription.period_family": {
+      "comment": "From Android feature/settings/src/main/res `subscription_period_family`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "per year · %1$lld child"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "per year · up to %1$lld children"
+                }
+              }
+            }
+          }
+        },
+        "kn": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "ವರ್ಷಕ್ಕೆ · %1$lld ಮಗು"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "needs_review",
+                  "value": "ವರ್ಷಕ್ಕೆ · %1$lld ಮಕ್ಕಳವರೆಗೆ"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "subscription.period_free": {
+      "comment": "From Android feature/settings/src/main/res `subscription_period_free`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try the magic"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಾಯೆಯನ್ನು ಪ್ರಯತ್ನಿಸಿ"
+          }
+        }
+      }
+    },
+    "subscription.period_month": {
+      "comment": "From Android feature/settings/src/main/res `subscription_period_month`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per month"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ತಿಂಗಳಿಗೆ"
+          }
+        }
+      }
+    },
+    "subscription.period_year": {
+      "comment": "From Android feature/settings/src/main/res `subscription_period_year`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per year · best value"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ವರ್ಷಕ್ಕೆ · ಉತ್ತಮ ಮೌಲ್ಯ"
+          }
+        }
+      }
+    },
+    "subscription.plan_family": {
+      "comment": "From Android feature/settings/src/main/res `subscription_plan_family`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium Family"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೀಮಿಯಂ ಕುಟುಂಬ"
+          }
+        }
+      }
+    },
+    "subscription.plan_free": {
+      "comment": "From Android feature/settings/src/main/res `subscription_plan_free`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಉಚಿತ"
+          }
+        }
+      }
+    },
+    "subscription.plan_monthly": {
+      "comment": "From Android feature/settings/src/main/res `subscription_plan_monthly`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium Monthly"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೀಮಿಯಂ ಮಾಸಿಕ"
+          }
+        }
+      }
+    },
+    "subscription.plan_yearly": {
+      "comment": "From Android feature/settings/src/main/res `subscription_plan_yearly`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium Yearly"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೀಮಿಯಂ ವಾರ್ಷಿಕ"
+          }
+        }
+      }
+    },
+    "subscription.title": {
+      "comment": "From Android feature/settings/src/main/res `subscription_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make every bedtime magical."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರತಿ ಮಲಗುವ ಸಮಯವನ್ನೂ ಮಾಯಾಮಯವಾಗಿಸಿ."
+          }
+        }
+      }
+    }
+  }
+}
