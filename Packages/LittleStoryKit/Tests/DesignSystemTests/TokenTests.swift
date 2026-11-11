@@ -16,11 +16,13 @@ struct TokenTests {
             let regular = LSFonts.font(family, weight: .regular, size: 20)
             let extraBold = LSFonts.font(family, weight: .extraBold, size: 20)
             #expect(regular.fontName.hasPrefix(family.postScriptName.prefix { $0 != "-" }), "\(family)")
-            // The weight axis carries the requested value.
+            // The heavy weight is applied: either the named instance or the weight axis value.
             let variation = CTFontCopyVariation(extraBold as CTFont) as? [NSNumber: NSNumber]
-            #expect(variation?[NSNumber(value: Self.weightAxisTag)]?.doubleValue == Double(LSFontWeight.extraBold.rawValue), "\(family)")
-            // Latin text also gets wider when heavier. Noto Sans Kannada keeps its advance widths
-            // across weights, so only the axis value is checked for it.
+            let axisWeight = variation?[NSNumber(value: Self.weightAxisTag)]?.doubleValue
+            let applied = extraBold.fontName == family.instanceName(.extraBold)
+                || axisWeight == Double(LSFontWeight.extraBold.rawValue)
+            #expect(applied, "\(family): \(extraBold.fontName), wght \(String(describing: axisWeight))")
+            // Latin text also gets wider when heavier (Noto Sans Kannada has no Latin glyphs).
             if family != .notoSansKannada {
                 let regularWidth = ("LittleStory" as NSString).size(withAttributes: [.font: regular]).width
                 let boldWidth = ("LittleStory" as NSString).size(withAttributes: [.font: extraBold]).width

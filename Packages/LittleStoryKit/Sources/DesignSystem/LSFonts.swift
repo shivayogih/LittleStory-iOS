@@ -22,6 +22,16 @@ public enum LSFontFamily: String, Sendable, CaseIterable {
         }
     }
 
+    /// PostScript name of the font's named instance at `weight`, for files that name their
+    /// instances. CoreText ignores a `wght` variation on Noto Sans Kannada, so instances come first.
+    public func instanceName(_ weight: LSFontWeight) -> String? {
+        switch self {
+        case .dmSans: nil
+        case .manrope: "Manrope-\(weight.instanceSuffix)"
+        case .notoSansKannada: "NotoSansKannada-\(weight.instanceSuffix)"
+        }
+    }
+
     var fileURL: URL? {
         Bundle.module.url(forResource: rawValue, withExtension: "ttf")
     }
@@ -73,6 +83,12 @@ public enum LSFonts {
     /// The family at `weight` and `size` points. Falls back to the system font if the file is missing.
     public static func font(_ family: LSFontFamily, weight: LSFontWeight, size: CGFloat) -> UIFont {
         register()
+        if let name = family.instanceName(weight) {
+            let instance = CTFontCreateWithName(name as CFString, size, nil)
+            if (CTFontCopyPostScriptName(instance) as String) == name {
+                return instance as UIFont
+            }
+        }
         // A name-plus-variation descriptor is ignored for some variable fonts, so build the default
         // instance first and then copy it with the weight axis set.
         let base = CTFontCreateWithName(family.postScriptName as CFString, size, nil)
@@ -89,6 +105,17 @@ public enum LSFonts {
 }
 
 extension LSFontWeight {
+    /// The OpenType instance name for this weight.
+    var instanceSuffix: String {
+        switch self {
+        case .regular: "Regular"
+        case .medium: "Medium"
+        case .semibold: "SemiBold"
+        case .bold: "Bold"
+        case .extraBold: "ExtraBold"
+        }
+    }
+
     var systemWeight: UIFont.Weight {
         switch self {
         case .regular: .regular
