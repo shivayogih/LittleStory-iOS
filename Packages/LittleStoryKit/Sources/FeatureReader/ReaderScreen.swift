@@ -17,6 +17,7 @@ public struct ReaderNavigation {
 
 public struct ReaderRoute: View {
     @State private var viewModel: ReaderViewModel
+    @Environment(\.layoutClass) private var layoutClass
     private let navigation: ReaderNavigation
 
     public init(viewModel: @autoclosure @escaping () -> ReaderViewModel, navigation: ReaderNavigation) {
@@ -38,6 +39,9 @@ public struct ReaderRoute: View {
             ),
         )
         .task { await viewModel.start() }
+        .onChange(of: layoutClass.showsReaderSpread, initial: true) { _, spread in
+            viewModel.onSpreadChanged(spread)
+        }
     }
 }
 
@@ -49,7 +53,8 @@ struct ReaderActions {
     let favourite: () -> Void
 }
 
-/// SCR-10: one page at a time on a warm page colour, with text size and page controls.
+/// SCR-10: one page at a time on a warm page colour, with text size and page controls; two pages
+/// side by side on a wide window.
 struct ReaderScreen: View {
     let state: ReaderState
     let navigation: ReaderNavigation
@@ -85,7 +90,6 @@ private struct ReaderPage: View {
     let navigation: ReaderNavigation
     let actions: ReaderActions
     @Environment(\.locale) private var locale
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.layoutDirection) private var layoutDirection
 
     var body: some View {
@@ -93,35 +97,46 @@ private struct ReaderPage: View {
             topBar
             ProgressLine(progress: content.progress)
             ScrollView {
-                VStack(spacing: LSSpacing.xl) {
-                    Text(content.title)
-                        .lsTextStyle(.heroTitle)
-                        .foregroundStyle(LSColor.textPrimary)
-                        .multilineTextAlignment(.center)
-                        .accessibilityAddTraits(.isHeader)
-                    StoryArt(paletteID: content.paletteID, motifID: content.motifID)
-                        .frame(height: LSDimens.readerCoverHeight)
-                        .clipShape(.rect(cornerRadius: LSRadius.large))
-                    Text(content.text)
-                        .lsTextStyle(.readerBody, extraScale: content.textScale)
-                        .foregroundStyle(LSColor.textReader)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .animation(LSMotion.standard(LSMotion.readerFontSize, reduceMotion: reduceMotion), value: content.textScale)
-                        .accessibilityIdentifier(ReaderID.text)
-                    Sparkle()
-                        .fill(LSColor.accent)
-                        .frame(width: LSDimens.sparkleSize, height: LSDimens.sparkleSize)
-                        .accessibilityHidden(true)
+                Group {
+                    if let facing = content.facingText {
+                        HStack(alignment: .top, spacing: LSSpacing.xxl) {
+                            leadingPage
+                            PageText(text: facing, scale: content.textScale, identifier: ReaderID.facingText)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    } else {
+                        leadingPage
+                    }
                 }
                 .padding(.horizontal, LSSpacing.screenHorizontal)
                 .padding(.vertical, LSSpacing.xl)
-                .frame(maxWidth: LayoutTokens.readableMaxWidth)
+                .frame(maxWidth: content.facingText == nil ? LayoutTokens.readableMaxWidth : LayoutTokens.readerSpreadMaxWidth)
                 .frame(maxWidth: .infinity)
             }
             .id(content.page)
             .simultaneousGesture(swipe)
             bottomBar
         }
+    }
+
+    /// Title, art and the current page; the leading page of a spread.
+    private var leadingPage: some View {
+        VStack(spacing: LSSpacing.xl) {
+            Text(content.title)
+                .lsTextStyle(.heroTitle)
+                .foregroundStyle(LSColor.textPrimary)
+                .multilineTextAlignment(.center)
+                .accessibilityAddTraits(.isHeader)
+            StoryArt(paletteID: content.paletteID, motifID: content.motifID)
+                .frame(height: LSDimens.readerCoverHeight)
+                .clipShape(.rect(cornerRadius: LSRadius.large))
+            PageText(text: content.text, scale: content.textScale, identifier: ReaderID.text)
+            Sparkle()
+                .fill(LSColor.accent)
+                .frame(width: LSDimens.sparkleSize, height: LSDimens.sparkleSize)
+                .accessibilityHidden(true)
+        }
+        .frame(maxWidth: .infinity)
     }
 
     private var topBar: some View {
@@ -173,6 +188,7 @@ private struct ReaderPage: View {
     private var bottomBar: some View {
         HStack {
             PageButton(icon: .back, label: ReaderStrings.previous, enabled: content.canGoBack, action: actions.previous)
+                .keyboardShortcut(layoutDirection == .leftToRight ? .leftArrow : .rightArrow, modifiers: [])
                 .accessibilityIdentifier(ReaderID.previous)
             Spacer()
             Button { navigation.listen(content.id) } label: {
@@ -186,6 +202,7 @@ private struct ReaderPage: View {
             .accessibilityIdentifier(ReaderID.play)
             Spacer()
             PageButton(icon: .chevron, label: ReaderStrings.next, enabled: content.canGoForward, action: actions.next)
+                .keyboardShortcut(layoutDirection == .leftToRight ? .rightArrow : .leftArrow, modifiers: [])
                 .accessibilityIdentifier(ReaderID.next)
         }
         .padding(.horizontal, LSSpacing.xxl)
@@ -208,6 +225,23 @@ private struct ReaderPage: View {
                 actions.previous()
             }
         }
+    }
+}
+
+/// One page of story text at the child's chosen size.
+private struct PageText: View {
+    let text: String
+    let scale: Double
+    let identifier: String
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        Text(text)
+            .lsTextStyle(.readerBody, extraScale: scale)
+            .foregroundStyle(LSColor.textReader)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .animation(LSMotion.standard(LSMotion.readerFontSize, reduceMotion: reduceMotion), value: scale)
+            .accessibilityIdentifier(identifier)
     }
 }
 

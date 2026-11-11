@@ -650,6 +650,24 @@
         }
       }
     },
+    "reader.pages_of": {
+      "comment": "iOS only: page label of the two-page spread on wide iPad windows, e.g. \"3–4 of 8\".",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld–%2$lld of %3$lld"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%3$lld ರಲ್ಲಿ %1$lld–%2$lld"
+          }
+        }
+      }
+    },
     "reader.play": {
       "comment": "From Android feature/reader/src/main/res `reader_play`.",
       "extractionState": "manual",

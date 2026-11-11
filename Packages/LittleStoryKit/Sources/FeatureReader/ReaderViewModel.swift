@@ -13,16 +13,29 @@ public struct ReaderContent: Sendable, Hashable {
     public let paletteID: String
     public let motifID: String
     public let favourite: Bool
+    /// Two pages side by side on a wide window (HLD §6A.4); `page` is then the leading one.
+    public var spread = false
 
     public var pageCount: Int { pages.count }
     public var text: String { pages[page] }
+    /// The trailing page of a spread, or nil on a single page or the last odd page.
+    public var facingText: String? { spread && page + 1 < pages.count ? pages[page + 1] : nil }
+    /// The last page on screen.
+    public var lastVisiblePage: Int { facingText == nil ? page : page + 1 }
     public var canGoBack: Bool { page > 0 }
-    public var canGoForward: Bool { page < pages.count - 1 }
+    public var canGoForward: Bool { lastVisiblePage < pages.count - 1 }
     public var canShrink: Bool { textScale > AppConfig.Reader.textScaleRange.lowerBound + Self.epsilon }
     public var canGrow: Bool { textScale < AppConfig.Reader.textScaleRange.upperBound - Self.epsilon }
-    public var pageLabel: UIText { ReaderStrings.pageOf(.number(page + 1), .number(pages.count)) }
+    public var pageLabel: UIText {
+        facingText == nil ? ReaderStrings.pageOf(.number(page + 1), .number(pages.count)) : ReaderStrings.pagesOf(
+            .number(page + 1),
+            .number(page + 2),
+            .number(pages.count),
+        )
+    }
+
     /// Share of the story read, for the thin progress line under the top bar.
-    public var progress: Double { Double(page + 1) / Double(max(pages.count, 1)) }
+    public var progress: Double { Double(lastVisiblePage + 1) / Double(max(pages.count, 1)) }
 
     public var favouriteLabel: UIText {
         favourite ? CoreUIStrings.storyFavouriteRemove(.text(title)) : CoreUIStrings.storyFavouriteAdd(.text(title))
@@ -49,6 +62,7 @@ public final class ReaderViewModel {
     @ObservationIgnored private let stores: StoryStores
     @ObservationIgnored private let now: @Sendable () -> Date
     @ObservationIgnored private var page: Int
+    @ObservationIgnored private var spread = false
     @ObservationIgnored private var snapshot: ReaderSnapshot?
 
     public init(
@@ -85,12 +99,24 @@ public final class ReaderViewModel {
     }
 
     public func onNext() async {
-        await go(to: page + 1)
+        await go(to: page + step)
     }
 
     public func onPrevious() async {
-        await go(to: page - 1)
+        await go(to: page - step)
     }
+
+    /// The window became wide enough for a two-page spread, or narrow again. A spread starts on
+    /// an odd page (1–2, 3–4), so the page the child was on stays in view.
+    public func onSpreadChanged(_ enabled: Bool) {
+        guard enabled != spread else {
+            return
+        }
+        spread = enabled
+        rebuild()
+    }
+
+    private var step: Int { spread ? Self.spreadPages : 1 }
 
     public func onTextSmaller() async {
         await changeScale(by: -AppConfig.Reader.textScaleStep)
@@ -111,14 +137,14 @@ public final class ReaderViewModel {
         guard let snapshot else {
             return
         }
-        state = Self.state(for: snapshot, page: page)
+        state = Self.state(for: snapshot, page: page, spread: spread)
     }
 
     private func go(to target: Int) async {
         guard case let .loaded(content) = state, let childID = snapshot?.context.childID else {
             return
         }
-        let next = min(max(target, 0), content.pageCount - 1)
+        let next = Self.leadingPage(min(max(target, 0), content.pageCount - 1), spread: spread)
         guard next != page else {
             return
         }
@@ -144,21 +170,30 @@ public final class ReaderViewModel {
         await preferences.setReading(reading)
     }
 
-    static func state(for snapshot: ReaderSnapshot, page: Int) -> ReaderState {
+    static func state(for snapshot: ReaderSnapshot, page: Int, spread: Bool = false) -> ReaderState {
         guard let story = snapshot.story, !story.pages.isEmpty else {
             return .notFound
         }
+        let current = min(max(page, 0), story.pages.count - 1)
         return .loaded(ReaderContent(
             id: story.id,
             title: story.title,
             pages: story.pages.map(\.text),
-            page: min(max(page, 0), story.pages.count - 1),
+            page: leadingPage(current, spread: spread),
             textScale: snapshot.reading.textScale,
             paletteID: story.art.paletteID,
             motifID: story.art.motifID,
             favourite: snapshot.favouriteIDs.contains(story.id),
+            spread: spread,
         ))
     }
+
+    /// The first page of the spread that holds `page`; the page itself when there is no spread.
+    static func leadingPage(_ page: Int, spread: Bool) -> Int {
+        spread ? page - page % spreadPages : page
+    }
+
+    private static let spreadPages = 2
 
     /// Steps are compared in tenths so repeated taps do not drift.
     private static let scalePrecision = 10.0

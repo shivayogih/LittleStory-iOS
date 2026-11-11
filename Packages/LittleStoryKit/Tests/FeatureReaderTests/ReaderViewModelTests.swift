@@ -67,6 +67,34 @@ struct ReaderViewModelTests {
         #expect(abs(preferences.readingPreferences.current.textScale - 1.2) < 0.0001)
     }
 
+    @Test("A wide window shows two pages, turns two at a time and keeps the child's page in view")
+    func spread() async throws {
+        let viewModel = makeViewModel(page: 1)
+        let task = Task { await viewModel.start() }
+        defer { task.cancel() }
+        try await waitUntil { content(viewModel) != nil }
+        viewModel.onSpreadChanged(true)
+        #expect(content(viewModel)?.page == 0)
+        #expect(content(viewModel)?.facingText == "Two.")
+        #expect(content(viewModel)?.pageLabel.resolved(for: Locale(identifier: "en")) == "1–2 of 3")
+        #expect(content(viewModel)?.progress == 2.0 / 3.0)
+        #expect(content(viewModel)?.canGoBack == false)
+
+        await viewModel.onNext()
+        #expect(content(viewModel)?.page == 2)
+        #expect(content(viewModel)?.facingText == nil)
+        #expect(content(viewModel)?.pageLabel.resolved(for: Locale(identifier: "en")) == "3 of 3")
+        #expect(content(viewModel)?.canGoForward == false)
+
+        await viewModel.onPrevious()
+        #expect(content(viewModel)?.page == 0)
+        viewModel.onSpreadChanged(false)
+        #expect(content(viewModel)?.facingText == nil)
+        #expect(content(viewModel)?.text == "One.")
+        await viewModel.onNext()
+        #expect(content(viewModel)?.text == "Two.")
+    }
+
     @Test("A start page past the end shows the last page; an unknown story shows not found")
     func bounds() async throws {
         let late = makeViewModel(page: 9)

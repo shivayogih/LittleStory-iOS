@@ -112,6 +112,8 @@ struct ProfileScreen: View {
             }
             .background(LSColor.background)
             .presentationDetents([.large])
+            // A form sheet on iPad, sized for the keypad rather than the whole window.
+            .presentationSizing(.form)
         }
     }
 
