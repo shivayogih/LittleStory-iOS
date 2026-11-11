@@ -59,9 +59,13 @@ public enum LSFonts {
 
     /// Fonts are made from the bundled files' descriptors, not looked up by name, so a system font
     /// with the same PostScript name (iOS ships its own Noto Sans Kannada) can never replace them.
-    /// `nonisolated(unsafe)`: the table is written once by the lazy initializer, and CoreText font
-    /// descriptors are immutable and thread-safe, though not marked Sendable.
-    private nonisolated(unsafe) static let descriptors: [String: CTFontDescriptor] = {
+    private static let descriptorTable = DescriptorTable(loadDescriptors())
+
+    private static var descriptors: [String: CTFontDescriptor] {
+        descriptorTable.byFileName
+    }
+
+    private static func loadDescriptors() -> [String: CTFontDescriptor] {
         var table: [String: CTFontDescriptor] = [:]
         let names = Set(LSFontFamily.allCases.flatMap { family in LSFontWeight.allCases.map(family.fileName) })
         for name in names {
@@ -75,7 +79,7 @@ public enum LSFonts {
             table[name] = descriptor
         }
         return table
-    }()
+    }
 
     /// Families whose files are all present and readable.
     public static var availableFamilies: Set<LSFontFamily> {
@@ -100,6 +104,15 @@ public enum LSFonts {
             weight.rawValue,
         )
         return CTFontCreateCopyWithAttributes(base, size, nil, varied) as UIFont
+    }
+}
+
+/// CoreText font descriptors are immutable and thread-safe, though not marked Sendable.
+private struct DescriptorTable: @unchecked Sendable {
+    let byFileName: [String: CTFontDescriptor]
+
+    init(_ byFileName: [String: CTFontDescriptor]) {
+        self.byFileName = byFileName
     }
 }
 
