@@ -1,0 +1,123 @@
+{
+  "language": "en",
+  "stories": [
+    {
+      "id": "story_little_elephant",
+      "title": "The Little Elephant Who Shared",
+      "synopsis": "A gentle adventure about friendship, generosity, and discovering that sharing can make everyone happier.",
+      "categoryId": "friendship",
+      "tags": ["animals", "kindness", "nature"],
+      "ageMin": 4,
+      "ageMax": 7,
+      "durationMinutes": 6,
+      "addedEpochDay": 20750,
+      "lesson": "Sharing, generosity and caring for friends.",
+      "art": { "paletteId": "friendship", "motifId": "elephant" },
+      "pages": [
+        "Little Gaja the elephant lived at the edge of a green forest, where mango trees grew taller than the clouds.",
+        "One sunny morning he found a basket of ripe mangoes, golden and sweet. His tummy rumbled with joy.",
+        "Just as he lifted the first mango, he heard a tiny sniffle. Mina the mouse was sitting alone, far too small to reach the fruit.",
+        "Gaja thought for a moment. Then he smiled and set the basket down between them. There is plenty for two, he said.",
+        "They ate until their cheeks were sticky, and the whole forest agreed that mangoes taste best when they are shared."
+      ]
+    },
+    {
+      "id": "story_magical_cricket_bat",
+      "title": "Aarav and the Magical Cricket Bat",
+      "synopsis": "Aarav finds a glowing cricket bat in the garden shed and learns that real magic is practice, patience and teamwork.",
+      "categoryId": "adventure",
+      "tags": ["learning"],
+      "ageMin": 5,
+      "ageMax": 9,
+      "durationMinutes": 8,
+      "addedEpochDay": 20740,
+      "lesson": "Practice and teamwork matter more than any magic.",
+      "art": { "paletteId": "adventure", "motifId": "cricket" },
+      "pages": [
+        "Behind the garden shed, Aarav found an old cricket bat that glowed softly, like a lantern at dusk.",
+        "When he swung it, the ball floated up past the treetops and landed in the neighbour's courtyard. Everyone cheered.",
+        "But the next day the bat would not glow at all. Aarav felt his heart sink.",
+        "A wise old gardener smiled. Magic is only a spark, beta. The fire is your own practice and your friends beside you.",
+        "So Aarav practised every evening with his friends, and on match day the bat glowed again, brighter than ever.",
+        "Together they won, and Aarav never forgot who the real magic belonged to."
+      ]
+    },
+    {
+      "id": "story_moonlit_garden",
+      "title": "Mira and the Moonlit Garden",
+      "synopsis": "When the moon rises, Mira discovers a quiet garden where flowers hum lullabies to help little ones fall asleep.",
+      "categoryId": "bedtime",
+      "tags": ["nature"],
+      "ageMin": 3,
+      "ageMax": 6,
+      "durationMinutes": 7,
+      "addedEpochDay": 20730,
+      "lesson": "Calm breaths and kind words help us rest.",
+      "art": { "paletteId": "bedtime", "motifId": "moon" },
+      "pages": [
+        "Mira could not sleep. So she tiptoed to the window and saw a silver path leading into the garden.",
+        "The jasmine flowers were humming a slow, sleepy song, and the fireflies swayed along to the tune.",
+        "Mira took a deep breath, then another, and her eyes grew heavy. The moon winked, and she drifted back to bed."
+      ]
+    },
+    {
+      "id": "story_banyan_secret",
+      "title": "The Banyan Tree's Secret",
+      "synopsis": "An old banyan tree in a village square holds a secret about patience, and one curious child is ready to listen.",
+      "categoryId": "indian_tales",
+      "tags": ["nature", "indian_folk_tales", "panchatantra"],
+      "ageMin": 4,
+      "ageMax": 7,
+      "durationMinutes": 6,
+      "addedEpochDay": 20720,
+      "lesson": "Good things grow slowly, with patience.",
+      "art": { "paletteId": "indian_tales", "motifId": "forest" },
+      "pages": [
+        "In the middle of a village stood a banyan tree so old that nobody remembered who had planted it.",
+        "Little Kavya asked it, How did you grow so big? The leaves rustled, and she leaned in to listen.",
+        "I started as a seed no bigger than your fingernail, whispered the tree. Every day I grew a tiny bit, and that is all.",
+        "Kavya planted a seed that evening. She watered it patiently, and the banyan seemed to smile."
+      ]
+    },
+    {
+      "id": "story_journey_to_stars",
+      "title": "Ananya's Journey to the Stars",
+      "synopsis": "Ananya builds a paper rocket and travels across the night sky, meeting planets who each teach her something new.",
+      "categoryId": "space",
+      "tags": ["science", "learning"],
+      "ageMin": 7,
+      "ageMax": 12,
+      "durationMinutes": 15,
+      "addedEpochDay": 20710,
+      "lesson": "Curiosity turns questions into adventures.",
+      "art": { "paletteId": "space", "motifId": "space" },
+      "pages": [
+        "Ananya loved the night sky. One evening she folded a paper rocket, whispered a wish, and it began to glow.",
+        "The rocket zoomed past the moon, which waved hello with a sleepy crater smile.",
+        "Next came Mars, red and dusty. Ask me anything, it boomed, and Ananya asked why it was red.",
+        "Saturn spun its rings like a giant hula hoop. Even the biggest rings are made of tiny pieces, it said, working together.",
+        "On Jupiter, a great storm rolled by. Storms are loud, said Jupiter, but they pass, and so do worries.",
+        "Far away, a comet left a sparkling trail. Ananya followed it until she could see the whole galaxy twinkling.",
+        "She felt small, and also very brave. Questions, she realised, were the fuel for her rocket.",
+        "The rocket drifted home, and Ananya fell asleep with starlight in her hair, already planning her next journey."
+      ]
+    },
+    {
+      "id": "story_lanterns_jaipur",
+      "title": "The Lanterns of Jaipur",
+      "synopsis": "On the night of the festival, two siblings light a lantern for every neighbour and discover how light grows when it is shared.",
+      "categoryId": "festivals",
+      "tags": ["kindness", "indian_folk_tales"],
+      "ageMin": 4,
+      "ageMax": 8,
+      "durationMinutes": 5,
+      "addedEpochDay": 20700,
+      "lesson": "A small light grows when we share it.",
+      "art": { "paletteId": "festivals", "motifId": "festival" },
+      "pages": [
+        "In Jaipur, the festival night was coming, and Riya and her brother Dev had only one lantern.",
+        "They lit it, then used its flame to light the neighbours' lanterns, one by one, until the whole street glowed pink and gold."
+      ]
+    }
+  ]
+}

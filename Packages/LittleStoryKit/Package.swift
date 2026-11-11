@@ -18,7 +18,8 @@ let package = Package(
         .target(name: "Common"),
         .target(name: "Domain", dependencies: ["Common"]),
         // Named DataLayer, not Data, so it never clashes with Foundation.Data.
-        .target(name: "DataLayer", dependencies: ["Domain", "Common"]),
+        // Mock JSON is copied as a folder so the files keep the same names as on Android.
+        .target(name: "DataLayer", dependencies: ["Domain", "Common"], resources: [.copy("Resources/Mock")]),
 
         // UI foundations
         .target(name: "DesignSystem", resources: [.process("Resources")]),
@@ -45,6 +46,7 @@ let package = Package(
 
         .testTarget(name: "CommonTests", dependencies: ["Common", "TestSupport"]),
         .testTarget(name: "DomainTests", dependencies: ["Domain", "Common", "TestSupport"]),
+        .testTarget(name: "DataLayerTests", dependencies: ["DataLayer", "Domain", "Common", "TestSupport"]),
         .testTarget(name: "DesignSystemTests", dependencies: ["DesignSystem"]),
         .testTarget(name: "CoreUITests", dependencies: ["CoreUI"]),
     ],
