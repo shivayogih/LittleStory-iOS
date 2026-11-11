@@ -1,0 +1,18 @@
+{
+  "language": "en",
+  "categories": [
+    { "id": "bedtime", "name": "Bedtime", "description": "Soft, sleepy stories to wind down the day." },
+    { "id": "animals", "name": "Animals", "description": "Furry, feathered and fantastic friends." },
+    { "id": "adventure", "name": "Adventure", "description": "Brave journeys and big surprises." },
+    { "id": "friendship", "name": "Friendship", "description": "Tales about kindness, sharing and belonging." },
+    { "id": "kindness", "name": "Kindness", "description": "Little acts that make the world warmer." },
+    { "id": "nature", "name": "Nature", "description": "Forests, rivers and the creatures within them." },
+    { "id": "space", "name": "Space", "description": "Rockets, planets and a sky full of wonder." },
+    { "id": "science", "name": "Science", "description": "Curious questions with surprising answers." },
+    { "id": "panchatantra", "name": "Panchatantra", "description": "Classic fables with clever lessons." },
+    { "id": "indian_folk_tales", "name": "Indian Folk Tales", "description": "Stories passed down through generations." },
+    { "id": "indian_tales", "name": "Indian Tales", "description": "Warm, wonder-filled adventures inspired by India's many landscapes and storytelling traditions." },
+    { "id": "festivals", "name": "Festivals", "description": "Lights, sweets and celebrations through the year." },
+    { "id": "learning", "name": "Learning", "description": "Stories that make new ideas feel easy and fun." }
+  ]
+}

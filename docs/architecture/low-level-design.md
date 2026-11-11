@@ -393,6 +393,7 @@ erDiagram
         String storyID PK
         Int64 sizeBytes
         String status
+        Date startedAt "list order"
     }
     GeneratedStoryRecord {
         String id PK "generated_requestID"
@@ -421,6 +422,7 @@ erDiagram
 - `@Model` classes use `@Attribute(.unique)` on the key; composite keys are a joined string because SwiftData has no composite primary key.
 - No relationships, like Android: the guest key has no profile row. `ProfilesRepositoryImpl.delete` removes that child's rows explicitly in one transaction.
 - Schema is versioned from day one: `LittleStorySchemaV1: VersionedSchema` and `LittleStoryMigrationPlan: SchemaMigrationPlan`.
+- **As built in phase I3:** `DownloadRecord` also keeps `startedAt`, so the Downloads list has a stable order (Room returned rows in insertion order). Records live in `DataLayer/Persistence/`; `LittleStore(inMemory:)` gives tests a fresh in-memory container.
 - `@Model` objects never leave the Data layer: each record maps to a Domain struct (`record.toDomain()`, `Record(domain)`), because model objects are not `Sendable`.
 
 ### 4.3 Store access and change streams

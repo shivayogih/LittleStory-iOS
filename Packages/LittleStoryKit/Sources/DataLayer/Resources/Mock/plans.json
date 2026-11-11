@@ -1,0 +1,30 @@
+{
+  "plans": [
+    {
+      "id": "free",
+      "priceMinorUnits": 0,
+      "currencyCode": "INR",
+      "billedYearly": false
+    },
+    {
+      "id": "monthly",
+      "priceMinorUnits": 24900,
+      "currencyCode": "INR",
+      "billedYearly": false
+    },
+    {
+      "id": "yearly",
+      "priceMinorUnits": 179900,
+      "currencyCode": "INR",
+      "billedYearly": true,
+      "bestValue": true
+    },
+    {
+      "id": "family",
+      "priceMinorUnits": 249900,
+      "currencyCode": "INR",
+      "billedYearly": true,
+      "maxChildren": 5
+    }
+  ]
+}

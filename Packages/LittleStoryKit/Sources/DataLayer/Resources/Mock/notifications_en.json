@@ -1,0 +1,26 @@
+{
+  "language": "en",
+  "notifications": [
+    {
+      "id": "notification_story_ready",
+      "section": "Today",
+      "kind": "StoryReady",
+      "title": "Your new story is ready",
+      "body": "A story made just for your family is waiting in My Stories."
+    },
+    {
+      "id": "notification_storytime",
+      "section": "Today",
+      "kind": "Reminder",
+      "title": "Storytime is at 8:30 PM",
+      "body": "A gentle nudge to wind down together."
+    },
+    {
+      "id": "notification_fresh_tales",
+      "section": "Earlier",
+      "kind": "NewStories",
+      "title": "Fresh tales from India",
+      "body": "Three new stories about friendship, family and wonder."
+    }
+  ]
+}
