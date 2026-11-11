@@ -148,7 +148,8 @@ private actor LatestRelay<T: Sendable> {
                 guard !Task.isCancelled else { return }
                 continuation.yield(value)
             }
-            await self.innerFinished(current)
+            // The task inherits this actor's isolation, so no hop is needed.
+            self.innerFinished(current)
         }
     }
 
