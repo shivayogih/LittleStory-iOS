@@ -57,7 +57,7 @@ public struct AdaptiveRoot<Content: View>: View {
         content
             .environment(
                 \.layoutClass,
-                LayoutClass(width: width, sizeClass: sizeClass, dynamicTypeSize: dynamicTypeSize)
+                LayoutClass(width: width, sizeClass: sizeClass, dynamicTypeSize: dynamicTypeSize),
             )
             .onGeometryChange(for: CGFloat.self) { proxy in
                 proxy.size.width

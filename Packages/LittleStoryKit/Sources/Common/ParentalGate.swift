@@ -48,7 +48,7 @@ public struct RandomParentalGateChallenges: ParentalGateChallenges {
     public func next() -> ParentalGateChallenge {
         ParentalGateChallenge(
             first: Int.random(in: AppConfig.ParentalGate.firstFactorRange),
-            second: Int.random(in: AppConfig.ParentalGate.secondFactorRange)
+            second: Int.random(in: AppConfig.ParentalGate.secondFactorRange),
         )
     }
 }

@@ -18,7 +18,7 @@ struct AppConfigTests {
     func stageThresholds() {
         let thresholds = AppConfig.Generation.stageThresholdsPercent
         #expect(thresholds == thresholds.sorted())
-        #expect(thresholds.allSatisfy { 0 < $0 && $0 < 100 })
+        #expect(thresholds.allSatisfy { $0 > 0 && $0 < 100 })
         #expect(AppConfig.Generation.restartPercent < thresholds[0])
     }
 }

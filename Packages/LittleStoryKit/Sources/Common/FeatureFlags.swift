@@ -15,7 +15,7 @@ public struct FeatureFlags: Sendable, Equatable {
         simulatedDownloads: Bool = true,
         bedtimeReminder: Bool = true,
         notificationsInbox: Bool = true,
-        draftLegalText: Bool = true
+        draftLegalText: Bool = true,
     ) {
         self.demoSubscription = demoSubscription
         self.simulatedNarration = simulatedNarration

@@ -9,3 +9,5 @@
 --ranges spaced
 --header ignore
 --importgrouping alpha
+# Keep short one-line bodies and plain @Test("display name") strings.
+--disable wrapPropertyBodies,wrapFunctionBodies,swiftTestingTestCaseNames
