@@ -73,15 +73,18 @@ public enum LSFonts {
     /// The family at `weight` and `size` points. Falls back to the system font if the file is missing.
     public static func font(_ family: LSFontFamily, weight: LSFontWeight, size: CGFloat) -> UIFont {
         register()
-        let attributes: [UIFontDescriptor.AttributeName: Any] = [
-            .name: family.postScriptName,
-            UIFontDescriptor.AttributeName(rawValue: kCTFontVariationAttribute as String): [weightAxisTag: weight.rawValue],
-        ]
-        let font = UIFont(descriptor: UIFontDescriptor(fontAttributes: attributes), size: size)
-        guard font.fontName.hasPrefix(family.postScriptName.prefix { $0 != "-" }) else {
+        // A name-plus-variation descriptor is ignored for some variable fonts, so build the default
+        // instance first and then copy it with the weight axis set.
+        let base = CTFontCreateWithName(family.postScriptName as CFString, size, nil)
+        guard (CTFontCopyPostScriptName(base) as String) == family.postScriptName else {
             return UIFont.systemFont(ofSize: size, weight: weight.systemWeight)
         }
-        return font
+        let descriptor = CTFontDescriptorCreateCopyWithVariation(
+            CTFontCopyFontDescriptor(base),
+            NSNumber(value: weightAxisTag) as CFNumber,
+            weight.rawValue,
+        )
+        return CTFontCreateCopyWithAttributes(base, size, nil, descriptor) as UIFont
     }
 }
 
