@@ -1,0 +1,366 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "home.continue_eyebrow": {
+      "comment": "From Android feature/home/src/main/res `home_continue_eyebrow`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld MIN · %2$lld%% COMPLETE"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$lld ನಿಮಿಷ · %2$lld%% ಪೂರ್ಣ"
+          }
+        }
+      }
+    },
+    "home.continue_resume": {
+      "comment": "From Android feature/home/src/main/res `home_continue_resume`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resume story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆ ಮುಂದುವರಿಸಿ"
+          }
+        }
+      }
+    },
+    "home.continue_title": {
+      "comment": "From Android feature/home/src/main/res `home_continue_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue listening"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕೇಳುವುದನ್ನು ಮುಂದುವರಿಸಿ"
+          }
+        }
+      }
+    },
+    "home.culture_body": {
+      "comment": "From Android feature/home/src/main/res `home_culture_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Timeless wisdom, family traditions and joyful festivals."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಾಲಾತೀತ ಜ್ಞಾನ, ಕುಟುಂಬ ಸಂಪ್ರದಾಯಗಳು ಮತ್ತು ಸಂತಸದ ಹಬ್ಬಗಳು."
+          }
+        }
+      }
+    },
+    "home.culture_kicker": {
+      "comment": "From Android feature/home/src/main/res `home_culture_kicker`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ROOTED IN WONDER"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅದ್ಭುತದ ಬೇರುಗಳು"
+          }
+        }
+      }
+    },
+    "home.culture_link": {
+      "comment": "From Android feature/home/src/main/res `home_culture_link`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explore Indian stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಭಾರತೀಯ ಕಥೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ"
+          }
+        }
+      }
+    },
+    "home.culture_title": {
+      "comment": "From Android feature/home/src/main/res `home_culture_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories from every corner of India"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಭಾರತದ ಪ್ರತಿ ಮೂಲೆಯ ಕಥೆಗಳು"
+          }
+        }
+      }
+    },
+    "home.explore_title": {
+      "comment": "From Android feature/home/src/main/res `home_explore_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explore stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ"
+          }
+        }
+      }
+    },
+    "home.greeting": {
+      "comment": "From Android feature/home/src/main/res `home_greeting`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good evening"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಶುಭ ಸಂಜೆ"
+          }
+        }
+      }
+    },
+    "home.hero_body": {
+      "comment": "From Android feature/home/src/main/res `home_hero_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn today’s little moments into magical adventures."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಂದಿನ ಪುಟ್ಟ ಕ್ಷಣಗಳನ್ನು ಮಾಯಾ ಸಾಹಸಗಳನ್ನಾಗಿ ಮಾಡಿ."
+          }
+        }
+      }
+    },
+    "home.hero_cta": {
+      "comment": "From Android feature/home/src/main/res `home_hero_cta`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a Story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆ ರಚಿಸಿ"
+          }
+        }
+      }
+    },
+    "home.hero_kicker": {
+      "comment": "From Android feature/home/src/main/res `home_hero_kicker`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TONIGHT’S ADVENTURE"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಂದು ರಾತ್ರಿಯ ಸಾಹಸ"
+          }
+        }
+      }
+    },
+    "home.hero_title": {
+      "comment": "From Android feature/home/src/main/res `home_hero_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tonight, anything is possible."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಂದು ರಾತ್ರಿ ಏನು ಬೇಕಾದರೂ ಸಾಧ್ಯ."
+          }
+        }
+      }
+    },
+    "home.made_for_child": {
+      "comment": "From Android feature/home/src/main/res `home_made_for_child`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Made for %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಅವರಿಗಾಗಿ ಮಾಡಿದ್ದು"
+          }
+        }
+      }
+    },
+    "home.made_for_generic": {
+      "comment": "From Android feature/home/src/main/res `home_made_for_generic`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Picked for you"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮಗಾಗಿ ಆಯ್ದವು"
+          }
+        }
+      }
+    },
+    "home.notifications": {
+      "comment": "From Android feature/home/src/main/res `home_notifications`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಧಿಸೂಚನೆಗಳು"
+          }
+        }
+      }
+    },
+    "home.profiles": {
+      "comment": "From Android feature/home/src/main/res `home_profiles`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Child profiles"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮಕ್ಕಳ ಪ್ರೊಫೈಲ್‌ಗಳು"
+          }
+        }
+      }
+    },
+    "home.see_all": {
+      "comment": "From Android feature/home/src/main/res `home_see_all`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See all"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವನ್ನೂ ನೋಡಿ"
+          }
+        }
+      }
+    },
+    "home.title_for_child": {
+      "comment": "From Android feature/home/src/main/res `home_title_for_child`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories for %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಅವರಿಗಾಗಿ ಕಥೆಗಳು"
+          }
+        }
+      }
+    },
+    "home.title_generic": {
+      "comment": "From Android feature/home/src/main/res `home_title_generic`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories for you"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮಗಾಗಿ ಕಥೆಗಳು"
+          }
+        }
+      }
+    }
+  }
+}

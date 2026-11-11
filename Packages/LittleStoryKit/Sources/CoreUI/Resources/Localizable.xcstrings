@@ -2,6 +2,78 @@
   "sourceLanguage": "en",
   "version": "1.0",
   "strings": {
+    "action.back": {
+      "comment": "From Android core/ui/src/main/res `action_back`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹಿಂದೆ"
+          }
+        }
+      }
+    },
+    "action.continue": {
+      "comment": "From Android core/ui/src/main/res `action_continue`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮುಂದುವರಿಸಿ"
+          }
+        }
+      }
+    },
+    "action.skip": {
+      "comment": "From Android core/ui/src/main/res `action_skip`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಬಿಟ್ಟುಬಿಡಿ"
+          }
+        }
+      }
+    },
+    "action.try_again": {
+      "comment": "From Android core/ui/src/main/res `action_try_again`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ"
+          }
+        }
+      }
+    },
     "app.name": {
       "comment": "Brand name shown on the launch placeholder. Not translated.",
       "extractionState": "manual",
@@ -20,6 +92,168 @@
         }
       }
     },
+    "coming_soon.text": {
+      "comment": "iOS only. Body of a screen that a later phase builds.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This part of LittleStory is still being built."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "LittleStory ಯ ಈ ಭಾಗವನ್ನು ಇನ್ನೂ ನಿರ್ಮಿಸಲಾಗುತ್ತಿದೆ."
+          }
+        }
+      }
+    },
+    "coming_soon.title": {
+      "comment": "iOS only. Title of a screen that a later phase builds.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On its way"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ"
+          }
+        }
+      }
+    },
+    "error.generic": {
+      "comment": "From Android core/ui/src/main/res `error_generic`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something went wrong. Please try again."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+          }
+        }
+      }
+    },
+    "interest.adventure": {
+      "comment": "From Android core/ui/src/main/res `interest_adventure`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adventure"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಾಹಸ"
+          }
+        }
+      }
+    },
+    "interest.animals": {
+      "comment": "From Android core/ui/src/main/res `interest_animals`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Animals"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರಾಣಿಗಳು"
+          }
+        }
+      }
+    },
+    "interest.cricket": {
+      "comment": "From Android core/ui/src/main/res `interest_cricket`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cricket"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕ್ರಿಕೆಟ್"
+          }
+        }
+      }
+    },
+    "interest.music": {
+      "comment": "From Android core/ui/src/main/res `interest_music`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Music"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಸಂಗೀತ"
+          }
+        }
+      }
+    },
+    "interest.nature": {
+      "comment": "From Android core/ui/src/main/res `interest_nature`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nature"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರಕೃತಿ"
+          }
+        }
+      }
+    },
+    "interest.space": {
+      "comment": "From Android core/ui/src/main/res `interest_space`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Space"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಬಾಹ್ಯಾಕಾಶ"
+          }
+        }
+      }
+    },
     "launch.tagline": {
       "comment": "Line under the app name on the launch placeholder (same text as Android onboarding_title_1).",
       "extractionState": "manual",
@@ -34,6 +268,348 @@
           "stringUnit": {
             "state": "needs_review",
             "value": "ಪ್ರತಿ ದಿನವೂ ಒಂದು ಕಥೆ"
+          }
+        }
+      }
+    },
+    "meta.minutes": {
+      "comment": "From Android core/ui/src/main/res `meta_minutes`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld min"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$lld ನಿಮಿಷ"
+          }
+        }
+      }
+    },
+    "nav.create": {
+      "comment": "From Android app/src/main/res `nav_create`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ರಚಿಸಿ"
+          }
+        }
+      }
+    },
+    "nav.discover": {
+      "comment": "From Android app/src/main/res `nav_discover`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discover"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅನ್ವೇಷಿಸಿ"
+          }
+        }
+      }
+    },
+    "nav.home": {
+      "comment": "From Android app/src/main/res `nav_home`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮುಖಪುಟ"
+          }
+        }
+      }
+    },
+    "nav.profile": {
+      "comment": "From Android app/src/main/res `nav_profile`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profile"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರೊಫೈಲ್"
+          }
+        }
+      }
+    },
+    "nav.stories": {
+      "comment": "From Android app/src/main/res `nav_stories`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My Stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನನ್ನ ಕಥೆಗಳು"
+          }
+        }
+      }
+    },
+    "parental.gate_answer": {
+      "comment": "From Android core/ui/src/main/res `parental_gate_answer`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answer"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಉತ್ತರ"
+          }
+        }
+      }
+    },
+    "parental.gate_body": {
+      "comment": "From Android core/ui/src/main/res `parental_gate_body`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This part of LittleStory is for parents and guardians. Please answer to continue."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಲಿಟಲ್‌ಸ್ಟೋರಿಯ ಈ ಭಾಗ ಪೋಷಕರು ಮತ್ತು ಪಾಲಕರಿಗಾಗಿ. ಮುಂದುವರಿಯಲು ದಯವಿಟ್ಟು ಉತ್ತರಿಸಿ."
+          }
+        }
+      }
+    },
+    "parental.gate_cancel": {
+      "comment": "From Android core/ui/src/main/res `parental_gate_cancel`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ರದ್ದುಮಾಡಿ"
+          }
+        }
+      }
+    },
+    "parental.gate_clear": {
+      "comment": "From Android core/ui/src/main/res `parental_gate_clear`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಅಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "parental.gate_question": {
+      "comment": "From Android core/ui/src/main/res `parental_gate_question`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is %1$@ × %2$@?"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ × %2$@ ಎಷ್ಟು?"
+          }
+        }
+      }
+    },
+    "parental.gate_title": {
+      "comment": "From Android core/ui/src/main/res `parental_gate_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grown-ups only"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ದೊಡ್ಡವರಿಗೆ ಮಾತ್ರ"
+          }
+        }
+      }
+    },
+    "parental.gate_wrong": {
+      "comment": "From Android core/ui/src/main/res `parental_gate_wrong`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That’s not right. Here is a new question."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಉತ್ತರ ಸರಿಯಿಲ್ಲ. ಇಲ್ಲಿದೆ ಹೊಸ ಪ್ರಶ್ನೆ."
+          }
+        }
+      }
+    },
+    "state.loading": {
+      "comment": "From Android core/ui/src/main/res `state_loading`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading…"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಲೋಡ್ ಆಗುತ್ತಿದೆ…"
+          }
+        }
+      }
+    },
+    "story.card_meta": {
+      "comment": "From Android core/ui/src/main/res `story_card_meta`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$lld min"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ · %2$lld ನಿಮಿಷ"
+          }
+        }
+      }
+    },
+    "story.favourite_add": {
+      "comment": "From Android core/ui/src/main/res `story_favourite_add`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add %1$@ to favourites"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಅನ್ನು ಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸಿ"
+          }
+        }
+      }
+    },
+    "story.favourite_remove": {
+      "comment": "From Android core/ui/src/main/res `story_favourite_remove`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove %1$@ from favourites"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಅನ್ನು ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಿ"
+          }
+        }
+      }
+    },
+    "story.list_meta": {
+      "comment": "From Android core/ui/src/main/res `story_list_meta`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ages %1$lld–%2$lld · %3$lld min"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$lld–%2$lld ವರ್ಷದವರಿಗೆ · %3$lld ನಿಮಿಷ"
+          }
+        }
+      }
+    },
+    "story.offline": {
+      "comment": "From Android core/ui/src/main/res `story_offline`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Available offline"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಲಭ್ಯ"
           }
         }
       }

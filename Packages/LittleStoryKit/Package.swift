@@ -26,9 +26,9 @@ let package = Package(
         .target(name: "CoreUI", dependencies: ["DesignSystem", "Domain", "Common"], resources: [.process("Resources")]),
 
         // Features: never depend on each other or on DataLayer
-        .target(name: "FeatureOnboarding", dependencies: featureDependencies),
-        .target(name: "FeatureHome", dependencies: featureDependencies),
-        .target(name: "FeatureDiscover", dependencies: featureDependencies),
+        .target(name: "FeatureOnboarding", dependencies: featureDependencies, resources: [.process("Resources")]),
+        .target(name: "FeatureHome", dependencies: featureDependencies, resources: [.process("Resources")]),
+        .target(name: "FeatureDiscover", dependencies: featureDependencies, resources: [.process("Resources")]),
         .target(name: "FeatureCreate", dependencies: featureDependencies),
         .target(name: "FeatureReader", dependencies: featureDependencies),
         .target(name: "FeatureLibrary", dependencies: featureDependencies),
@@ -37,7 +37,7 @@ let package = Package(
             name: "AppFeatures",
             dependencies: [
                 "FeatureOnboarding", "FeatureHome", "FeatureDiscover", "FeatureCreate",
-                "FeatureReader", "FeatureLibrary", "FeatureSettings", "CoreUI", "DesignSystem",
+                "FeatureReader", "FeatureLibrary", "FeatureSettings", "CoreUI", "DesignSystem", "Domain", "Common",
             ],
         ),
 
@@ -48,7 +48,11 @@ let package = Package(
         .testTarget(name: "DomainTests", dependencies: ["Domain", "Common", "TestSupport"]),
         .testTarget(name: "DataLayerTests", dependencies: ["DataLayer", "Domain", "Common", "TestSupport"]),
         .testTarget(name: "DesignSystemTests", dependencies: ["DesignSystem"]),
-        .testTarget(name: "CoreUITests", dependencies: ["CoreUI"]),
+        .testTarget(name: "CoreUITests", dependencies: ["CoreUI", "Domain", "TestSupport"]),
+        .testTarget(name: "FeatureOnboardingTests", dependencies: ["FeatureOnboarding", "CoreUI", "Domain", "Common", "TestSupport"]),
+        .testTarget(name: "FeatureHomeTests", dependencies: ["FeatureHome", "CoreUI", "Domain", "Common", "TestSupport"]),
+        .testTarget(name: "FeatureDiscoverTests", dependencies: ["FeatureDiscover", "CoreUI", "Domain", "Common", "TestSupport"]),
+        .testTarget(name: "AppFeaturesTests", dependencies: ["AppFeatures", "CoreUI", "Domain", "Common", "TestSupport"]),
     ],
     swiftLanguageModes: [.v6],
 )

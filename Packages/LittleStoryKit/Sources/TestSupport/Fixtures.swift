@@ -11,22 +11,29 @@ public enum Fixtures {
         pages: [String] = ["Page one.", "Page two."],
         language: String = "en",
         origin: StoryOrigin = .catalogue,
+        durationMinutes: Int = 5,
+        addedEpochDay: Int = 20000,
+        synopsis: String = "A gentle story.",
     ) -> Story {
         Story(
             id: id,
             title: title,
-            synopsis: "A gentle story.",
+            synopsis: synopsis,
             categoryID: categoryID,
             tags: tags,
             ages: 3 ... 6,
-            durationMinutes: 5,
+            durationMinutes: durationMinutes,
             lesson: "Kindness",
-            addedEpochDay: 20000,
+            addedEpochDay: addedEpochDay,
             art: StoryArtSpec(paletteID: "adventure", motifID: "cricket"),
             pages: pages.enumerated().map { StoryPage(index: $0.offset, text: $0.element) },
             resolvedLanguage: language,
             origin: origin,
         )
+    }
+
+    public static func category(id: String, name: String? = nil) -> StoryCategory {
+        StoryCategory(id: id, name: name ?? id.capitalized, summary: "About \(id).", storyCount: 0)
     }
 
     public static func child(id: String = "child_1", firstName: String = "Asha", age: Int = 6) -> ChildProfile {
