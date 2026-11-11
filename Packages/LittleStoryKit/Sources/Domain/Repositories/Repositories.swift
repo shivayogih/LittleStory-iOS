@@ -1,5 +1,5 @@
-/// Contracts the data layer implements. Reads are streams that emit the current value at once and
-/// again on every change; writes are async. Nothing here knows about storage, bundles or UI.
+// Contracts the data layer implements. Reads are streams that emit the current value at once and
+// again on every change; writes are async. Nothing here knows about storage, bundles or UI.
 
 /// Read-only catalogue of bundled stories, resolved for a language with English fallback.
 public protocol CatalogRepository: Sendable {

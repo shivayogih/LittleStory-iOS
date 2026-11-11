@@ -46,8 +46,12 @@ public enum PromptError: Sendable, Hashable {
 public enum PromptValidator {
     /// Nil when the prompt can be sent; the form also stops typing at the limit.
     public static func validate(_ prompt: String) -> PromptError? {
-        if prompt.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return .empty }
-        if prompt.count > AppConfig.Create.promptMaxCharacters { return .tooLong }
+        if prompt.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return .empty
+        }
+        if prompt.count > AppConfig.Create.promptMaxCharacters {
+            return .tooLong
+        }
         return nil
     }
 }

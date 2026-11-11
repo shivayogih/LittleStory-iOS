@@ -8,7 +8,10 @@ struct SimulationTests {
 
     private func percents(_ states: [GenerationState]) -> [Int] {
         states.compactMap { state in
-            if case let .inProgress(_, _, percent) = state { percent } else { nil }
+            guard case let .inProgress(_, _, percent) = state else {
+                return nil
+            }
+            return percent
         }
     }
 

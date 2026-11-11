@@ -77,9 +77,15 @@ public enum ProfileValidator {
     public static func validate(_ draft: ChildProfileDraft) -> Set<ProfileError> {
         var errors = Set<ProfileError>()
         let name = draft.firstName.trimmingCharacters(in: .whitespacesAndNewlines)
-        if name.isEmpty { errors.insert(.nameEmpty) }
-        if name.count > AppConfig.Setup.nameMaxCharacters { errors.insert(.nameTooLong) }
-        if !AppConfig.Setup.ageRange.contains(draft.age) { errors.insert(.ageOutOfRange) }
+        if name.isEmpty {
+            errors.insert(.nameEmpty)
+        }
+        if name.count > AppConfig.Setup.nameMaxCharacters {
+            errors.insert(.nameTooLong)
+        }
+        if !AppConfig.Setup.ageRange.contains(draft.age) {
+            errors.insert(.ageOutOfRange)
+        }
         if !AppConfig.Setup.durationOptionsMinutes.contains(draft.defaultDurationMinutes) {
             errors.insert(.durationNotAllowed)
         }
