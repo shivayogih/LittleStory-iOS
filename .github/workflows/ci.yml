@@ -27,12 +27,14 @@ jobs:
 
   build-and-test:
     name: Lint, build and test (iPhone + iPad)
-    runs-on: macos-26
+    # GitHub's GA macOS images (macos-26) stop at Xcode 26.6; Xcode 27 is only on the
+    # xcode-27 preview image so far. Switch to the GA label once it carries Xcode 27.
+    runs-on: xcode-27
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v7
 
-      - name: Select Xcode from .xcode-version
+      - name: Select Xcode from .xcode-version (newest 27.x if 27.2 is not on the image)
         run: Tools/select-xcode.sh
 
       - name: Install pinned SwiftLint and SwiftFormat

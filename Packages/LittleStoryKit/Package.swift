@@ -1,5 +1,6 @@
-// swift-tools-version: 6.4
-// Toolchain: Xcode 27.2 (Swift 6.4.2). Targets and allowed imports: docs/architecture/low-level-design.md §1.
+// swift-tools-version: 6.2
+// Toolchain: Xcode 27.2 (Swift 6.4.2). The manifest format only needs 6.2 (first with .iOS(.v26)),
+// so CI images that are a point release behind can still read it. Targets and allowed imports: docs/architecture/low-level-design.md §1.
 import PackageDescription
 
 let featureDependencies: [Target.Dependency] = ["CoreUI", "DesignSystem", "Domain", "Common"]
