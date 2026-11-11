@@ -1,0 +1,42 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "app.name": {
+      "comment": "Brand name shown on the launch placeholder. Not translated.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LittleStory"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LittleStory"
+          }
+        }
+      }
+    },
+    "launch.tagline": {
+      "comment": "Line under the app name on the launch placeholder (same text as Android onboarding_title_1).",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every Day Has a Story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರತಿ ದಿನವೂ ಒಂದು ಕಥೆ"
+          }
+        }
+      }
+    }
+  }
+}
