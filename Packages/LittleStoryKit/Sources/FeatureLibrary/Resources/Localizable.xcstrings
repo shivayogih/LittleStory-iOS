@@ -1,0 +1,528 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "downloads.available": {
+      "comment": "From Android feature/library/src/main/res `downloads_available`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AVAILABLE OFFLINE"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಲಭ್ಯ"
+          }
+        }
+      }
+    },
+    "downloads.empty_action": {
+      "comment": "From Android feature/library/src/main/res `downloads_empty_action`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find a story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಒಂದು ಕಥೆ ಹುಡುಕಿ"
+          }
+        }
+      }
+    },
+    "downloads.empty_text": {
+      "comment": "From Android feature/library/src/main/res `downloads_empty_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save a few favourites for journeys, power cuts and cosy nights away."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಪ್ರಯಾಣ, ವಿದ್ಯುತ್ ಕಡಿತ ಮತ್ತು ಮನೆಯಿಂದ ದೂರದ ಬೆಚ್ಚಗಿನ ರಾತ್ರಿಗಳಿಗಾಗಿ ಕೆಲವು ಮೆಚ್ಚಿನ ಕಥೆಗಳನ್ನು ಉಳಿಸಿ."
+          }
+        }
+      }
+    },
+    "downloads.empty_title": {
+      "comment": "From Android feature/library/src/main/res `downloads_empty_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No downloads yet"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್‌ಗಳಿಲ್ಲ"
+          }
+        }
+      }
+    },
+    "downloads.quota": {
+      "comment": "From Android feature/library/src/main/res `downloads_quota`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ GB available for stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳಿಗೆ %1$@ GB ಲಭ್ಯ"
+          }
+        }
+      }
+    },
+    "downloads.remove": {
+      "comment": "From Android feature/library/src/main/res `downloads_remove`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove download of %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಡೌನ್‌ಲೋಡ್ ತೆಗೆದುಹಾಕಿ"
+          }
+        }
+      }
+    },
+    "downloads.size": {
+      "comment": "From Android feature/library/src/main/res `downloads_size`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ MB · Audio & story"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ MB · ಧ್ವನಿ ಮತ್ತು ಕಥೆ"
+          }
+        }
+      }
+    },
+    "downloads.tip": {
+      "comment": "From Android feature/library/src/main/res `downloads_tip`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline means worry-free. Downloaded stories work without internet and stay private on this device."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್ ಎಂದರೆ ಚಿಂತೆಯಿಲ್ಲ. ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದ ಕಥೆಗಳು ಇಂಟರ್ನೆಟ್ ಇಲ್ಲದೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ ಮತ್ತು ಈ ಸಾಧನದಲ್ಲೇ ಖಾಸಗಿಯಾಗಿರುತ್ತವೆ."
+          }
+        }
+      }
+    },
+    "downloads.title": {
+      "comment": "From Android feature/library/src/main/res `downloads_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline Downloads"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್ ಡೌನ್‌ಲೋಡ್‌ಗಳು"
+          }
+        }
+      }
+    },
+    "downloads.used": {
+      "comment": "From Android feature/library/src/main/res `downloads_used`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ MB used"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ MB ಬಳಸಲಾಗಿದೆ"
+          }
+        }
+      }
+    },
+    "stories.collection": {
+      "comment": "From Android feature/library/src/main/res `stories_collection`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your collection"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮ್ಮ ಸಂಗ್ರಹ"
+          }
+        }
+      }
+    },
+    "stories.empty_action": {
+      "comment": "From Android feature/library/src/main/res `stories_empty_action`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discover stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಕಥೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ"
+          }
+        }
+      }
+    },
+    "stories.empty_downloaded_text": {
+      "comment": "From Android feature/library/src/main/res `stories_empty_downloaded_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download a story and bedtime can travel anywhere."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಒಂದು ಕಥೆಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ, ಮಲಗುವ ಸಮಯ ಎಲ್ಲಿ ಬೇಕಾದರೂ ಜೊತೆಗಿರುತ್ತದೆ."
+          }
+        }
+      }
+    },
+    "stories.empty_downloaded_title": {
+      "comment": "From Android feature/library/src/main/res `stories_empty_downloaded_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ready for offline adventures?"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್ ಸಾಹಸಗಳಿಗೆ ಸಿದ್ಧವೇ?"
+          }
+        }
+      }
+    },
+    "stories.empty_text": {
+      "comment": "From Android feature/library/src/main/res `stories_empty_text`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the heart on a story you love to keep it close."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮಗೆ ಇಷ್ಟವಾದ ಕಥೆಯ ಹೃದಯವನ್ನು ಒತ್ತಿ, ಅದನ್ನು ಹತ್ತಿರ ಇಟ್ಟುಕೊಳ್ಳಿ."
+          }
+        }
+      }
+    },
+    "stories.empty_title": {
+      "comment": "From Android feature/library/src/main/res `stories_empty_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No stories here yet"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇಲ್ಲಿ ಇನ್ನೂ ಕಥೆಗಳಿಲ್ಲ"
+          }
+        }
+      }
+    },
+    "stories.offline": {
+      "comment": "From Android feature/library/src/main/res `stories_offline`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Available offline"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಲಭ್ಯ"
+          }
+        }
+      }
+    },
+    "stories.open_downloads": {
+      "comment": "From Android feature/library/src/main/res `stories_open_downloads`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offline downloads"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಆಫ್‌ಲೈನ್ ಡೌನ್‌ಲೋಡ್‌ಗಳು"
+          }
+        }
+      }
+    },
+    "stories.play": {
+      "comment": "From Android feature/library/src/main/res `stories_play`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play %1$@"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@ ಕೇಳಿ"
+          }
+        }
+      }
+    },
+    "stories.recently_played": {
+      "comment": "From Android feature/library/src/main/res `stories_recently_played`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recently played"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಇತ್ತೀಚೆಗೆ ಕೇಳಿದ್ದು"
+          }
+        }
+      }
+    },
+    "stories.remaining": {
+      "comment": "From Android feature/library/src/main/res `stories_remaining`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@:%2$02lld remaining"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$@:%2$02lld ಉಳಿದಿದೆ"
+          }
+        }
+      }
+    },
+    "stories.row_meta": {
+      "comment": "From Android feature/library/src/main/res `stories_row_meta`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld min · %2$lld–%3$lld years"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%1$lld ನಿಮಿಷ · %2$lld–%3$lld ವರ್ಷ"
+          }
+        }
+      }
+    },
+    "stories.search": {
+      "comment": "From Android feature/library/src/main/res `stories_search`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search your stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಿಮ್ಮ ಕಥೆಗಳನ್ನು ಹುಡುಕಿ"
+          }
+        }
+      }
+    },
+    "stories.search_clear": {
+      "comment": "From Android feature/library/src/main/res `stories_search_clear`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear search"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಹುಡುಕಾಟ ಅಳಿಸಿ"
+          }
+        }
+      }
+    },
+    "stories.tab_all": {
+      "comment": "From Android feature/library/src/main/res `stories_tab_all`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಎಲ್ಲವೂ"
+          }
+        }
+      }
+    },
+    "stories.tab_created": {
+      "comment": "From Android feature/library/src/main/res `stories_tab_created`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Created by Me"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನಾನು ರಚಿಸಿದವು"
+          }
+        }
+      }
+    },
+    "stories.tab_downloaded": {
+      "comment": "From Android feature/library/src/main/res `stories_tab_downloaded`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Downloaded"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಡೌನ್‌ಲೋಡ್ ಆದವು"
+          }
+        }
+      }
+    },
+    "stories.tab_favourites": {
+      "comment": "From Android feature/library/src/main/res `stories_tab_favourites`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favourites"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ಮೆಚ್ಚಿನವು"
+          }
+        }
+      }
+    },
+    "stories.title": {
+      "comment": "From Android feature/library/src/main/res `stories_title`.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "My Stories"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ನನ್ನ ಕಥೆಗಳು"
+          }
+        }
+      }
+    }
+  }
+}

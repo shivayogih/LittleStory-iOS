@@ -45,7 +45,15 @@ struct DiscoverScreen: View {
         ScrollView {
             VStack(alignment: .leading, spacing: LSSpacing.xl) {
                 header
-                SearchField(query: state.query, onChange: actions.query, onClear: actions.clear)
+                SearchField(
+                    query: state.query,
+                    placeholder: UIText(DiscoverStrings.searchPlaceholder),
+                    clearLabel: UIText(DiscoverStrings.searchClear),
+                    identifier: DiscoverID.search,
+                    clearIdentifier: DiscoverID.clearSearch,
+                    onChange: actions.query,
+                    onClear: actions.clear,
+                )
                 if state.loading {
                     LoadingIndicator()
                 } else {
@@ -133,43 +141,6 @@ struct DiscoverScreen: View {
                 }
             }
         }
-    }
-}
-
-private struct SearchField: View {
-    let query: String
-    let onChange: (String) -> Void
-    let onClear: () -> Void
-    @Environment(\.locale) private var locale
-
-    var body: some View {
-        HStack(spacing: LSSpacing.sm) {
-            LSIconView(.search, size: LSDimens.iconSizeSmall)
-                .foregroundStyle(LSColor.textSecondary)
-            TextField(
-                text: Binding(get: { query }, set: onChange),
-                prompt: DiscoverStrings.searchPlaceholder.text(locale).foregroundStyle(LSColor.textSecondary),
-            ) {
-                LText(DiscoverStrings.searchPlaceholder)
-            }
-            .submitLabel(.search)
-            .autocorrectionDisabled()
-            .lsTextStyle(.body)
-            .foregroundStyle(LSColor.textPrimary)
-            .accessibilityIdentifier(DiscoverID.search)
-            if !query.isEmpty {
-                Button(action: onClear) {
-                    LSIconView(.close, label: DiscoverStrings.searchClear.text(locale), size: LSDimens.iconSizeSmall)
-                        .foregroundStyle(LSColor.textSecondary)
-                        .frame(minWidth: LSDimens.minTouchTarget, minHeight: LSDimens.minTouchTarget)
-                }
-                .accessibilityIdentifier(DiscoverID.clearSearch)
-            }
-        }
-        .padding(.horizontal, LSSpacing.lg)
-        .frame(minHeight: LSDimens.inputHeight)
-        .background(LSColor.surface, in: .rect(cornerRadius: LSRadius.button))
-        .overlay(RoundedRectangle(cornerRadius: LSRadius.button).strokeBorder(LSColor.outline, lineWidth: LSDimens.borderWidth))
     }
 }
 
