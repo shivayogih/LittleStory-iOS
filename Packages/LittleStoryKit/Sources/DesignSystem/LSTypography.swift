@@ -65,11 +65,11 @@ public struct LSTextSpec: Sendable, Equatable {
         self.uppercased = uppercased
     }
 
-    /// The style scaled for `dynamicTypeSize`.
-    public func resolved(for dynamicTypeSize: DynamicTypeSize) -> LSResolvedText {
+    /// The style scaled for `dynamicTypeSize`, times `extraScale` (the Reader's own text size).
+    public func resolved(for dynamicTypeSize: DynamicTypeSize, extraScale: CGFloat = 1) -> LSResolvedText {
         let traits = UITraitCollection(preferredContentSizeCategory: UIContentSizeCategory(dynamicTypeSize))
         let metrics = UIFontMetrics(forTextStyle: relativeTo.uiTextStyle)
-        let scale = metrics.scaledValue(for: size, compatibleWith: traits) / size
+        let scale = metrics.scaledValue(for: size, compatibleWith: traits) / size * extraScale
         let font = LSFonts.font(family, weight: weight, size: size * scale)
         let lineSpacing = lineHeight.map { max($0 * size * scale - font.lineHeight, 0) } ?? 0
         return LSResolvedText(font: font, lineSpacing: lineSpacing, tracking: tracking * scale, uppercased: uppercased)
@@ -139,11 +139,12 @@ public extension LSTextStyle {
 /// Applies an `LSTextStyle` for the current language and text size.
 struct LSTextStyleModifier: ViewModifier {
     let style: LSTextStyle
+    let extraScale: CGFloat
     @Environment(\.locale) private var locale
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     func body(content: Content) -> some View {
-        let text = style.spec(for: LSTypographyScript(locale: locale)).resolved(for: dynamicTypeSize)
+        let text = style.spec(for: LSTypographyScript(locale: locale)).resolved(for: dynamicTypeSize, extraScale: extraScale)
         content
             .font(Font(text.font as CTFont))
             .tracking(text.tracking)
@@ -154,9 +155,10 @@ struct LSTextStyleModifier: ViewModifier {
 
 public extension View {
     /// Styles text with a design text style; scales with Dynamic Type and switches to the
-    /// Kannada set when the app language is Kannada.
-    func lsTextStyle(_ style: LSTextStyle) -> some View {
-        modifier(LSTextStyleModifier(style: style))
+    /// Kannada set when the app language is Kannada. `extraScale` is an in-app text size on top
+    /// of Dynamic Type (the Reader's A− / A+).
+    func lsTextStyle(_ style: LSTextStyle, extraScale: CGFloat = 1) -> some View {
+        modifier(LSTextStyleModifier(style: style, extraScale: extraScale))
     }
 }
 

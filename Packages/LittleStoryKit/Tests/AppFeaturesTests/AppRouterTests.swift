@@ -61,3 +61,17 @@ struct AppRouterTests {
         #expect(router.selectedTab == .home)
     }
 }
+
+@MainActor
+struct AppRouterCreateFlowTests {
+    @Test("Story ready replaces Generating, so Back returns to the Create form")
+    func replaceTop() {
+        let router = AppRouter()
+        router.select(.create)
+        router.push(.generating(requestID: "r1"))
+        router.replaceTop(with: .storyReady("made"))
+        #expect(router.paths[.create] == [.storyReady("made")])
+        router.pop()
+        #expect(router.paths[.create]?.isEmpty == true)
+    }
+}

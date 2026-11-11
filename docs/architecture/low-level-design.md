@@ -1164,7 +1164,7 @@ Baselines live in `__Snapshots__/`, are recorded on the CI simulator image only,
 | `check-translations` | parses every `.xcstrings`: each key has `en` and `kn`, placeholders match, no empty values |
 | `check-tokens` | `design-tokens.json` colours present in `Palette.swift`; icons match `LSIcon`; font licences present |
 | `convert-icons` | Android `ic_*.xml` → `Icons.xcassets` SVGs (run when an Android icon changes) |
-| `import-android-strings` | Android `strings.xml` (values, values-kn) → `.xcstrings`: the first `_` becomes `.`, `%1$s` → `%1$@`, `%1$d` → `%1$lld`, plurals → variants; Kannada is `needs_review`; iOS-only keys are kept |
+| `import-android-strings` | Android `strings.xml` (values, values-kn) → `.xcstrings`: the first `_` becomes `.`, `%1$s` → `%1$@`, `%1$d` → `%1$lld`, plurals → variants (a plural with several arguments becomes a substitution on its last number, e.g. "%1$@, %#@count@"); Kannada is `needs_review`; iOS-only keys are kept |
 | `sync-android-content` | copies mock JSON from a checkout of the Android repo and diffs it |
 
 ### 14.2 `ci.yml` (shape)

@@ -31,6 +31,7 @@ final class AppContainer {
             profiles: repositories.profiles,
             preferences: repositories.preferences,
             stores: repositories.storyStores,
+            generation: repositories.generation,
         )
     }
 }

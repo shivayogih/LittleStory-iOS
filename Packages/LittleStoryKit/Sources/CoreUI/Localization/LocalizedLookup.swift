@@ -21,6 +21,7 @@ enum LocalizedLookup {
             switch argument {
             case let .text(text): text
             case let .number(number): number
+            case let .localized(nested): string(nested, arguments: [], languageTag: languageTag)
             }
         }
         return String(format: format, locale: Locale(identifier: languageTag), arguments: values)
