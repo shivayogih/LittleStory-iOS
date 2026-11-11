@@ -5,6 +5,9 @@ import Testing
 import UIKit
 
 struct TokenTests {
+    /// The OpenType tag 'wght' as a number.
+    private static let weightAxisTag = 0x7767_6874
+
     @Test("Every bundled font registers and its weight axis is applied")
     func fontsRegister() {
         LSFonts.register()
@@ -13,12 +16,16 @@ struct TokenTests {
             let regular = LSFonts.font(family, weight: .regular, size: 20)
             let extraBold = LSFonts.font(family, weight: .extraBold, size: 20)
             #expect(regular.fontName.hasPrefix(family.postScriptName.prefix { $0 != "-" }), "\(family)")
-            // Noto Sans Kannada has no Latin glyphs, so measure Kannada text with it.
-            let sample = family == .notoSansKannada ? "ಕಥೆ ಹೇಳುವ ಸಮಯ" : "LittleStory"
-            let regularWidth = (sample as NSString).size(withAttributes: [.font: regular]).width
-            let boldWidth = (sample as NSString).size(withAttributes: [.font: extraBold]).width
-            // A heavier instance of the same text is wider, so the weight axis was applied.
-            #expect(boldWidth > regularWidth, "\(family)")
+            // The weight axis carries the requested value.
+            let variation = CTFontCopyVariation(extraBold as CTFont) as? [NSNumber: NSNumber]
+            #expect(variation?[NSNumber(value: Self.weightAxisTag)]?.doubleValue == Double(LSFontWeight.extraBold.rawValue), "\(family)")
+            // Latin text also gets wider when heavier. Noto Sans Kannada keeps its advance widths
+            // across weights, so only the axis value is checked for it.
+            if family != .notoSansKannada {
+                let regularWidth = ("LittleStory" as NSString).size(withAttributes: [.font: regular]).width
+                let boldWidth = ("LittleStory" as NSString).size(withAttributes: [.font: extraBold]).width
+                #expect(boldWidth > regularWidth, "\(family)")
+            }
         }
     }
 
