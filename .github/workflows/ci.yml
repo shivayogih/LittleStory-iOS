@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   checks:
-    name: Rules (dependencies, hardcoding, translations)
+    name: Rules (dependencies, hardcoding, translations, tokens)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -24,6 +24,7 @@ jobs:
       - run: python3 Tools/check-dependencies.py
       - run: python3 Tools/check-hardcoding.py
       - run: python3 Tools/check-translations.py
+      - run: python3 Tools/check-tokens.py
 
   build-and-test:
     name: Lint, build and test (iPhone + iPad)

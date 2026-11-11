@@ -230,7 +230,7 @@ flowchart TB
 | --- | --- | --- |
 | `:app` | `LittleStory` app target | Composition root, root navigation, Info.plist, privacy manifest |
 | `:core:common` | `Common` | Pure Swift |
-| `:core:designsystem` | `DesignSystem` | Tokens generated from `design-tokens.json` |
+| `:core:designsystem` | `DesignSystem` | Tokens ported from Android, checked against `design-tokens.json` |
 | `:core:ui` | `CoreUI` | Includes `Localizer` (replaces `UiText` + `AppLanguage`) |
 | `:domain` | `Domain` | Pure Swift; port of the Kotlin models and rules |
 | `:data` | `Data` | SwiftData replaces Room, `UserDefaults` replaces DataStore |
@@ -473,7 +473,8 @@ sequenceDiagram
 | Contract | Source of truth | How iOS uses it |
 | --- | --- | --- |
 | Mock content JSON | Android `data/src/main/assets/mock/` | Copied into `Data/Resources/Mock/` by `Tools/sync-android-content.sh`; same decoder tests on both sides |
-| Design tokens | `docs/design/design-tokens.json` | `Tools/gen-tokens` generates `DesignSystem/Tokens.generated.swift` |
+| Design tokens | `docs/design/design-tokens.json` | `Palette.swift` holds the values; `Tools/check-tokens.py` fails CI when a design colour is missing |
+| Icons | Android `core/designsystem/src/main/res/drawable/ic_*.xml` | `Tools/convert-icons.py` writes the SVG asset catalog |
 | Translations | Android `strings.xml` (EN, KN) and the workbook Translations sheet | `Tools/import-android-strings` converts to `.xcstrings`, keeping the same keys |
 | Screens and states | `docs/design/screen-inventory.md`, `screen-state-matrix.md` | Same screen IDs, same states, same acceptance criteria |
 | Test cases | Workbook test cases (TC-###) | iOS tests reference the same IDs |
@@ -570,7 +571,7 @@ LittleStory-iOS/
 ├── App/                           # @main, AppContainer, AppRouter, RootView, Info.plist, PrivacyInfo.xcprivacy, Assets
 ├── Config/                        # Debug.xcconfig, Release.xcconfig, Shared.xcconfig
 ├── Packages/LittleStoryKit/       # Package.swift + Sources/<Target>/ + Tests/<Target>Tests/
-├── Tools/                         # check-dependencies, check-hardcoding, check-translations, gen-tokens, sync scripts
+├── Tools/                         # check-dependencies, check-hardcoding, check-translations, check-tokens, convert-icons
 ├── docs/                          # HLD, LLD, ADRs, localization, testing
 ├── .github/workflows/ci.yml
 ├── .swiftlint.yml, .swiftformat, .xcode-version, .gitattributes, .gitignore

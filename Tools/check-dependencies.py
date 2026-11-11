@@ -18,7 +18,7 @@ PROJECT_MODULES = {"Common", "Domain", "DataLayer", "DesignSystem", "CoreUI", "A
 
 # Apple / toolchain modules each target may use. Anything not listed here or in ALLOWED is refused.
 PURE = {"Foundation", "Observation", "OSLog"}
-UI = PURE | {"SwiftUI", "CoreGraphics", "UIKit"}
+UI = PURE | {"SwiftUI", "CoreGraphics", "CoreText", "UIKit"}
 
 ALLOWED = {
     "Common": {"modules": set(), "system": PURE},

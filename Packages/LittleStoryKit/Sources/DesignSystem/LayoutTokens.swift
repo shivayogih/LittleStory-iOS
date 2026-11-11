@@ -10,13 +10,8 @@ public enum LayoutTokens {
     public static let readableMaxWidth: CGFloat = 680
     /// Smallest width of a story card in adaptive grids.
     public static let cardMinWidth: CGFloat = 160
-}
-
-/// Spacing scale; features use these instead of numbers.
-public enum LSSpacing {
-    public static let xs: CGFloat = 4
-    public static let sm: CGFloat = 8
-    public static let md: CGFloat = 16
-    public static let lg: CGFloat = 24
-    public static let xl: CGFloat = 32
+    /// Phone layouts at or below this width use the compact side padding (design-tokens.json breakpoints).
+    public static let narrowPhoneMaxWidth: CGFloat = 360
+    /// Phones at least this tall use the roomier vertical layout of the design.
+    public static let tallPhoneMinHeight: CGFloat = 900
 }

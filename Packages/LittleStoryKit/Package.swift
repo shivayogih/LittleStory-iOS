@@ -21,7 +21,7 @@ let package = Package(
         .target(name: "DataLayer", dependencies: ["Domain", "Common"]),
 
         // UI foundations
-        .target(name: "DesignSystem"),
+        .target(name: "DesignSystem", resources: [.process("Resources")]),
         .target(name: "CoreUI", dependencies: ["DesignSystem", "Domain", "Common"], resources: [.process("Resources")]),
 
         // Features: never depend on each other or on DataLayer

@@ -7,6 +7,7 @@ cd "$(dirname "$0")/.."
 python3 Tools/check-dependencies.py
 python3 Tools/check-hardcoding.py
 python3 Tools/check-translations.py
+python3 Tools/check-tokens.py
 
 Tools/install-lint-tools.sh
 .tools/bin/swiftformat --lint .

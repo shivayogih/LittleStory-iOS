@@ -16,7 +16,11 @@ public struct AppRootView: View {
     public var body: some View {
         AdaptiveRoot {
             LaunchPlaceholder()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(LSColor.background)
         }
+        // One light theme with night surfaces (Android ADR-013) until a dark palette is designed.
+        .preferredColorScheme(.light)
     }
 }
 
@@ -24,15 +28,17 @@ private struct LaunchPlaceholder: View {
     var body: some View {
         VStack(spacing: LSSpacing.md) {
             Text(CoreUIStrings.appName)
-                .font(.largeTitle)
+                .lsTextStyle(.displayOnboarding)
                 .accessibilityIdentifier(AppAccessibilityID.launchTitle)
                 .accessibilityAddTraits(.isHeader)
             Text(CoreUIStrings.launchTagline)
-                .font(.title3)
+                .lsTextStyle(.bodyLarge)
+                .foregroundStyle(LSColor.textSecondary)
                 .multilineTextAlignment(.center)
                 .accessibilityIdentifier(AppAccessibilityID.launchTagline)
         }
-        .padding(LSSpacing.lg)
+        .foregroundStyle(LSColor.textPrimary)
+        .padding(LSSpacing.screenHorizontal)
         .frame(maxWidth: LayoutTokens.readableMaxWidth)
     }
 }
