@@ -8,15 +8,14 @@ struct TokenTests {
     /// The OpenType tag 'wght' as a number.
     private static let weightAxisTag = 0x7767_6874
 
-    @Test("Every bundled font registers and its weight axis is applied")
-    func fontsRegister() {
-        LSFonts.register()
-        #expect(LSFonts.registeredFamilies == Set(LSFontFamily.allCases))
+    @Test("Every bundled font loads and each weight is applied")
+    func fontsLoad() {
+        #expect(LSFonts.availableFamilies == Set(LSFontFamily.allCases))
         for family in LSFontFamily.allCases {
             let regular = LSFonts.font(family, weight: .regular, size: 20)
             let extraBold = LSFonts.font(family, weight: .extraBold, size: 20)
             #expect(regular.fontName.hasPrefix(family.postScriptName.prefix { $0 != "-" }), "\(family)")
-            // The heavy weight is applied: either the named instance or the weight axis value.
+            // The heavy weight is applied: the static file's instance or the weight axis value.
             let variation = CTFontCopyVariation(extraBold as CTFont) as? [NSNumber: NSNumber]
             let axisWeight = variation?[NSNumber(value: Self.weightAxisTag)]?.doubleValue
             let applied = extraBold.fontName == family.instanceName(.extraBold)

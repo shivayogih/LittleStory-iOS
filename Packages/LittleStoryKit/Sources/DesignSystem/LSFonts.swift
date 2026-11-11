@@ -14,7 +14,7 @@ public enum LSFontFamily: String, Sendable, CaseIterable {
     /// Every style when the app language is Kannada (Latin fonts have no Kannada glyphs).
     case notoSansKannada = "noto_sans_kannada"
 
-    /// PostScript name of the file's default instance; variations are applied on top of it.
+    /// PostScript name of the default (regular) font of the family.
     public var postScriptName: String {
         switch self {
         case .dmSans: "DMSans-9ptRegular"
@@ -23,25 +23,22 @@ public enum LSFontFamily: String, Sendable, CaseIterable {
         }
     }
 
-    /// PostScript name of the instance at `weight`, for families that ship or name their instances.
+    /// PostScript name of the static file for `weight`, for families shipped as one file per weight.
     /// CoreText applies neither a `wght` variation nor the named instances of the variable Noto Sans
-    /// Kannada, so it ships as static files (`Tools/instance-noto-kannada.py`).
+    /// Kannada, and iOS has its own copy with fewer weights, so the app ships static files
+    /// (`Tools/instance-noto-kannada.py`).
     public func instanceName(_ weight: LSFontWeight) -> String? {
         switch self {
-        case .dmSans: nil
-        case .manrope: "Manrope-\(weight.instanceSuffix)"
+        case .dmSans, .manrope: nil
         case .notoSansKannada: "NotoSansKannada-\(weight.instanceSuffix)"
         }
     }
 
-    var fileURLs: [URL] {
+    /// The bundled file holding `weight`.
+    func fileName(_ weight: LSFontWeight) -> String {
         switch self {
-        case .dmSans, .manrope:
-            [Bundle.module.url(forResource: rawValue, withExtension: "ttf")].compactMap(\.self)
-        case .notoSansKannada:
-            LSFontWeight.allCases.compactMap {
-                Bundle.module.url(forResource: "\(rawValue)_\($0.instanceSuffix.lowercased())", withExtension: "ttf")
-            }
+        case .dmSans, .manrope: rawValue
+        case .notoSansKannada: "\(rawValue)_\(weight.instanceSuffix.lowercased())"
         }
     }
 }
@@ -60,63 +57,47 @@ public enum LSFonts {
     private static let weightAxisTag = 0x7767_6874
     private static let logger = Logger(subsystem: "LittleStoryKit", category: "Fonts")
 
-    /// Registers the bundled fonts for this process. Safe to call many times; the work runs once.
-    public static func register() {
-        _ = registration
-    }
-
-    /// Families that registered (or were already registered).
-    public static var registeredFamilies: Set<LSFontFamily> {
-        registration
-    }
-
-    private static let registration: Set<LSFontFamily> = {
-        var registered = Set<LSFontFamily>()
-        for family in LSFontFamily.allCases {
-            let urls = family.fileURLs
-            guard !urls.isEmpty else {
-                logger.error("Missing font files for \(family.rawValue, privacy: .public)")
+    /// Fonts are made from the bundled files' descriptors, not looked up by name, so a system font
+    /// with the same PostScript name (iOS ships its own Noto Sans Kannada) can never replace them.
+    private static let descriptors: [String: CTFontDescriptor] = {
+        var table: [String: CTFontDescriptor] = [:]
+        let names = Set(LSFontFamily.allCases.flatMap { family in LSFontWeight.allCases.map(family.fileName) })
+        for name in names {
+            guard let url = Bundle.module.url(forResource: name, withExtension: "ttf"),
+                  let found = CTFontManagerCreateFontDescriptorsFromURL(url as CFURL) as? [CTFontDescriptor],
+                  let descriptor = found.first
+            else {
+                logger.error("Missing or unreadable font file \(name, privacy: .public)")
                 continue
             }
-            let alreadyAvailable = UIFont(name: family.postScriptName, size: UIFont.systemFontSize) != nil
-            if alreadyAvailable || urls.allSatisfy({ register($0) }) {
-                registered.insert(family)
-            }
+            table[name] = descriptor
         }
-        return registered
+        return table
     }()
 
-    private static func register(_ url: URL) -> Bool {
-        var error: Unmanaged<CFError>?
-        guard CTFontManagerRegisterFontsForURL(url as CFURL, .process, &error) else {
-            let reason = error?.takeRetainedValue().localizedDescription ?? "unknown"
-            logger.error("Could not register \(url.lastPathComponent, privacy: .public): \(reason, privacy: .public)")
-            return false
-        }
-        return true
+    /// Families whose files are all present and readable.
+    public static var availableFamilies: Set<LSFontFamily> {
+        Set(LSFontFamily.allCases.filter { family in
+            LSFontWeight.allCases.allSatisfy { descriptors[family.fileName($0)] != nil }
+        })
     }
 
-    /// The family at `weight` and `size` points. Falls back to the system font if the file is missing.
+    /// The family at `weight` and `size` points. Falls back to the system font if a file is missing.
     public static func font(_ family: LSFontFamily, weight: LSFontWeight, size: CGFloat) -> UIFont {
-        register()
-        if let name = family.instanceName(weight) {
-            let instance = CTFontCreateWithName(name as CFString, size, nil)
-            if (CTFontCopyPostScriptName(instance) as String) == name {
-                return instance as UIFont
-            }
-        }
-        // A name-plus-variation descriptor is ignored for some variable fonts, so build the default
-        // instance first and then copy it with the weight axis set.
-        let base = CTFontCreateWithName(family.postScriptName as CFString, size, nil)
-        guard (CTFontCopyPostScriptName(base) as String) == family.postScriptName else {
+        guard let descriptor = descriptors[family.fileName(weight)] else {
             return UIFont.systemFont(ofSize: size, weight: weight.systemWeight)
         }
-        let descriptor = CTFontDescriptorCreateCopyWithVariation(
+        let base = CTFontCreateWithFontDescriptor(descriptor, size, nil)
+        guard family.instanceName(weight) == nil else {
+            return base as UIFont
+        }
+        // Variable file: copy the default instance with the weight axis set.
+        let varied = CTFontDescriptorCreateCopyWithVariation(
             CTFontCopyFontDescriptor(base),
             NSNumber(value: weightAxisTag) as CFNumber,
             weight.rawValue,
         )
-        return CTFontCreateCopyWithAttributes(base, size, nil, descriptor) as UIFont
+        return CTFontCreateCopyWithAttributes(base, size, nil, varied) as UIFont
     }
 }
 
