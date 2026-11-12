@@ -31,7 +31,8 @@ jobs:
     # GitHub's GA macOS images (macos-26) stop at Xcode 26.6; Xcode 27 is only on the
     # xcode-27 preview image so far. Switch to the GA label once it carries Xcode 27.
     runs-on: xcode-27
-    timeout-minutes: 60
+    # The iPhone and iPad UI tests run one after the other (see below), so allow for both.
+    timeout-minutes: 80
     steps:
       - uses: actions/checkout@v7
 
@@ -59,6 +60,17 @@ jobs:
           echo "iphone=$(python3 Tools/pick-simulator.py iphone)" >> "$GITHUB_OUTPUT"
           echo "ipad=$(python3 Tools/pick-simulator.py ipad)" >> "$GITHUB_OUTPUT"
 
+      # Booting before xcodebuild avoids "test runner hung before establishing connection"
+      # on a cold simulator.
+      - name: Boot simulators
+        run: |
+          for destination in "${{ steps.sims.outputs.iphone }}" "${{ steps.sims.outputs.ipad }}"; do
+            udid="${destination#id=}"
+            # simctl boot fails when the device is already booted, which is fine here.
+            xcrun simctl boot "$udid" || true
+            xcrun simctl bootstatus "$udid" -b
+          done
+
       - name: Package tests (Swift Testing)
         working-directory: Packages/LittleStoryKit
         run: >
@@ -66,6 +78,8 @@ jobs:
           -scheme LittleStoryKit-Package
           -destination "${{ steps.sims.outputs.iphone }}"
           -resultBundlePath "$RUNNER_TEMP/PackageTests.xcresult"
+          -test-timeouts-enabled YES
+          -default-test-execution-time-allowance 120
           SWIFT_TREAT_WARNINGS_AS_ERRORS=YES
 
       - name: App build and UI tests on iPhone and iPad
@@ -75,6 +89,9 @@ jobs:
           -scheme LittleStory
           -destination "${{ steps.sims.outputs.iphone }}"
           -destination "${{ steps.sims.outputs.ipad }}"
+          -disable-concurrent-destination-testing
+          -test-timeouts-enabled YES
+          -default-test-execution-time-allowance 300
           -resultBundlePath "$RUNNER_TEMP/AppTests.xcresult"
           CODE_SIGNING_ALLOWED=NO
 
